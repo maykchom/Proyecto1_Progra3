@@ -9,3 +9,8 @@ C:\Users\Mike\Documents\GitHub\Sistema3CapasProgra3\ProyectoCapas\Entidades\bin\
 C:\Users\Mike\Documents\GitHub\Sistema3CapasProgra3\ProyectoCapas\Entidades\obj\Debug\Entidades.dll
 C:\Users\Mike\Documents\GitHub\Sistema3CapasProgra3\ProyectoCapas\Entidades\obj\Debug\Entidades.pdb
 C:\Users\Mike\Documents\GitHub\Sistema3CapasProgra3\ProyectoCapas\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\bin\Debug\Entidades.dll
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.dll
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.pdb
