@@ -102,5 +102,10 @@ namespace CapaUI
                 MessageBox.Show("No se pudo Eliminar el registro");
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
