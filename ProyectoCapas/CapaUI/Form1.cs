@@ -42,7 +42,11 @@ namespace CapaUI
         {
 
         }
-
+        /// <summary>
+        /// Evento click del botón guardár, su función es accionar el guardado de la región ingresada en el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -105,7 +109,21 @@ namespace CapaUI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            bool resultado = false;
+            Regiones Region = new Regiones();
+            Region.RegionID = Convert.ToInt32(txtRegionID.Text);
+            Region.RegionDescripcion = txtRegionNombre.Text;
+            resultado = BLL.BLLRegiones.EditarRegiones(Region);
+            if (resultado)
+            {
+                MessageBox.Show("Registro editado correctamente");
+                Limpiarcontroles();
+                Listar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo editar el registro");
+            }
         }
     }
 }
