@@ -21,11 +21,19 @@ namespace CapaUI
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Evento de carga del formulario, ejecuta el método de Listar que muestra las regiones
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             Listar();
         }
 
+        /// <summary>
+        /// El método Listar obtiene la data de la base de datos y la muestra através de una data grid view
+        /// </summary>
         private void Listar()
         {
             dtListado = BLL.BLLRegiones.ListarRegiones("");
@@ -43,7 +51,11 @@ namespace CapaUI
 
         }
         /// <summary>
-        /// Evento click del botón guardár, su función es accionar el guardado de la región ingresada en el formulario
+        /// Evento click del botón editar.
+        /// Realiza la función de agregar un registro a las regiones.
+        /// Implementa una instancia de la clase regiones para la asignación de atributos (RegionID y RegionDescripcion)
+        /// Ejecuta método de InsertarRegiones con los parámetros previamente asigandos a la clase Regiones
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -66,10 +78,20 @@ namespace CapaUI
             }
         }
 
+
+        /// <summary>
+        /// Evento de click del botón "Nuevo", ejecuta el método "Limpiarcontroles".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
         }
+
+        /// <summary>
+        /// El evento Limpiarcontroles borra el texto ingresado en los TextBox de regionID y regionDescription para un posterior ingreso de datos
+        /// </summary>
         public void Limpiarcontroles()
         {
             txtRegionID.Text = "";
@@ -81,6 +103,12 @@ namespace CapaUI
            
         }
 
+        /// <summary>
+        /// Evento que se acciona al hacer click en una celda del data grid view.
+        /// Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados con el fin de aplicarle un mantenimiento posterior
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgRegiones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Limpiarcontroles();
@@ -90,9 +118,16 @@ namespace CapaUI
             txtRegionNombre.Text= dgRegiones.Rows[RowNo].Cells[1].Value.ToString();
         }
 
+        /// <summary>
+        /// Evento click del botón de eliminar.
+        /// Realiza la acción de eliminar un registro de regiones.
+        /// Ejecuta el método de EliminarRegiones con el ID de la region como parámetro
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
-        {
-           
+        {           
             bool resultado = false;
             resultado = BLL.BLLRegiones.EliminaRegiones(Convert.ToInt32(txtRegionID.Text));
             if (resultado)
@@ -107,6 +142,15 @@ namespace CapaUI
             }
         }
 
+        /// <summary>
+        /// Evento click del botón editar.
+        /// Realiza la función de modificar un registro de las regiones.
+        /// Implementa una instancia de la clase regiones para la asignación de atributos (RegionID y RegionDescripcion)
+        /// Ejecuta método de EditarRegiones con los parámetros previamente asigandos a la clase Regiones
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
