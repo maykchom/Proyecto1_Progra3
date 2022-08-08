@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using MySql.Data.MySqlClient;
 using Entidades;
 
 namespace DAL
@@ -24,6 +25,17 @@ namespace DAL
             strSQL += "'" + categoria.CategoryName + "',";
             strSQL += "'" + categoria.Description + "', NULL);";          
             return ExecTransaction(strSQL);
+        }
+
+        public static bool InsertaCategoriaFoto(categorias categoria)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "Insert into categories (CategoryID, CategoryName, Description, Picture) values(@id, @cat, @description, @picture)";
+            cmd.Parameters.AddWithValue("@id", categoria.CategoriaID);
+            cmd.Parameters.AddWithValue("@cat", categoria.CategoryName);
+            cmd.Parameters.AddWithValue("@description", categoria.Description);
+            cmd.Parameters.AddWithValue("@picture", categoria.Picture);
+            return Configuracion.ExecTransactionParameters(cmd);
         }
 
         public static bool EliminaCategoria(int CatID)

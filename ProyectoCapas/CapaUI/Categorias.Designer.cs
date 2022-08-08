@@ -35,14 +35,18 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.gControles = new System.Windows.Forms.GroupBox();
+            this.tbDescri = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbCatID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbDescri = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCat)).BeginInit();
             this.gControles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // dgCat
@@ -108,6 +112,7 @@
             // 
             // gControles
             // 
+            this.gControles.Controls.Add(this.btnImg);
             this.gControles.Controls.Add(this.tbDescri);
             this.gControles.Controls.Add(this.label4);
             this.gControles.Controls.Add(this.tbNombre);
@@ -122,6 +127,24 @@
             this.gControles.TabIndex = 10;
             this.gControles.TabStop = false;
             this.gControles.Text = "Datos";
+            // 
+            // tbDescri
+            // 
+            this.tbDescri.Location = new System.Drawing.Point(89, 86);
+            this.tbDescri.Margin = new System.Windows.Forms.Padding(2);
+            this.tbDescri.Name = "tbDescri";
+            this.tbDescri.Size = new System.Drawing.Size(98, 20);
+            this.tbDescri.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 86);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Descripción";
             // 
             // tbNombre
             // 
@@ -159,29 +182,35 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Categoria ID";
             // 
-            // tbDescri
+            // pbImagen
             // 
-            this.tbDescri.Location = new System.Drawing.Point(89, 86);
-            this.tbDescri.Margin = new System.Windows.Forms.Padding(2);
-            this.tbDescri.Name = "tbDescri";
-            this.tbDescri.Size = new System.Drawing.Size(98, 20);
-            this.tbDescri.TabIndex = 5;
+            this.pbImagen.Location = new System.Drawing.Point(647, 12);
+            this.pbImagen.Name = "pbImagen";
+            this.pbImagen.Size = new System.Drawing.Size(120, 69);
+            this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagen.TabIndex = 11;
+            this.pbImagen.TabStop = false;
             // 
-            // label4
+            // openFileDialog1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 86);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Descripción";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnImg
+            // 
+            this.btnImg.Location = new System.Drawing.Point(15, 112);
+            this.btnImg.Name = "btnImg";
+            this.btnImg.Size = new System.Drawing.Size(171, 23);
+            this.btnImg.TabIndex = 6;
+            this.btnImg.Text = "Seleccionar imagen...";
+            this.btnImg.UseVisualStyleBackColor = true;
+            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
             // 
             // Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 400);
+            this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.gControles);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEliminar);
@@ -195,6 +224,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgCat)).EndInit();
             this.gControles.ResumeLayout(false);
             this.gControles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +245,8 @@
         private System.Windows.Forms.TextBox tbCatID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnImg;
+        private System.Windows.Forms.PictureBox pbImagen;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

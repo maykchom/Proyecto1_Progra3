@@ -81,6 +81,46 @@ namespace DAL
             }
             return resultado;
         }
+
+        //ejecuta transacciones con parámetros establecidos para insertar, eliminar y actualizar
+        public static bool ExecTransactionParameters(MySqlCommand comando)
+        {
+            bool resultado = false;
+            try
+            {
+                using (MySqlConnection cn = new MySqlConnection(cadenaconexion))
+                {
+                    cn.Open();
+                    using (MySqlTransaction trx = cn.BeginTransaction())
+                    {
+                        try
+                        {
+                            using (comando)
+                            {
+                                comando.Connection = cn;
+                                comando.Transaction = trx;
+                                comando.ExecuteNonQuery();
+                            }
+                            trx.Commit();
+                            resultado = true;
+                        }
+                        catch (Exception)
+                        {
+                            trx.Rollback();
+                            resultado = false;
+                            throw;
+                        }
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+            return resultado;
+        }
+
     }
 
 }

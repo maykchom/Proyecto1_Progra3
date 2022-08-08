@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using System.Data;
 using BLL;
 using Entidades;
+using System.IO;
+
 namespace CapaUI
 {
     public partial class Categorias : Form
     {
         private DataTable dataCat;
+        string nombre;
         public Categorias()
         {
             InitializeComponent();
@@ -38,7 +41,11 @@ namespace CapaUI
             categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
             categorias.CategoryName = tbNombre.Text.ToString();
             categorias.Description = tbDescri.Text.ToString();
-            resultado = BLL.BLLCategorias.InsertarCategorias(categorias);
+            MemoryStream ms = new MemoryStream();
+            Image image = Image.FromFile(nombre);
+            image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            categorias.Picture = (ms.ToArray());
+            resultado = BLL.BLLCategorias.InsertarCategoriasFotos(categorias);
             if (resultado)
             {
                 MessageBox.Show("Registro ingresado correctamente");
@@ -57,6 +64,30 @@ namespace CapaUI
             tbNombre.Clear();
             tbDescri.Clear();
             tbCatID.Focus();
+        }
+
+        private void btnImg_Click(object sender, EventArgs e)
+        {
+            int size = -1;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string file = openFileDialog1.FileName;
+                nombre = openFileDialog1.FileName;
+                try
+                {
+                    string text = File.ReadAllText(file);
+                    size = text.Length;
+                    pbImagen.Image = new Bitmap(openFileDialog1.FileName);
+                }
+                catch (IOException)
+                {
+
+                    throw;
+                }
+
+            }
         }
     }
 }

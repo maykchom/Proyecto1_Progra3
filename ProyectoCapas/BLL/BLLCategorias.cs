@@ -21,6 +21,11 @@ namespace BLL
             return ClaseCategorias.InsertaCategoria(categoria);
         }
 
+        public static bool InsertarCategoriasFotos(categorias categoria)
+        {
+            return ClaseCategorias.InsertaCategoriaFoto(categoria);
+        }
+
         public static bool EliminarCategoria(int CatID)
         {
             return ClaseCategorias.EliminaCategoria(CatID);
