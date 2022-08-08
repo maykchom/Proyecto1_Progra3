@@ -102,5 +102,30 @@ namespace CapaUI
                 MessageBox.Show("No se pudo Eliminar el registro");
             }
         }
+
+        private void dgRegiones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtRegionID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtRegionNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gControles_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

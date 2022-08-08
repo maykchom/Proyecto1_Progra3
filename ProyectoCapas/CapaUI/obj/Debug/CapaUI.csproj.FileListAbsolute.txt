@@ -120,3 +120,4 @@ C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Deb
 C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.csproj.CopyComplete
 C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.exe
 C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.pdb
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Proveedores.resources
