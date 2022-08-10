@@ -34,9 +34,13 @@ namespace CapaUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Limpiarcontroles();
         }
-
+        public void Limpiarcontroles()
+        {
+            txtPROVEEDOR_ID .Text = "";
+            txtPROVEEDOR_NOMBRE .Text = "";
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
