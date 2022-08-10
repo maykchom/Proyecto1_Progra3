@@ -35,6 +35,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.gControles = new System.Windows.Forms.GroupBox();
+            this.btnImg = new System.Windows.Forms.Button();
             this.tbDescri = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbNombre = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pbImagen = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCat)).BeginInit();
             this.gControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
@@ -56,6 +56,7 @@
             this.dgCat.Name = "dgCat";
             this.dgCat.Size = new System.Drawing.Size(525, 302);
             this.dgCat.TabIndex = 0;
+            this.dgCat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCat_CellClick);
             // 
             // label1
             // 
@@ -89,6 +90,7 @@
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -99,6 +101,7 @@
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnNuevo
             // 
@@ -127,6 +130,16 @@
             this.gControles.TabIndex = 10;
             this.gControles.TabStop = false;
             this.gControles.Text = "Datos";
+            // 
+            // btnImg
+            // 
+            this.btnImg.Location = new System.Drawing.Point(15, 112);
+            this.btnImg.Name = "btnImg";
+            this.btnImg.Size = new System.Drawing.Size(171, 23);
+            this.btnImg.TabIndex = 6;
+            this.btnImg.Text = "Seleccionar imagen...";
+            this.btnImg.UseVisualStyleBackColor = true;
+            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
             // 
             // tbDescri
             // 
@@ -194,16 +207,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnImg
-            // 
-            this.btnImg.Location = new System.Drawing.Point(15, 112);
-            this.btnImg.Name = "btnImg";
-            this.btnImg.Size = new System.Drawing.Size(171, 23);
-            this.btnImg.TabIndex = 6;
-            this.btnImg.Text = "Seleccionar imagen...";
-            this.btnImg.UseVisualStyleBackColor = true;
-            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
             // 
             // Categorias
             // 

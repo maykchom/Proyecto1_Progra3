@@ -89,5 +89,55 @@ namespace CapaUI
 
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            bool resultado = false;
+            resultado = BLL.BLLCategorias.EliminarCategoria(Convert.ToInt32(tbCatID .Text));
+            if (resultado)
+            {
+                MessageBox.Show("Registro Eliminado correctamente");
+                Limpiarcontroles();
+                cargarCategorias();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo Eliminar el registro");
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            bool resultado = false;
+            categorias categorias = new categorias();
+            categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
+            categorias.CategoryName = tbNombre.Text.ToString();
+            categorias.Description = tbDescri.Text.ToString();
+            MemoryStream ms = new MemoryStream();
+            Image image = Image.FromFile(nombre);
+            image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+            categorias.Picture = (ms.ToArray());
+            resultado = BLL.BLLCategorias.EditarCategoriasFotos(categorias);
+            if (resultado)
+            {
+                MessageBox.Show("Registro editado correctamente");
+                Limpiarcontroles();
+                cargarCategorias();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo editar el registro");
+            }
+        }
+
+        private void dgCat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int RowNo;
+            RowNo = e.RowIndex;
+            tbCatID.Text = dgCat.Rows[RowNo].Cells[0].Value.ToString();
+            tbNombre.Text = dgCat.Rows[RowNo].Cells[1].Value.ToString();
+            tbDescri.Text = dgCat.Rows[RowNo].Cells[2].Value.ToString();
+            pbImagen.Image = (Bitmap)((new ImageConverter()).ConvertFrom(dgCat.Rows[RowNo].Cells[3].Value));
+        }
     }
 }

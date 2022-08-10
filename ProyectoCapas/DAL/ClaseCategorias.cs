@@ -38,6 +38,17 @@ namespace DAL
             return Configuracion.ExecTransactionParameters(cmd);
         }
 
+        public static bool EditarCategoriaFoto(categorias categoria)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "Update categories set CategoryName = @cat, Description = @description, Picture = @picture where CategoryID = @id";
+            cmd.Parameters.AddWithValue("@id", categoria.CategoriaID);
+            cmd.Parameters.AddWithValue("@cat", categoria.CategoryName);
+            cmd.Parameters.AddWithValue("@description", categoria.Description);
+            cmd.Parameters.AddWithValue("@picture", categoria.Picture);
+            return Configuracion.ExecTransactionParameters(cmd);
+        }
+
         public static bool EliminaCategoria(int CatID)
         {
             string strSQL = "Delete from Categories where CategoryID=" + CatID;
