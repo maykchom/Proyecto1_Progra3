@@ -15,3 +15,9 @@ C:\Users\Mike\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Deb
 C:\Users\Mike\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Mike\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.dll
 C:\Users\Mike\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\bin\Debug\Entidades.dll
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.dll
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\Entidades\obj\Debug\Entidades.pdb
