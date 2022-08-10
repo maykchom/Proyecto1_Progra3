@@ -92,7 +92,7 @@ namespace CapaUI
             productos.Discontinued = txDiscontinued.Text;
 
 
-            resultado = BLL.BLLProductos.EditarProducto(Entidades.Productos);
+            resultado = BLL.BLLProductos.EditarProducto(productos);
             if (resultado)
             {
                 MessageBox.Show("Registro editado correctamente");
