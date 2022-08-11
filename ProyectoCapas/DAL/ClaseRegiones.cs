@@ -55,7 +55,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// Método EditarRegion
+        /// Método EliminarRegion
         /// Ejecuta una consulta SQL de tipo "Delete" que actualiza un registro en específico de la tabla region.
         /// Espera como parámetro un valor entero que contiene el ID de la region a eliminar.
         /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
