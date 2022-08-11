@@ -26,5 +26,10 @@ namespace BLL
         {
             return ClaseRegiones.EliminaRegion(RegionID);
         }
+
+        public static bool EditarRegiones(Regiones Region)
+        {
+            return ClaseRegiones.EditarRegion(Region);
+        }
     }
 }

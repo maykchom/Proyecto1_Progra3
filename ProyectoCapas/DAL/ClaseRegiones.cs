@@ -23,6 +23,12 @@ namespace DAL
             return ExecTransaction(strSQL);
         }
 
+        public static bool EditarRegion(Regiones Region)
+        {
+            string strSQL = "Update region set regiondescription = '" + Region.RegionDescripcion + "' where regionid = " + Region.RegionID;
+            return ExecTransaction(strSQL);
+        }
+
         public static bool EliminaRegion(int RegionID)
         {
             string strSQL = "Delete from region where RegionID="+ RegionID;

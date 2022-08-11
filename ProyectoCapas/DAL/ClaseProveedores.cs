@@ -19,10 +19,33 @@ namespace DAL
 
         public static bool InsertaProveedores(Proveedores Proveedor)
         {
-            string strSQL = "Insert into Suppliers (SupplierID,CompanyName,ContactTitle,Address,City,Region ) values(";
-            strSQL += "'" + Region.RegionID + "',";
-            strSQL += "'" + Region.RegionDescripcion + "');";
+            string strSQL = "Insert into Suppliers (SupplierID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax,HomePage ) values(";
+            strSQL += "'" + Proveedor.SupplierID + "',";
+            strSQL += "'" + Proveedor.CompanyName + "');";
+            strSQL += "'" + Proveedor.ContactName + "');";
+            strSQL += "'" + Proveedor. ContactTitle + "');";
+            strSQL += "'" + Proveedor.Address + "');";
+            strSQL += "'" + Proveedor.City + "');";
+            strSQL += "'" + Proveedor.Region + "');";
+            strSQL += "'" + Proveedor.PostalCode + "');";
+            strSQL += "'" + Proveedor.Country + "');";
+            strSQL += "'" + Proveedor.Phone + "');";
+            strSQL += "'" + Proveedor.Fax + "');";
+            strSQL += "'" + Proveedor.HomePage + "');";
             return ExecTransaction(strSQL);
         }
+
+        public static bool EliminaProveedor(int ProveedorID )
+        {
+            string strSQL = "Delete from Supplier where SupplierID="+ ProveedorID;
+            return ExecTransaction(strSQL);
+        }
+
+        public static bool EditarProveedor(Proveedores Proveedor)
+        {
+            string strSQL = "Update  set CompanyName = '" + Proveedor.CompanyName + "' where SupplierID = " + Proveedor.SupplierID;
+            return ExecTransaction(strSQL);
+        }
+
     }
 }

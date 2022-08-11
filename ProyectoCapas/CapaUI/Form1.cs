@@ -120,7 +120,21 @@ namespace CapaUI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            bool resultado = false;
+            Regiones Region = new Regiones();
+            Region.RegionID = Convert.ToInt32(txtRegionID.Text);
+            Region.RegionDescripcion = txtRegionNombre.Text;
+            resultado = BLL.BLLRegiones.EditarRegiones(Region);
+            if (resultado)
+            {
+                MessageBox.Show("Registro editado correctamente");
+                Limpiarcontroles();
+                Listar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo editar el registro");
+            }
         }
 
         private void gControles_Enter(object sender, EventArgs e)
