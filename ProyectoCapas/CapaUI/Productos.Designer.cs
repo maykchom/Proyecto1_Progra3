@@ -265,6 +265,7 @@
             this.BtEliminar.TabIndex = 24;
             this.BtEliminar.Text = "Eliminar";
             this.BtEliminar.UseVisualStyleBackColor = true;
+            this.BtEliminar.Click += new System.EventHandler(this.BtEliminar_Click);
             // 
             // label11
             // 

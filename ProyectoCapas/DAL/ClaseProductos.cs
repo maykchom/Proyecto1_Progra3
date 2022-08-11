@@ -12,13 +12,13 @@ namespace DAL
     {
         public static DataTable ListarProductos(string Productos)
         {
-            string strSQL = "select * from Productos";
+            string strSQL = "select * from Products";
             strSQL += " where ProductName like '%" + Productos + "%'";
             return Configuracion.GetDataTable(strSQL);
         }
         public static bool InsertaProducto(Productos producto)
         {
-            string strSQL = "Insert into region (ProductID, ProductName, SupplierID, CategoryID, QuatityPerUnit, UnitPrice, UnitInStock, UnitsOnOrder, RecorderLevel, Discontinued) values(";
+            string strSQL = "Insert into Products (ProductID, ProductName, SupplierID, CategoryID, QuatityPerUnit, UnitPrice, UnitInStock, UnitsOnOrder, RecorderLevel, Discontinued) values(";
             strSQL += "'" + producto.ProductID + "',";
             strSQL += "'" + producto.ProductName + "',";
             strSQL += "'" + producto.SupplierID + "',";
@@ -33,12 +33,12 @@ namespace DAL
         }
         public static bool EditarProducto(Productos Producto)
         {
-            string strSQL = "Update ProductID set ProductName = '" + Producto.ProductName + "' where ProductID = " + Producto.ProductID;
+            string strSQL = "Update Product set ProductName = '" + Producto.ProductName  + "',SupplierID='" +Producto.SupplierID + "',CategoryID='" + Producto.CategoryID + "',QuantityPerUnit='" + Producto.QuantityPerUnit + "',UnitPrice='" + Producto.UnitPrice + "',UnitsInStock='" + Producto.UnitsInStock + "',UnitsOnOrder='" + Producto.UnitsonOrder + "',RecorderLevel='" + Producto.RecorderLevel + "',Discontinued='" + Producto.Discontinued + "' where ProductID = " + Producto.ProductID ;
             return Configuracion.ExecTransaction(strSQL);
         }
         public static bool EliminaProductos(int ProductID)
         {
-            string strSQL = "Delete from Productos where ProductsID=" + ProductID;
+            string strSQL = "Delete from Products where ProductsID=" + ProductID;
             return Configuracion.ExecTransaction(strSQL);
         }
 

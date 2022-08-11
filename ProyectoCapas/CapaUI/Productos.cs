@@ -104,5 +104,23 @@ namespace CapaUI
                 MessageBox.Show("No se pudo editar el registro");
             }
         }
+
+        private void BtEliminar_Click(object sender, EventArgs e)
+        {
+            bool resultado = false;
+
+
+            resultado = BLL.BLLProductos.EliminaProductos(Convert.ToInt32(txProduct.Text));
+            if (resultado)
+            {
+                MessageBox.Show("Registro Eliminado correctamente");
+                Limpiarcontroles();
+                Listar();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo Eliminar el registro");
+            }
+        }
     }
 }

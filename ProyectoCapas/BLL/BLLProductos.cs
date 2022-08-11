@@ -9,6 +9,14 @@ using Entidades;
 
 namespace BLL
 {
+    /// <summary>
+    /// Método ListarProductos.
+    /// Ejecuta el método ListarProductos de la clase "ClaseProductos" en la capa DAL
+    /// Espera como parámetro un string que contendrá el valor de la consulta a buscar.
+    /// La data que devolverá será en formato DataTable
+    /// </summary>
+    /// <param name="strProductos"></param>
+    /// <returns></returns>
     public class BLLProductos
     {
         public static DataTable ListarProductos(string strCatt)
@@ -26,7 +34,7 @@ namespace BLL
          //   return ClaseCategorias.InsertaCategoriaFoto(Pr);
         //}
 
-        public static bool EliminarProductos(int ProductID)
+        public static bool EliminaProductos(int ProductID)
         {
             return ClaseProductos.EliminaProductos(ProductID);
         }
