@@ -17,6 +17,6 @@ namespace Entidades
         public int UnitsInStock { get; set; }
         public int UnitsonOrder { get; set; }
         public int RecorderLevel { get; set; }
-        public string Discontinued { get; set; }
+        public int Discontinued { get; set; }
     }
 }

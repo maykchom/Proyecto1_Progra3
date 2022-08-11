@@ -52,11 +52,12 @@ namespace CapaUI
             Productos.ProductName = txproName.Text;
             Productos.SupplierID = Convert.ToInt32(txSupplier.Text);
             Productos.CategoryID = Convert.ToInt32(txCategory.Text);
+            Productos.QuantityPerUnit = Convert.ToInt32(txQuantity.Text);
             Productos.UnitPrice = Convert.ToInt32(txUnitPrice.Text);
             Productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             Productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
             Productos.RecorderLevel = Convert.ToInt32(txRecorder.Text);
-            Productos.Discontinued = txDiscontinued.Text;
+            Productos.Discontinued = Convert.ToInt32(txDiscontinued.Text);
 
             resultado = BLL.BLLProductos.InsertarProducto(Productos);
             if (resultado)
@@ -89,7 +90,7 @@ namespace CapaUI
             productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
             productos.RecorderLevel = Convert.ToInt32(txRecorder.Text);
-            productos.Discontinued = txDiscontinued.Text;
+            productos.Discontinued = Convert.ToInt32(txDiscontinued.Text);
 
 
             resultado = BLL.BLLProductos.EditarProducto(productos);

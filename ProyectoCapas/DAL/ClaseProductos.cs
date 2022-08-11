@@ -18,27 +18,27 @@ namespace DAL
         }
         public static bool InsertaProducto(Productos producto)
         {
-            string strSQL = "Insert into Products (ProductID, ProductName, SupplierID, CategoryID, QuatityPerUnit, UnitPrice, UnitInStock, UnitsOnOrder, RecorderLevel, Discontinued) values(";
-            strSQL += "'" + producto.ProductID + "',";
+            string strSQL = "Insert into Products (ProductID, ProductName, SupplierID, CategoryID, QuantityPerUnit, UnitPrice, UnitsInStock, UnitsOnOrder, ReorderLevel, Discontinued) values(";
+            strSQL += " " + producto.ProductID + ",";
             strSQL += "'" + producto.ProductName + "',";
-            strSQL += "'" + producto.SupplierID + "',";
-            strSQL += "'" + producto.CategoryID + "',";
-            strSQL += "'" + producto.QuantityPerUnit + "',";
-            strSQL += "'" + producto.UnitPrice + "',";
-            strSQL += "'" + producto.UnitsInStock + "',";
-            strSQL += "'" + producto.UnitsonOrder + "',";
-            strSQL += "'" + producto.RecorderLevel + "',";
-            strSQL += "'" + producto.Discontinued + "');";
+            strSQL += "" + producto.SupplierID + ",";
+            strSQL += "" + producto.CategoryID + ",";
+            strSQL += "" + producto.QuantityPerUnit + ",";
+            strSQL += "" + producto.UnitPrice + ",";
+            strSQL += "" + producto.UnitsInStock + ",";
+            strSQL += "" + producto.UnitsonOrder + ",";
+            strSQL += "" + producto.RecorderLevel + ",";
+            strSQL += "" + producto.Discontinued + ");";
             return Configuracion.ExecTransaction(strSQL);
         }
         public static bool EditarProducto(Productos Producto)
         {
-            string strSQL = "Update Product set ProductName = '" + Producto.ProductName  + "',SupplierID='" +Producto.SupplierID + "',CategoryID='" + Producto.CategoryID + "',QuantityPerUnit='" + Producto.QuantityPerUnit + "',UnitPrice='" + Producto.UnitPrice + "',UnitsInStock='" + Producto.UnitsInStock + "',UnitsOnOrder='" + Producto.UnitsonOrder + "',RecorderLevel='" + Producto.RecorderLevel + "',Discontinued='" + Producto.Discontinued + "' where ProductID = " + Producto.ProductID ;
+            string strSQL = "Update Products set ProductName = '" + Producto.ProductName  + "',SupplierID='" +Producto.SupplierID + "',CategoryID='" + Producto.CategoryID + "',QuantityPerUnit='" + Producto.QuantityPerUnit + "',UnitPrice='" + Producto.UnitPrice + "',UnitsInStock='" + Producto.UnitsInStock + "',UnitsOnOrder='" + Producto.UnitsonOrder + "',ReorderLevel='" + Producto.RecorderLevel + "',Discontinued='" + Producto.Discontinued + "' where ProductID = " + Producto.ProductID ;
             return Configuracion.ExecTransaction(strSQL);
         }
         public static bool EliminaProductos(int ProductID)
         {
-            string strSQL = "Delete from Products where ProductsID=" + ProductID;
+            string strSQL = "Delete from Products where ProductID=" + ProductID;
             return Configuracion.ExecTransaction(strSQL);
         }
 

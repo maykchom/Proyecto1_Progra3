@@ -79,7 +79,7 @@ namespace DAL
             }
             catch (Exception)
             {
-               
+
             }
             return resultado;
         }
