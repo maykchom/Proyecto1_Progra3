@@ -59,13 +59,16 @@
             // 
             // dgPro
             // 
+            this.dgPro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPro.Location = new System.Drawing.Point(419, 272);
+            this.dgPro.Location = new System.Drawing.Point(270, 212);
             this.dgPro.Name = "dgPro";
             this.dgPro.RowHeadersWidth = 51;
             this.dgPro.RowTemplate.Height = 24;
-            this.dgPro.Size = new System.Drawing.Size(471, 245);
+            this.dgPro.Size = new System.Drawing.Size(879, 350);
             this.dgPro.TabIndex = 0;
+            this.dgPro.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPro_CellClick);
+            this.dgPro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPro_CellContentClick);
             // 
             // txProduct
             // 
@@ -272,10 +275,11 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.SystemColors.Control;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label11.Font = new System.Drawing.Font("Modern No. 20", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(391, 43);
             this.label11.MaximumSize = new System.Drawing.Size(3000000, 500000);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 16);
+            this.label11.Size = new System.Drawing.Size(212, 34);
             this.label11.TabIndex = 25;
             this.label11.Text = "PRODUCTOS";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -284,7 +288,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 616);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1161, 616);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.BtEliminar);
             this.Controls.Add(this.BtGuardar);
@@ -311,6 +316,7 @@
             this.Controls.Add(this.txproName);
             this.Controls.Add(this.txProduct);
             this.Controls.Add(this.dgPro);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.Name = "Productos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);

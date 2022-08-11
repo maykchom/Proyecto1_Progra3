@@ -211,3 +211,4 @@ C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3_Danna\ProyectoCapas\CapaU
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3_Danna\ProyectoCapas\CapaUI\obj\Debug\CapaUI.csproj.CopyComplete
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3_Danna\ProyectoCapas\CapaUI\obj\Debug\CapaUI.exe
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3_Danna\ProyectoCapas\CapaUI\obj\Debug\CapaUI.pdb
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
