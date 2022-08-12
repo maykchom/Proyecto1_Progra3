@@ -21,29 +21,29 @@ namespace DAL
         {
             string strSQL = "Insert into Suppliers (SupplierID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax,HomePage ) values(";
             strSQL += "'" + Proveedor.SupplierID + "',";
-            strSQL += "'" + Proveedor.CompanyName + "');";
-            strSQL += "'" + Proveedor.ContactName + "');";
-            strSQL += "'" + Proveedor. ContactTitle + "');";
-            strSQL += "'" + Proveedor.Address + "');";
-            strSQL += "'" + Proveedor.City + "');";
-            strSQL += "'" + Proveedor.Region + "');";
-            strSQL += "'" + Proveedor.PostalCode + "');";
-            strSQL += "'" + Proveedor.Country + "');";
-            strSQL += "'" + Proveedor.Phone + "');";
-            strSQL += "'" + Proveedor.Fax + "');";
+            strSQL += "'" + Proveedor.CompanyName + "',";
+            strSQL += "'" + Proveedor.ContactName + "',";
+            strSQL += "'" + Proveedor.ContactTitle + "',";
+            strSQL += "'" + Proveedor.Address + "',";
+            strSQL += "'" + Proveedor.City + "',";
+            strSQL += "'" + Proveedor.Region + "',";
+            strSQL += "'" + Proveedor.PostalCode + "',";
+            strSQL += "'" + Proveedor.Country + "',";
+            strSQL += "'" + Proveedor.Phone + "',";
+            strSQL += "'" + Proveedor.Fax + "',";
             strSQL += "'" + Proveedor.HomePage + "');";
             return ExecTransaction(strSQL);
         }
 
-        public static bool EliminaProveedor(int ProveedorID )
+        public static bool EliminaProveedor(int SupplierID )
         {
-            string strSQL = "Delete from Supplier where SupplierID="+ ProveedorID;
+            string strSQL = "Delete from Suppliers where SupplierID="+ SupplierID;
             return ExecTransaction(strSQL);
         }
 
         public static bool EditarProveedor(Proveedores Proveedor)
         {
-            string strSQL = "Update  set CompanyName = '" + Proveedor.CompanyName + "' where SupplierID = " + Proveedor.SupplierID;
+            string strSQL = "Update Suppliers  set CompanyName = '" + Proveedor.CompanyName + "',ContactName='" + Proveedor.ContactName + "',ContactTitle='" + Proveedor.ContactTitle + "',Address='" + Proveedor.Address + "',City='" + Proveedor.City + "',Region='" + Proveedor.Region + "',PostalCode='" + Proveedor.PostalCode + "',Country='" + Proveedor.Country + "',Phone='" + Proveedor.Phone + "',Fax='" + Proveedor.Fax + "',Homepage='" + Proveedor.HomePage + "'where SupplierID = '" + Proveedor.SupplierID + "'";
             return ExecTransaction(strSQL);
         }
 

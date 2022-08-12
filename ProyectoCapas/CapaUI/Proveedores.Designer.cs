@@ -35,7 +35,7 @@
             this.butELiminar = new System.Windows.Forms.Button();
             this.butGuardar = new System.Windows.Forms.Button();
             this.gControles = new System.Windows.Forms.GroupBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtPaginaWeb = new System.Windows.Forms.TextBox();
             this.txtFax = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Stencil", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(544, 27);
+            this.label1.Location = new System.Drawing.Point(547, 13);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(442, 71);
@@ -78,19 +78,20 @@
             // dgProveedores
             // 
             this.dgProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProveedores.Location = new System.Drawing.Point(334, 109);
+            this.dgProveedores.Location = new System.Drawing.Point(340, 103);
             this.dgProveedores.Name = "dgProveedores";
             this.dgProveedores.RowHeadersWidth = 51;
             this.dgProveedores.RowTemplate.Height = 24;
-            this.dgProveedores.Size = new System.Drawing.Size(870, 238);
+            this.dgProveedores.Size = new System.Drawing.Size(870, 353);
             this.dgProveedores.TabIndex = 1;
+            this.dgProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProveedores_CellClick);
             this.dgProveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // butNuevo
             // 
             this.butNuevo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.butNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butNuevo.Location = new System.Drawing.Point(525, 399);
+            this.butNuevo.Location = new System.Drawing.Point(511, 487);
             this.butNuevo.Name = "butNuevo";
             this.butNuevo.Size = new System.Drawing.Size(95, 48);
             this.butNuevo.TabIndex = 2;
@@ -102,7 +103,7 @@
             // 
             this.butEditar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.butEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butEditar.Location = new System.Drawing.Point(657, 399);
+            this.butEditar.Location = new System.Drawing.Point(643, 487);
             this.butEditar.Name = "butEditar";
             this.butEditar.Size = new System.Drawing.Size(95, 48);
             this.butEditar.TabIndex = 3;
@@ -114,7 +115,7 @@
             // 
             this.butELiminar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.butELiminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butELiminar.Location = new System.Drawing.Point(802, 399);
+            this.butELiminar.Location = new System.Drawing.Point(788, 487);
             this.butELiminar.Name = "butELiminar";
             this.butELiminar.Size = new System.Drawing.Size(95, 48);
             this.butELiminar.TabIndex = 4;
@@ -126,7 +127,7 @@
             // 
             this.butGuardar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.butGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butGuardar.Location = new System.Drawing.Point(941, 399);
+            this.butGuardar.Location = new System.Drawing.Point(927, 487);
             this.butGuardar.Name = "butGuardar";
             this.butGuardar.Size = new System.Drawing.Size(95, 48);
             this.butGuardar.TabIndex = 5;
@@ -136,7 +137,7 @@
             // 
             // gControles
             // 
-            this.gControles.Controls.Add(this.txtCorreo);
+            this.gControles.Controls.Add(this.txtPaginaWeb);
             this.gControles.Controls.Add(this.txtFax);
             this.gControles.Controls.Add(this.label10);
             this.gControles.Controls.Add(this.label11);
@@ -169,13 +170,13 @@
             this.gControles.TabStop = false;
             this.gControles.Text = "Datos";
             // 
-            // txtCorreo
+            // txtPaginaWeb
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(133, 491);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(130, 22);
-            this.txtCorreo.TabIndex = 23;
+            this.txtPaginaWeb.Location = new System.Drawing.Point(133, 491);
+            this.txtPaginaWeb.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPaginaWeb.Name = "txtPaginaWeb";
+            this.txtPaginaWeb.Size = new System.Drawing.Size(130, 22);
+            this.txtPaginaWeb.TabIndex = 23;
             // 
             // txtFax
             // 
@@ -191,9 +192,9 @@
             this.label10.Location = new System.Drawing.Point(37, 491);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 17);
+            this.label10.Size = new System.Drawing.Size(89, 17);
             this.label10.TabIndex = 21;
-            this.label10.Text = "Correo:";
+            this.label10.Text = "Pagina Web:";
             // 
             // label11
             // 
@@ -421,7 +422,7 @@
         private System.Windows.Forms.TextBox txtProveedorID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtPaginaWeb;
         private System.Windows.Forms.TextBox txtFax;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;

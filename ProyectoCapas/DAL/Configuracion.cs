@@ -45,6 +45,7 @@ namespace DAL
             }
         }
         //insert, update, delete
+
         public static bool ExecTransaction(string strSQL)
         {
             bool resultado = false;
@@ -77,10 +78,11 @@ namespace DAL
             }
             catch (Exception)
             {
-               
+
             }
             return resultado;
         }
+
     }
 
 }
