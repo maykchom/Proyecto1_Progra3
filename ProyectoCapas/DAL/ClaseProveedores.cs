@@ -10,6 +10,10 @@ namespace DAL
 {
     public class ClaseProveedores : Configuracion
     {
+        
+        // Metodo de listar proveedores.
+        // Ejecuta una consulta SQL de tipo "Select" que obtiene la data de la base de datos.
+        // Espera como parámetro un string que definirá la consulta en caso de buscar algo en específico.
         public static DataTable ListarProveedores(string strProveedor)
         {
             string strSQL = "select * from Suppliers";
@@ -17,6 +21,8 @@ namespace DAL
             return GetDataTable(strSQL);
         }
 
+        // Insertar Proveedores
+        // Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de producto.
         public static bool InsertaProveedores(Proveedores Proveedor)
         {
             string strSQL = "Insert into Suppliers (SupplierID,CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone,Fax,HomePage ) values(";
@@ -35,12 +41,17 @@ namespace DAL
             return ExecTransaction(strSQL);
         }
 
+        // Eliminar Proveedor
+        // Ejecuta una consulta SQL de tipo "Delete" que actualiza un registro en específico de la tabla Products.
+        // Espera como parámetro un valor entero que contiene el ID del Producto a eliminar.
         public static bool EliminaProveedor(int SupplierID )
         {
             string strSQL = "Delete from Suppliers where SupplierID="+ SupplierID;
             return ExecTransaction(strSQL);
         }
 
+        // Editar Proveedor
+        // Ejecuta una consulta SQL de tipo "Delete" que actualiza un registro en específico de la tabla Products.
         public static bool EditarProveedor(Proveedores Proveedor)
         {
             string strSQL = "Update Suppliers  set CompanyName = '" + Proveedor.CompanyName + "',ContactName='" + Proveedor.ContactName + "',ContactTitle='" + Proveedor.ContactTitle + "',Address='" + Proveedor.Address + "',City='" + Proveedor.City + "',Region='" + Proveedor.Region + "',PostalCode='" + Proveedor.PostalCode + "',Country='" + Proveedor.Country + "',Phone='" + Proveedor.Phone + "',Fax='" + Proveedor.Fax + "',Homepage='" + Proveedor.HomePage + "'where SupplierID = '" + Proveedor.SupplierID + "'";

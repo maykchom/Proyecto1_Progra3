@@ -213,3 +213,6 @@ C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.csproj.CopyComplete
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.menu.resources
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.menu.resources
+C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Productos.resources

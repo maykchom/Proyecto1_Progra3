@@ -61,7 +61,7 @@ namespace DAL
             return Configuracion.ExecTransaction(strSQL);
         }
         /// <summary>
-        /// Método EditarProductos
+        /// Método EliminarProductos
         /// Ejecuta una consulta SQL de tipo "Delete" que actualiza un registro en específico de la tabla Products.
         /// Espera como parámetro un valor entero que contiene el ID del Producto a eliminar.
         /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
