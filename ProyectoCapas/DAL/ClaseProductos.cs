@@ -39,7 +39,7 @@ namespace DAL
             strSQL += "'" + producto.ProductName + "',";
             strSQL += "" + producto.SupplierID + ",";
             strSQL += "" + producto.CategoryID + ",";
-            strSQL += "" + producto.QuantityPerUnit + ",";
+            strSQL += "'" + producto.QuantityPerUnit + "',";
             strSQL += "" + producto.UnitPrice + ",";
             strSQL += "" + producto.UnitsInStock + ",";
             strSQL += "" + producto.UnitsonOrder + ",";

@@ -48,18 +48,53 @@ namespace DAL
         }
         //insert, update, delete
 
+        //public static bool ExecTransaction(string strSQL)
+        //{
+        //    bool resultado = false;
+        //    try
+        //    {
+        //        using (MySqlConnection cn = new MySqlConnection(cadenaconexion))
+        //        {
+        //            cn.Open();
+        //            using (MySqlTransaction trx = cn.BeginTransaction())
+        //            {
+        //                try
+        //                {
+        //                    using (MySqlCommand cmd = new MySqlCommand(strSQL, cn))
+        //                    {
+        //                        cmd.Transaction = trx;
+        //                        cmd.ExecuteNonQuery();
+        //                    }
+        //                    trx.Commit();
+        //                    resultado = true;
+        //                }
+        //                catch (Exception)
+        //                {
+        //                    trx.Rollback();
+        //                    resultado = false;
+        //                    throw;
+        //                }
+        //            }
+        //        }
+
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //    }
+        //    return resultado;
+        //}
+
         public static bool ExecTransaction(string strSQL)
         {
             bool resultado = false;
-            try
-            {
+           
                 using (MySqlConnection cn = new MySqlConnection(cadenaconexion))
                 {
                     cn.Open();
                     using (MySqlTransaction trx = cn.BeginTransaction())
                     {
-                        try
-                        {
+
                             using (MySqlCommand cmd = new MySqlCommand(strSQL, cn))
                             {
                                 cmd.Transaction = trx;
@@ -67,22 +102,11 @@ namespace DAL
                             }
                             trx.Commit();
                             resultado = true;
-                        }
-                        catch (Exception)
-                        {
-                            trx.Rollback();
-                            resultado = false;
-                            throw;
-                        }
-                    }
+                    return resultado;
+                }
                 }
 
-            }
-            catch (Exception)
-            {
 
-            }
-            return resultado;
         }
 
         //ejecuta transacciones con parámetros establecidos para insertar, eliminar y actualizar
@@ -123,6 +147,7 @@ namespace DAL
             }
             return resultado;
         }
+
 
     }
 

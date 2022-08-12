@@ -74,7 +74,7 @@ namespace CapaUI
             Productos.ProductName = txproName.Text;
             Productos.SupplierID = Convert.ToInt32(txSupplier.Text);
             Productos.CategoryID = Convert.ToInt32(txCategory.Text);
-            Productos.QuantityPerUnit = Convert.ToInt32(txQuantity.Text);
+            Productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
             Productos.UnitPrice = Convert.ToDouble(txUnitPrice.Text);
             Productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             Productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
@@ -111,7 +111,7 @@ namespace CapaUI
             productos.ProductName = txproName.Text;
             productos.SupplierID = Convert.ToInt32(txSupplier.Text);
             productos.CategoryID = Convert.ToInt32(txCategory.Text);
-            productos.QuantityPerUnit = Convert.ToInt32(txQuantity.Text);
+            productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
             productos.UnitPrice = Convert.ToDouble(txUnitPrice.Text);
             productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
