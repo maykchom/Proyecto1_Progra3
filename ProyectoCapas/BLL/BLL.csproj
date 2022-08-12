@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLLCategorias.cs" />
+    <Compile Include="BLLProveedores.cs" />
     <Compile Include="BLLRegiones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
