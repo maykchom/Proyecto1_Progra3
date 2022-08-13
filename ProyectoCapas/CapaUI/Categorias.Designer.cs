@@ -62,19 +62,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(184, 9);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(134, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 46);
+            this.label1.Size = new System.Drawing.Size(271, 49);
             this.label1.TabIndex = 2;
             this.label1.Text = "CATEGORIAS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(670, 320);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(66, 48);
             this.btnGuardar.TabIndex = 9;
@@ -84,8 +85,9 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(594, 320);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(66, 48);
             this.btnEliminar.TabIndex = 8;
@@ -95,8 +97,9 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Location = new System.Drawing.Point(672, 256);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(66, 48);
             this.btnEditar.TabIndex = 7;
@@ -106,8 +109,9 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Location = new System.Drawing.Point(594, 256);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(66, 48);
             this.btnNuevo.TabIndex = 6;
@@ -123,10 +127,11 @@
             this.gControles.Controls.Add(this.tbCatID);
             this.gControles.Controls.Add(this.label3);
             this.gControles.Controls.Add(this.label2);
+            this.gControles.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gControles.Location = new System.Drawing.Point(558, 86);
-            this.gControles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gControles.Margin = new System.Windows.Forms.Padding(2);
             this.gControles.Name = "gControles";
-            this.gControles.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gControles.Padding = new System.Windows.Forms.Padding(2);
             this.gControles.Size = new System.Drawing.Size(209, 151);
             this.gControles.TabIndex = 10;
             this.gControles.TabStop = false;
@@ -145,9 +150,9 @@
             // tbDescri
             // 
             this.tbDescri.Location = new System.Drawing.Point(89, 86);
-            this.tbDescri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbDescri.Margin = new System.Windows.Forms.Padding(2);
             this.tbDescri.Name = "tbDescri";
-            this.tbDescri.Size = new System.Drawing.Size(98, 20);
+            this.tbDescri.Size = new System.Drawing.Size(98, 21);
             this.tbDescri.TabIndex = 5;
             // 
             // label4
@@ -156,24 +161,24 @@
             this.label4.Location = new System.Drawing.Point(12, 86);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Descripción";
             // 
             // tbNombre
             // 
             this.tbNombre.Location = new System.Drawing.Point(89, 57);
-            this.tbNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbNombre.Name = "tbNombre";
-            this.tbNombre.Size = new System.Drawing.Size(98, 20);
+            this.tbNombre.Size = new System.Drawing.Size(98, 21);
             this.tbNombre.TabIndex = 3;
             // 
             // tbCatID
             // 
             this.tbCatID.Location = new System.Drawing.Point(89, 27);
-            this.tbCatID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbCatID.Margin = new System.Windows.Forms.Padding(2);
             this.tbCatID.Name = "tbCatID";
-            this.tbCatID.Size = new System.Drawing.Size(98, 20);
+            this.tbCatID.Size = new System.Drawing.Size(98, 21);
             this.tbCatID.TabIndex = 2;
             // 
             // label3
@@ -182,7 +187,7 @@
             this.label3.Location = new System.Drawing.Point(12, 57);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nombre";
             // 
@@ -192,7 +197,7 @@
             this.label2.Location = new System.Drawing.Point(12, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Categoria ID";
             // 
@@ -222,6 +227,8 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgCat);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Categorias";
             this.Text = "Categorias";
             this.Load += new System.EventHandler(this.Categorias_Load);
