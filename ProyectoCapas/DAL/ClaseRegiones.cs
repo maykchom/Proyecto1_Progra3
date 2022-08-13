@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using Entidades;
+using MySql.Data.MySqlClient;
 
 namespace DAL
 {
@@ -21,6 +22,18 @@ namespace DAL
             strSQL += "'" + Region.RegionID + "',";
             strSQL += "'" + Region.RegionDescripcion + "');";
             return ExecTransaction(strSQL);
+        }
+
+        public static bool InsertaRegionSP(Regiones Region)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "InsertarRegion";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Region", Region.RegionID);
+            cmd.Parameters["@Region"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@RegionDescripcion", Region.RegionDescripcion);
+            cmd.Parameters["@RegionDescripcion"].Direction = ParameterDirection.Input;
+            return ExecTransactionParameters(cmd);
         }
 
         public static bool EditarRegion(Regiones Region)

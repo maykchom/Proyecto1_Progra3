@@ -187,3 +187,4 @@ C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\ob
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.dll
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.pdb
+C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll

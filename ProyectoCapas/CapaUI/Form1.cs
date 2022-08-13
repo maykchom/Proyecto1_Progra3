@@ -49,7 +49,7 @@ namespace CapaUI
             Regiones Region=new Regiones();
             Region.RegionID = Convert.ToInt32(txtRegionID.Text);
             Region.RegionDescripcion = txtRegionNombre.Text;
-            resultado = BLL.BLLRegiones.InsertarRegiones(Region);
+            resultado = BLL.BLLRegiones.InsertarRegionesSP(Region);
             if (resultado)
             {
                 MessageBox.Show("Registro ingresado correctamente");
