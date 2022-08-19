@@ -28,7 +28,8 @@ namespace CapaUI
         private void Productos_Load(object sender, EventArgs e)
         {
             Listar();
-        }
+            cargarSuppliers();
+            cargarCategory();        }
 
         /// <summary>
         /// El método Listar obtiene la data de la base de datos y la muestra através de una data grid view
@@ -40,40 +41,57 @@ namespace CapaUI
 
         }
 
-        /// <summary>
-        /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
-        /// </summary>
-        public void Limpiarcontroles()
+        private void cargarSuppliers()
         {
-            txProduct.Text = "";
-            txproName.Text = "";
-            txSupplier.Text = "";
-            txCategory.Text = "";
-            txQuantity.Text = "";
-            txUnitPrice.Text = "";
-            txunitInstock.Text = "";
-            txUnitonOrder.Text = "";
-           txRecorder.Text = "";
-            txDiscontinued.Text = "";
-
+            DataTable dtz = new DataTable();
+            dtz.Clear();
+            dtz = BLL.BLLProductos.ConsultaAbierta("SupplierID, CompanyName", "Suppliers");
+            CbSupplier.DisplayMember = "CompanyName";
+            CbSupplier.ValueMember = "SupplierID";
+            CbSupplier.DataSource = dtz;
         }
-        /// <summary>
-        /// Evento click del botón editar.
-        /// Realiza la función de agregar un registro a los productos.
-        /// Implementa una instancia de la clase regiones para la asignación de atributos 
-        /// Ejecuta método de InsertarProductos con los parámetros previamente asigandos a la clase Productos
-        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtGuardar_Click(object sender, EventArgs e)
+            private void cargarCategory()
+            {
+                DataTable dtz = new DataTable();
+                dtz.Clear();
+                dtz = BLL.BLLProductos.ConsultaAbierta("CategoryID, CategoryName", "Categories");
+                CbCategory.DisplayMember = "CategoryName";
+                CbCategory.ValueMember = "CategoryID";
+                CbCategory.DataSource = dtz;
+            }
+
+            /// <summary>
+            /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
+            /// </summary>
+            public void Limpiarcontroles()
+            {
+                txProduct.Text = "";
+                txproName.Text = "";
+                txQuantity.Text = "";
+                txUnitPrice.Text = "";
+                txunitInstock.Text = "";
+                txUnitonOrder.Text = "";
+                txRecorder.Text = "";
+                txDiscontinued.Text = "";
+
+            }
+            /// <summary>
+            /// Evento click del botón editar.
+            /// Realiza la función de agregar un registro a los productos.
+            /// Implementa una instancia de la clase regiones para la asignación de atributos 
+            /// Ejecuta método de InsertarProductos con los parámetros previamente asigandos a la clase Productos
+            /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+            private void BtGuardar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
             Entidades.Productos Productos = new Entidades.Productos();
             Productos.ProductID = Convert.ToInt32(txProduct.Text);
             Productos.ProductName = txproName.Text;
-            Productos.SupplierID = Convert.ToInt32(txSupplier.Text);
-            Productos.CategoryID = Convert.ToInt32(txCategory.Text);
+            Productos.SupplierID = Convert.ToInt32(CbSupplier.SelectedValue);
+            Productos.CategoryID = Convert.ToInt32(CbCategory.SelectedValue);
             Productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
             Productos.UnitPrice = Convert.ToDouble(txUnitPrice.Text);
             Productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
@@ -109,9 +127,9 @@ namespace CapaUI
             Entidades.Productos productos = new Entidades.Productos();
             productos.ProductID = Convert.ToInt32(txProduct.Text);
             productos.ProductName = txproName.Text;
-            productos.SupplierID = Convert.ToInt32(txSupplier.Text);
-            productos.CategoryID = Convert.ToInt32(txCategory.Text);
-            productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
+            productos.SupplierID = Convert.ToInt32(CbSupplier.SelectedValue);
+                productos.CategoryID = Convert.ToInt32(CbCategory.SelectedValue);
+                productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
             productos.UnitPrice = Convert.ToDouble(txUnitPrice.Text);
             productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
@@ -174,8 +192,8 @@ namespace CapaUI
             RowNo = e.RowIndex;
             txProduct.Text = dgPro.Rows[RowNo].Cells[0].Value.ToString();
             txproName.Text = dgPro.Rows[RowNo].Cells[1].Value.ToString();
-            txSupplier.Text = dgPro.Rows[RowNo].Cells[2].Value.ToString();
-            txCategory.Text = dgPro.Rows[RowNo].Cells[3].Value.ToString();
+            CbSupplier.SelectedValue = dgPro.Rows[RowNo].Cells[2].Value.ToString();
+            CbCategory.SelectedValue = dgPro.Rows[RowNo].Cells[3].Value.ToString();
             txQuantity.Text = dgPro.Rows[RowNo].Cells[4].Value.ToString();
             txUnitPrice.Text = dgPro.Rows[RowNo].Cells[5].Value.ToString();
             txunitInstock.Text = dgPro.Rows[RowNo].Cells[6].Value.ToString();

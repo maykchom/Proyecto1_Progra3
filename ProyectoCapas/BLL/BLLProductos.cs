@@ -23,6 +23,11 @@ namespace BLL
         {
             return ClaseProductos.ListarProductos(strCatt);
         }
+
+        public static DataTable ConsultaAbierta(string campos, string consulta)
+        {
+            return ClaseProductos.ConsultaAbierta(campos, consulta);
+        }
         /// <summary>
         /// Método InsertarProductos.
         /// Ejecuta el método InsertarProductos de la clase "ClaseProductos" en la capa DAL
