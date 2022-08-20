@@ -47,7 +47,7 @@ namespace CapaUI
         {
             bool resultado = false;
             Regiones Region=new Regiones();
-            Region.RegionID = Convert.ToInt32(txtRegionID.Text);
+            //Region.RegionID = Convert.ToInt32(txtRegionID.Text);
             Region.RegionDescripcion = txtRegionNombre.Text;
             resultado = BLL.BLLRegiones.InsertarRegionesSP(Region);
             if (resultado)

@@ -38,14 +38,14 @@ namespace CapaUI
         {
             bool resultado = false;
             categorias categorias = new categorias();
-            categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
+            //categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
             categorias.CategoryName = tbNombre.Text.ToString();
             categorias.Description = tbDescri.Text.ToString();
             MemoryStream ms = new MemoryStream();
             Image image = Image.FromFile(nombre);
             image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
             categorias.Picture = (ms.ToArray());
-            resultado = BLL.BLLCategorias.InsertarCategoriasFotos(categorias);
+            resultado = BLL.BLLCategorias.InsertarCategoriasSP(categorias);
             if (resultado)
             {
                 MessageBox.Show("Registro ingresado correctamente");

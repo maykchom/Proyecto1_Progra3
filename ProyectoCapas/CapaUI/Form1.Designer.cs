@@ -150,6 +150,7 @@ namespace CapaUI
             // 
             // txtRegionID
             // 
+            this.txtRegionID.Enabled = false;
             this.txtRegionID.Location = new System.Drawing.Point(89, 27);
             this.txtRegionID.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegionID.Name = "txtRegionID";

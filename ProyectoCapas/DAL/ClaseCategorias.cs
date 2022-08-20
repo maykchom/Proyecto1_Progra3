@@ -96,5 +96,20 @@ namespace DAL
             return ExecTransaction(strSQL);
         }
 
+
+        public static bool InsertaCategoriasSP(categorias categorias)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "InsertaCategorias";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@nombreCategoria", categorias.CategoryName);
+            cmd.Parameters["@nombreCategoria"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Descri", categorias.Description);
+            cmd.Parameters["@Descri"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Pic", categorias.Picture);
+            cmd.Parameters["@Pic"].Direction = ParameterDirection.Input;
+            return Configuracion.ExecTransactionParameters(cmd);
+        }
+
     }
 }

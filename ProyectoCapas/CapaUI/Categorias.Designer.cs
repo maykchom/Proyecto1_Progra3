@@ -175,6 +175,7 @@
             // 
             // tbCatID
             // 
+            this.tbCatID.Enabled = false;
             this.tbCatID.Location = new System.Drawing.Point(89, 27);
             this.tbCatID.Margin = new System.Windows.Forms.Padding(2);
             this.tbCatID.Name = "tbCatID";

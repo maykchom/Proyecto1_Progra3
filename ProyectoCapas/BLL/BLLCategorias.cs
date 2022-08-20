@@ -77,5 +77,10 @@ namespace BLL
         {
             return ClaseCategorias.EliminaCategoria(CatID);
         }
+
+        public static bool InsertarCategoriasSP(categorias categorias)
+        {
+            return ClaseCategorias.InsertaCategoriasSP(categorias);
+        }
     }
 }

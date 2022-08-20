@@ -367,6 +367,7 @@
             // 
             // txtProveedorID
             // 
+            this.txtProveedorID.Enabled = false;
             this.txtProveedorID.Location = new System.Drawing.Point(135, 28);
             this.txtProveedorID.Margin = new System.Windows.Forms.Padding(2);
             this.txtProveedorID.Name = "txtProveedorID";

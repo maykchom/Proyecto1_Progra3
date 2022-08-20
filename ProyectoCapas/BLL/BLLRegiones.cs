@@ -22,11 +22,6 @@ namespace BLL
             return ClaseRegiones.InsertaRegion(Region);
         }
 
-        public static bool InsertarRegionesSP(Regiones Region)
-        {
-            return ClaseRegiones.InsertaRegionSP(Region);
-        }
-
         public static bool EliminaRegiones(int RegionID)
         {
             return ClaseRegiones.EliminaRegion(RegionID);
@@ -35,6 +30,11 @@ namespace BLL
         public static bool EditarRegiones(Regiones Region)
         {
             return ClaseRegiones.EditarRegion(Region);
+        }
+
+        public static bool InsertarRegionesSP(Regiones Region)
+        {
+            return ClaseRegiones.InsertaRegionesSP(Region);
         }
     }
 }
