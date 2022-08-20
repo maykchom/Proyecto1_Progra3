@@ -39,5 +39,10 @@ namespace BLL
         {
             return ClaseProveedores.EditarProveedor(Proveedor);
         }
+
+        public static bool InsertarProveedoresSP(Proveedores proveedores)
+        {
+            return ClaseProveedores.InsertaProveedorSP(proveedores);
+        }
     }
 }

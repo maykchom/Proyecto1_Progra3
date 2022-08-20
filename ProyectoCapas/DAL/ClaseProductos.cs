@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Entidades;
+using MySql.Data.MySqlClient;
 
 namespace DAL
 {
@@ -20,8 +21,9 @@ namespace DAL
         /// <returns></returns>
         public static DataTable ListarProductos(string Productos)
         {
-            string strSQL = "select * from Products";
-            strSQL += " where ProductName like '%" + Productos + "%'";
+            string strSQL = "SELECT P.PRODUCTID as IDProducto, P.PRODUCTNAME as NombreProducto, S.CompanyName as Compañia, C.CATEGORYNAME as Categoria, P.QuantityPerUnit as CantPorUni, P.UnitPrice as PrecioUnit, P.UnitsInStock as UnidadesStock, P.UnitsOnOrder as UniOrden, P.ReorderLevel, P.Discontinued FROM PRODUCTS AS P INNER JOIN SUPPLIERS AS S ON S.SUPPLIERID = P.SUPPLIERID INNER JOIN CATEGORIES AS C ON C.CATEGORYID = P.CATEGORYID " + "where P.ProductName like '%" + Productos + "%' ORDER BY P.PRODUCTID";
+            //string strSQL = "select * from Products";
+            //strSQL += " where ProductName like '%" + Productos + "%'";
             return Configuracion.GetDataTable(strSQL);
         }
         /// <summary>
@@ -35,6 +37,37 @@ namespace DAL
             string cadena = "select " + campos + " from " + consulta;
             return Configuracion.GetDataTable(cadena);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Region"></param>
+        /// <returns></returns>
+        public static bool InsertaProductoSP(Productos productos)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "InsertaProductos";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ProducName", productos.ProductName);
+            cmd.Parameters["@ProducName"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@SupplierID", productos.SupplierID);
+            cmd.Parameters["@SupplierID"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@CatID", productos.CategoryID);
+            cmd.Parameters["@CatID"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@PerUnit", productos.QuantityPerUnit);
+            cmd.Parameters["@PerUnit"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@UnitPrice", productos.UnitPrice);
+            cmd.Parameters["@UnitPrice"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@UnitsStock", productos.UnitsInStock);
+            cmd.Parameters["@UnitsStock"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@UnitsOrder", productos.UnitsonOrder);
+            cmd.Parameters["@UnitsOrder"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@ReorderLevel", productos.RecorderLevel);
+            cmd.Parameters["@ReorderLevel"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Discontinued", productos.Discontinued);
+            cmd.Parameters["@Discontinued"].Direction = ParameterDirection.Input;
+            return Configuracion.ExecTransactionParameters(cmd);
+        }
+
 
 
         /// <summary>

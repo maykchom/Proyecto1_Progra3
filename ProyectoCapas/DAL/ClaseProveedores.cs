@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Entidades;
+using MySql.Data.MySqlClient;
 
 namespace DAL
 {
@@ -56,6 +57,41 @@ namespace DAL
         {
             string strSQL = "Update Suppliers  set CompanyName = '" + Proveedor.CompanyName + "',ContactName='" + Proveedor.ContactName + "',ContactTitle='" + Proveedor.ContactTitle + "',Address='" + Proveedor.Address + "',City='" + Proveedor.City + "',Region='" + Proveedor.Region + "',PostalCode='" + Proveedor.PostalCode + "',Country='" + Proveedor.Country + "',Phone='" + Proveedor.Phone + "',Fax='" + Proveedor.Fax + "',Homepage='" + Proveedor.HomePage + "'where SupplierID = '" + Proveedor.SupplierID + "'";
             return ExecTransaction(strSQL);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <returns></returns>
+        public static bool InsertaProveedorSP(Proveedores proveedor)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "InsertaProveedores";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CompanyName", proveedor.CompanyName);
+            cmd.Parameters["@CompanyName"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@ContactName", proveedor.ContactName);
+            cmd.Parameters["@ContactName"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@ContactTitle", proveedor.ContactTitle);
+            cmd.Parameters["@ContactTitle"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Address", proveedor.Address);
+            cmd.Parameters["@Address"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@City", proveedor.City);
+            cmd.Parameters["@City"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Region", proveedor.Region);
+            cmd.Parameters["@Region"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@PostalCode", proveedor.PostalCode);
+            cmd.Parameters["@PostalCode"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Country", proveedor.Country);
+            cmd.Parameters["@Country"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Phone", proveedor.Phone);
+            cmd.Parameters["@Phone"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@Fax", proveedor.Fax);
+            cmd.Parameters["@Fax"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@HomePage", proveedor.HomePage);
+            cmd.Parameters["@HomePage"].Direction = ParameterDirection.Input;
+            return Configuracion.ExecTransactionParameters(cmd);
         }
 
     }

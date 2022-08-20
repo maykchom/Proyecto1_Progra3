@@ -15,6 +15,7 @@ namespace CapaUI
     public partial class Productos : Form
     {
         private DataTable dtListado;
+        private int supplierIDactual;
         public Productos()
         {
             InitializeComponent();
@@ -88,7 +89,7 @@ namespace CapaUI
         {
             bool resultado = false;
             Entidades.Productos Productos = new Entidades.Productos();
-            Productos.ProductID = Convert.ToInt32(txProduct.Text);
+            //Productos.ProductID = Convert.ToInt32(txProduct.Text);
             Productos.ProductName = txproName.Text;
             Productos.SupplierID = Convert.ToInt32(CbSupplier.SelectedValue);
             Productos.CategoryID = Convert.ToInt32(CbCategory.SelectedValue);
@@ -99,7 +100,7 @@ namespace CapaUI
             Productos.RecorderLevel = Convert.ToInt32(txRecorder.Text);
             Productos.Discontinued = Convert.ToInt32(txDiscontinued.Text);
 
-            resultado = BLL.BLLProductos.InsertarProducto(Productos);
+            resultado = BLL.BLLProductos.InsertarProductosSP(Productos);
             if (resultado)
             {
                 MessageBox.Show("Registro ingresado correctamente");
@@ -128,8 +129,8 @@ namespace CapaUI
             productos.ProductID = Convert.ToInt32(txProduct.Text);
             productos.ProductName = txproName.Text;
             productos.SupplierID = Convert.ToInt32(CbSupplier.SelectedValue);
-                productos.CategoryID = Convert.ToInt32(CbCategory.SelectedValue);
-                productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
+            productos.CategoryID = Convert.ToInt32(CbCategory.SelectedValue);
+            productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
             productos.UnitPrice = Convert.ToDouble(txUnitPrice.Text);
             productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
@@ -192,14 +193,20 @@ namespace CapaUI
             RowNo = e.RowIndex;
             txProduct.Text = dgPro.Rows[RowNo].Cells[0].Value.ToString();
             txproName.Text = dgPro.Rows[RowNo].Cells[1].Value.ToString();
-            CbSupplier.SelectedValue = dgPro.Rows[RowNo].Cells[2].Value.ToString();
-            CbCategory.SelectedValue = dgPro.Rows[RowNo].Cells[3].Value.ToString();
+            //CbSupplier.SelectedItem = dgPro.Rows[RowNo].Cells[2].Value.ToString();
+            //CbCategory.SelectedItem = dgPro.Rows[RowNo].Cells[3].Value.ToString();
+            //CbCategory.SelectedValue = 4;
             txQuantity.Text = dgPro.Rows[RowNo].Cells[4].Value.ToString();
             txUnitPrice.Text = dgPro.Rows[RowNo].Cells[5].Value.ToString();
             txunitInstock.Text = dgPro.Rows[RowNo].Cells[6].Value.ToString();
             txUnitonOrder.Text = dgPro.Rows[RowNo].Cells[7].Value.ToString();
             txRecorder.Text = dgPro.Rows[RowNo].Cells[8].Value.ToString();
             txDiscontinued.Text = dgPro.Rows[RowNo].Cells[9].Value.ToString();
+        }
+
+        public void obtenerIDSupplier(string valor)
+        {
+            BLL.BLLProductos.ConsultaAbierta("SupplierID", "CompanyName = " + valor);
         }
     }
 }

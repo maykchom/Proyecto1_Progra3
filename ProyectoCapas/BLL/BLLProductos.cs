@@ -65,6 +65,11 @@ namespace BLL
         {
             return ClaseProductos.EditarProducto(Producto);
         }
+
+        public static bool InsertarProductosSP(Productos productos)
+        {
+            return ClaseProductos.InsertaProductoSP(productos);
+        }
     }
 
 }

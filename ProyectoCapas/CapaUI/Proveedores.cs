@@ -126,7 +126,7 @@ namespace CapaUI
         {
             bool resultado = false;
             Entidades.Proveedores Proveedor = new Entidades.Proveedores();
-            Proveedor.SupplierID = Convert.ToInt32(txtProveedorID.Text);
+            //Proveedor.SupplierID = Convert.ToInt32(txtProveedorID.Text);
             Proveedor.CompanyName = txtCompania.Text;
             Proveedor.ContactName = txtNombreContacto.Text;
             Proveedor.ContactTitle = txtCargoContacto.Text;
