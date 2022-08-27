@@ -199,7 +199,6 @@ C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCa
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Memory.dll
-C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Buffers.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Hash.xxHash.dll

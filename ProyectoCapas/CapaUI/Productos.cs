@@ -188,14 +188,29 @@ namespace CapaUI
         /// <param name="e"></param>
         private void dgPro_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Limpiarcontroles();
             int RowNo;
             RowNo = e.RowIndex;
+            Limpiarcontroles();
+
+            //Obtener el ID de la suppliers
+            DataTable tablaSup = new DataTable();
+            string SupBus = dgPro.Rows[RowNo].Cells[2].Value.ToString();
+            tablaSup = BLLProductos.ConsultaAbierta("SupplierID", "Suppliers where companyName = \""+SupBus+ "\"");            
+            int SupID = Convert.ToInt32(tablaSup.Rows[0][0]);
+
+            //Obtener el ID de la cateogoria
+            DataTable tablaCat = new DataTable();
+            string CatBus = dgPro.Rows[RowNo].Cells[3].Value.ToString();
+            tablaCat = BLLProductos.ConsultaAbierta("CategoryID", "Categories where CategoryName = \"" + CatBus + "\"");
+            int CatID = Convert.ToInt32(tablaCat.Rows[0][0]);
+
+            //Asignar datos a componentes          
             txProduct.Text = dgPro.Rows[RowNo].Cells[0].Value.ToString();
             txproName.Text = dgPro.Rows[RowNo].Cells[1].Value.ToString();
-            //CbSupplier.SelectedItem = dgPro.Rows[RowNo].Cells[2].Value.ToString();
-            //CbCategory.SelectedItem = dgPro.Rows[RowNo].Cells[3].Value.ToString();
+            CbSupplier.SelectedValue = SupID;
+            CbCategory.SelectedValue = CatID;
             //CbCategory.SelectedValue = 4;
+            CbCategory.SelectedItem = "Pavlova, Ltd.";
             txQuantity.Text = dgPro.Rows[RowNo].Cells[4].Value.ToString();
             txUnitPrice.Text = dgPro.Rows[RowNo].Cells[5].Value.ToString();
             txunitInstock.Text = dgPro.Rows[RowNo].Cells[6].Value.ToString();
