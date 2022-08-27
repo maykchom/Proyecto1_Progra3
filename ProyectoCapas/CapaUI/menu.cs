@@ -62,10 +62,11 @@ namespace CapaUI
             btRegion.PerformClick();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btShip_Click(object sender, EventArgs e)
         {
-            Shipper Shipper = new Shipper();
-            Shipper.ShowDialog();
-        }
+            Shipper Shi = new Shipper();
+            Shi.ShowDialog();
+        
+    }
     }
 }
