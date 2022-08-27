@@ -61,5 +61,11 @@ namespace CapaUI
         {
             btRegion.PerformClick();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Territorios pro = new Territorios();
+            pro.ShowDialog();
+        }
     }
 }

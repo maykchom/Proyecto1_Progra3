@@ -71,7 +71,7 @@ namespace CapaUI
             }
         }
 
-        // BOTON DE GUARDAR
+        // BOTON DE NUEVO
         // EJECUTA EL METODO DE LIMPIAR BOTONES
         private void button1_Click(object sender, EventArgs e)
         {
