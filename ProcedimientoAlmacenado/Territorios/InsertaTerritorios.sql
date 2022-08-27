@@ -5,7 +5,7 @@ CREATE PROCEDURE InsertaTerritorios (IN DescriTerritorio varchar(50), IN RegionI
 BEGIN
 Select @territorioID := max(TerritoryID)+1 from Territories;
  INSERT INTO Territories (TerritoryID, TerritoryDescription, RegionID)
- value
+ value (@territorioID, DescriTerritorio, RegionID);
 
 END 
 $$
