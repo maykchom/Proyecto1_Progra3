@@ -46,6 +46,7 @@
     <Compile Include="BLLProveedores.cs" />
     <Compile Include="BLLRegiones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BLLShipper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

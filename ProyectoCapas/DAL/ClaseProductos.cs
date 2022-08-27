@@ -40,7 +40,7 @@ namespace DAL
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="Region"></param>
+        /// <param name="productos"></param>
         /// <returns></returns>
         public static bool InsertaProductoSP(Productos productos)
         {
