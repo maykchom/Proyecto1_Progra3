@@ -68,7 +68,13 @@ namespace CapaUI
             pro.ShowDialog();
         }
 
-        private void btShippers_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Shipper pro = new Shipper();
+            pro.ShowDialog();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
             Shipper pro = new Shipper();
             pro.ShowDialog();

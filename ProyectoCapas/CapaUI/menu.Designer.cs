@@ -33,12 +33,16 @@
             this.btProveedor = new System.Windows.Forms.Button();
             this.btRegion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btShippers = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -120,6 +124,59 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Bienvenido";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.button1.Location = new System.Drawing.Point(145, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 57);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Territorios";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.button2.Location = new System.Drawing.Point(365, 248);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 57);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Expendedores";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::CapaUI.Properties.Resources.terri;
+            this.pictureBox5.Location = new System.Drawing.Point(94, 248);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(55, 57);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 10;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::CapaUI.Properties.Resources.shipper;
+            this.pictureBox6.Location = new System.Drawing.Point(519, 248);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(55, 57);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 6;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::CapaUI.Properties.Resources.region;
@@ -164,45 +221,21 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.button1.Location = new System.Drawing.Point(145, 249);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 57);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Territorios";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btShippers
-            // 
-            this.btShippers.Location = new System.Drawing.Point(499, 265);
-            this.btShippers.Name = "btShippers";
-            this.btShippers.Size = new System.Drawing.Size(75, 23);
-            this.btShippers.TabIndex = 9;
-            this.btShippers.Text = "Shippers";
-            this.btShippers.UseVisualStyleBackColor = true;
-            this.btShippers.Click += new System.EventHandler(this.btShippers_Click);
-            // 
             // menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(673, 337);
-            this.Controls.Add(this.btShippers);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btRegion);
             this.Controls.Add(this.btProveedor);
             this.Controls.Add(this.btProducto);
@@ -211,6 +244,8 @@
             this.MaximizeBox = false;
             this.Name = "menu";
             this.Text = "menu";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -232,6 +267,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btShippers;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
