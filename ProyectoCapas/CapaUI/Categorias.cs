@@ -113,7 +113,16 @@ namespace CapaUI
             tbCatID.Text = dgCat.Rows[RowNo].Cells[0].Value.ToString();
             tbNombre.Text = dgCat.Rows[RowNo].Cells[1].Value.ToString();
             tbDescri.Text = dgCat.Rows[RowNo].Cells[2].Value.ToString();
-            pbImagen.Image = (Bitmap)((new ImageConverter()).ConvertFrom(dgCat.Rows[RowNo].Cells[3].Value));
+            
+            //Verificamos si el registro de la imagen es nulo para evitar errores en el picture box
+            if (dgCat.Rows[RowNo].Cells[3].Value != DBNull.Value)
+            {                
+                pbImagen.Image = (Bitmap)((new ImageConverter()).ConvertFrom(dgCat.Rows[RowNo].Cells[3].Value));
+            }
+            else
+            {
+                pbImagen.Image = null;
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
