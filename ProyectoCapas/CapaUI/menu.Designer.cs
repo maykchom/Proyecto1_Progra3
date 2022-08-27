@@ -38,6 +38,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btShippers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -51,10 +52,9 @@
             this.btCategoria.FlatAppearance.BorderSize = 0;
             this.btCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCategoria.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.btCategoria.Location = new System.Drawing.Point(193, 144);
-            this.btCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btCategoria.Location = new System.Drawing.Point(145, 117);
             this.btCategoria.Name = "btCategoria";
-            this.btCategoria.Size = new System.Drawing.Size(209, 70);
+            this.btCategoria.Size = new System.Drawing.Size(157, 57);
             this.btCategoria.TabIndex = 0;
             this.btCategoria.Text = "Categorias";
             this.btCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -68,10 +68,9 @@
             this.btProducto.FlatAppearance.BorderSize = 0;
             this.btProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btProducto.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.btProducto.Location = new System.Drawing.Point(487, 144);
-            this.btProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.btProducto.Location = new System.Drawing.Point(365, 117);
             this.btProducto.Name = "btProducto";
-            this.btProducto.Size = new System.Drawing.Size(209, 70);
+            this.btProducto.Size = new System.Drawing.Size(157, 57);
             this.btProducto.TabIndex = 1;
             this.btProducto.Text = "Productos";
             this.btProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -85,10 +84,9 @@
             this.btProveedor.FlatAppearance.BorderSize = 0;
             this.btProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btProveedor.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.btProveedor.Location = new System.Drawing.Point(193, 228);
-            this.btProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.btProveedor.Location = new System.Drawing.Point(145, 185);
             this.btProveedor.Name = "btProveedor";
-            this.btProveedor.Size = new System.Drawing.Size(209, 70);
+            this.btProveedor.Size = new System.Drawing.Size(157, 57);
             this.btProveedor.TabIndex = 2;
             this.btProveedor.Text = "Proveedores";
             this.btProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -102,10 +100,9 @@
             this.btRegion.FlatAppearance.BorderSize = 0;
             this.btRegion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRegion.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.btRegion.Location = new System.Drawing.Point(487, 228);
-            this.btRegion.Margin = new System.Windows.Forms.Padding(4);
+            this.btRegion.Location = new System.Drawing.Point(365, 185);
             this.btRegion.Name = "btRegion";
-            this.btRegion.Size = new System.Drawing.Size(209, 70);
+            this.btRegion.Size = new System.Drawing.Size(157, 57);
             this.btRegion.TabIndex = 3;
             this.btRegion.Text = "Regiones";
             this.btRegion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -117,20 +114,18 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(372, 70);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(279, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 29);
+            this.label1.Size = new System.Drawing.Size(119, 23);
             this.label1.TabIndex = 4;
             this.label1.Text = "Bienvenido";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::CapaUI.Properties.Resources.region;
-            this.pictureBox3.Location = new System.Drawing.Point(692, 228);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(519, 185);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(73, 70);
+            this.pictureBox3.Size = new System.Drawing.Size(55, 57);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
@@ -139,10 +134,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::CapaUI.Properties.Resources.produ;
-            this.pictureBox4.Location = new System.Drawing.Point(692, 144);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(519, 117);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(73, 70);
+            this.pictureBox4.Size = new System.Drawing.Size(55, 57);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 7;
             this.pictureBox4.TabStop = false;
@@ -151,10 +145,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::CapaUI.Properties.Resources.pro;
-            this.pictureBox2.Location = new System.Drawing.Point(125, 228);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(94, 185);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(73, 70);
+            this.pictureBox2.Size = new System.Drawing.Size(55, 57);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -163,10 +156,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CapaUI.Properties.Resources.cat;
-            this.pictureBox1.Location = new System.Drawing.Point(125, 144);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(94, 117);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -179,22 +171,32 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.button1.Location = new System.Drawing.Point(193, 306);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(145, 249);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 70);
+            this.button1.Size = new System.Drawing.Size(157, 57);
             this.button1.TabIndex = 8;
             this.button1.Text = "Territorios";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // btShippers
+            // 
+            this.btShippers.Location = new System.Drawing.Point(499, 265);
+            this.btShippers.Name = "btShippers";
+            this.btShippers.Size = new System.Drawing.Size(75, 23);
+            this.btShippers.TabIndex = 9;
+            this.btShippers.Text = "Shippers";
+            this.btShippers.UseVisualStyleBackColor = true;
+            this.btShippers.Click += new System.EventHandler(this.btShippers_Click);
+            // 
             // menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(897, 415);
+            this.ClientSize = new System.Drawing.Size(673, 337);
+            this.Controls.Add(this.btShippers);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox4);
@@ -206,7 +208,6 @@
             this.Controls.Add(this.btProducto);
             this.Controls.Add(this.btCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "menu";
             this.Text = "menu";
@@ -231,5 +232,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btShippers;
     }
 }

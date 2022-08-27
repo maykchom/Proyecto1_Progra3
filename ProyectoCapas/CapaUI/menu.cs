@@ -67,5 +67,11 @@ namespace CapaUI
             Territorios pro = new Territorios();
             pro.ShowDialog();
         }
+
+        private void btShippers_Click(object sender, EventArgs e)
+        {
+            Shipper pro = new Shipper();
+            pro.ShowDialog();
+        }
     }
 }

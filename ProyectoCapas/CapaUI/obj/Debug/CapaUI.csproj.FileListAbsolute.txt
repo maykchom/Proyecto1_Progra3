@@ -309,3 +309,5 @@ C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCa
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.exe
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.pdb
 C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Territorios.resources
+C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Territorios.resources
+C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Shipper.resources
