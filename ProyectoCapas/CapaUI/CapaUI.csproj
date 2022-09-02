@@ -99,6 +99,12 @@
     <Compile Include="Territorios.Designer.cs">
       <DependentUpon>Territorios.cs</DependentUpon>
     </Compile>
+    <Compile Include="verOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="verOrdenes.Designer.cs">
+      <DependentUpon>verOrdenes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Categorias.resx">
       <DependentUpon>Categorias.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Territorios.resx">
       <DependentUpon>Territorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="verOrdenes.resx">
+      <DependentUpon>verOrdenes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

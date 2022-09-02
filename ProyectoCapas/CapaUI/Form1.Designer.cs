@@ -48,6 +48,7 @@ namespace CapaUI
             // 
             this.dgRegiones.AllowUserToAddRows = false;
             this.dgRegiones.AllowUserToDeleteRows = false;
+            this.dgRegiones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgRegiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRegiones.Location = new System.Drawing.Point(248, 166);
             this.dgRegiones.Margin = new System.Windows.Forms.Padding(2);

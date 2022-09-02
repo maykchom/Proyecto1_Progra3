@@ -46,7 +46,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txRecorder = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txDiscontinued = new System.Windows.Forms.TextBox();
             this.BtNuevo = new System.Windows.Forms.Button();
             this.BtEditar = new System.Windows.Forms.Button();
             this.BtGuardar = new System.Windows.Forms.Button();
@@ -54,11 +53,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.CbSupplier = new System.Windows.Forms.ComboBox();
             this.CbCategory = new System.Windows.Forms.ComboBox();
+            this.cbDescon = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgPro)).BeginInit();
             this.SuspendLayout();
             // 
             // dgPro
             // 
+            this.dgPro.AllowUserToAddRows = false;
             this.dgPro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPro.Location = new System.Drawing.Point(260, 168);
@@ -238,14 +239,6 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Discontinued";
             // 
-            // txDiscontinued
-            // 
-            this.txDiscontinued.Location = new System.Drawing.Point(124, 440);
-            this.txDiscontinued.Margin = new System.Windows.Forms.Padding(2);
-            this.txDiscontinued.Name = "txDiscontinued";
-            this.txDiscontinued.Size = new System.Drawing.Size(116, 20);
-            this.txDiscontinued.TabIndex = 19;
-            // 
             // BtNuevo
             // 
             this.BtNuevo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,12 +322,25 @@
             this.CbCategory.Size = new System.Drawing.Size(116, 21);
             this.CbCategory.TabIndex = 27;
             // 
+            // cbDescon
+            // 
+            this.cbDescon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDescon.FormattingEnabled = true;
+            this.cbDescon.Items.AddRange(new object[] {
+            "Falso",
+            "Verdadero"});
+            this.cbDescon.Location = new System.Drawing.Point(124, 444);
+            this.cbDescon.Name = "cbDescon";
+            this.cbDescon.Size = new System.Drawing.Size(116, 21);
+            this.cbDescon.TabIndex = 28;
+            // 
             // Productos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1166, 491);
+            this.ClientSize = new System.Drawing.Size(1166, 509);
+            this.Controls.Add(this.cbDescon);
             this.Controls.Add(this.CbCategory);
             this.Controls.Add(this.CbSupplier);
             this.Controls.Add(this.label11);
@@ -343,7 +349,6 @@
             this.Controls.Add(this.BtEditar);
             this.Controls.Add(this.BtNuevo);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txDiscontinued);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txRecorder);
             this.Controls.Add(this.label8);
@@ -394,7 +399,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txRecorder;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txDiscontinued;
         private System.Windows.Forms.Button BtNuevo;
         private System.Windows.Forms.Button BtEditar;
         private System.Windows.Forms.Button BtGuardar;
@@ -402,5 +406,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox CbSupplier;
         private System.Windows.Forms.ComboBox CbCategory;
+        private System.Windows.Forms.ComboBox cbDescon;
     }
 }

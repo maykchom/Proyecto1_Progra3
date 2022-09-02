@@ -46,6 +46,7 @@
     <Compile Include="BLLProveedores.cs" />
     <Compile Include="BLLRegiones.cs" />
     <Compile Include="BLLShipper.cs" />
+    <Compile Include="BLLvistaOrdenes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BLLTerritorios.cs" />
   </ItemGroup>

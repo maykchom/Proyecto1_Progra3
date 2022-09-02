@@ -30,7 +30,9 @@ namespace CapaUI
         {
             Listar();
             cargarSuppliers();
-            cargarCategory();        }
+            cargarCategory();
+            cbDescon.SelectedIndex = 0;
+        }
 
         /// <summary>
         /// El método Listar obtiene la data de la base de datos y la muestra através de una data grid view
@@ -73,7 +75,6 @@ namespace CapaUI
                 txunitInstock.Text = "";
                 txUnitonOrder.Text = "";
                 txRecorder.Text = "";
-                txDiscontinued.Text = "";
 
             }
             /// <summary>
@@ -98,7 +99,16 @@ namespace CapaUI
             Productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             Productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
             Productos.RecorderLevel = Convert.ToInt32(txRecorder.Text);
-            Productos.Discontinued = Convert.ToInt32(txDiscontinued.Text);
+
+            //Insetar con base a el comboBox de Discontinued
+            if (cbDescon.Text == "Falso")
+            {
+                Productos.Discontinued = 0;
+            }
+            else
+            {
+                Productos.Discontinued = 1;
+            }
 
             resultado = BLL.BLLProductos.InsertarProductosSP(Productos);
             if (resultado)
@@ -106,6 +116,7 @@ namespace CapaUI
                 MessageBox.Show("Registro ingresado correctamente");
                 Limpiarcontroles();
                 Listar();
+                dgPro.FirstDisplayedScrollingRowIndex = dgPro.RowCount - 1;
             }
             else
             {
@@ -135,8 +146,6 @@ namespace CapaUI
             productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
             productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
             productos.RecorderLevel = Convert.ToInt32(txRecorder.Text);
-            productos.Discontinued = Convert.ToInt32(txDiscontinued.Text);
-
 
             resultado = BLL.BLLProductos.EditarProducto(productos);
             if (resultado)
@@ -215,8 +224,19 @@ namespace CapaUI
             txUnitPrice.Text = dgPro.Rows[RowNo].Cells[5].Value.ToString();
             txunitInstock.Text = dgPro.Rows[RowNo].Cells[6].Value.ToString();
             txUnitonOrder.Text = dgPro.Rows[RowNo].Cells[7].Value.ToString();
-            txRecorder.Text = dgPro.Rows[RowNo].Cells[8].Value.ToString();
-            txDiscontinued.Text = dgPro.Rows[RowNo].Cells[9].Value.ToString();
+            txRecorder.Text = dgPro.Rows[RowNo].Cells[8].Value.ToString();            
+
+            //Asignar valor a ComboBox
+            int valorDiscontinued = Convert.ToInt32(dgPro.Rows[RowNo].Cells[9].Value);
+            if (valorDiscontinued == 0)
+            {
+                cbDescon.SelectedIndex = 0;
+            }
+            else
+            {
+                cbDescon.SelectedIndex = 1;
+            }
+            
         }
 
         public void obtenerIDSupplier(string valor)

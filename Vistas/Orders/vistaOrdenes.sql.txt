@@ -1,0 +1,8 @@
+create view vistaOrdenes
+as
+SELECT o.OrderID as OrdenID, o.OrderDate as FechaOrden, o.RequiredDate as FechaPeticion, 
+o.ShippedDate as FechaCompra, e.FirstName as NombreEmpleado, o.ShipName as NombreEnvio, 
+o.ShipAddress as DireccionEnvio, c.CompanyName as NombreCompania, c.ContactName as NombreContacto 
+FROM orders as o
+inner join customers as c on o.CustomerID = c.CustomerID
+inner join employees as e on o.EmployeeID = e.EmployeeID 
