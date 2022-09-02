@@ -15,9 +15,4 @@ namespace Entidades
         public int RegionID { get; set; }
         public string RegionDescripcion { get; set; }
     }
-    public class RegionesRespuesta
-    {
-        public bool respuesta { get; set; }
-        public int ID { get; set; }
-    }
 }

@@ -90,7 +90,7 @@
     <Compile Include="Shipper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shipper.Designer.cs">
+    <Compile Include="Shipper.designer.cs">
       <DependentUpon>Shipper.cs</DependentUpon>
     </Compile>
     <Compile Include="Territorios.cs">

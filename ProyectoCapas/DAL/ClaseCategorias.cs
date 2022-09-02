@@ -110,21 +110,6 @@ namespace DAL
             cmd.Parameters["@Pic"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
         }
-        public static RegionesRespuesta InsertaRegionSPSalida(String RegionDescripcion)
-        {
-            RegionesRespuesta RegionRespuesta = new RegionesRespuesta();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "insertarRegionSalida";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@RegionDescripcion", RegionDescripcion);
-            cmd.Parameters["@RegionDescripcion"].Direction = ParameterDirection.Input;
-            cmd.Parameters.Add(new MySqlParameter("@ID", MySqlDbType.Int32));
-            cmd.Parameters["@ID"].Direction = ParameterDirection.Output;
-            RegionRespuesta.respuesta = ExecTransactionParameters(cmd);
-            var result = cmd.Parameters["@ID"].Value;
-            RegionRespuesta.ID = (int)result;
-            return RegionRespuesta;
-        }
 
     }
 }
