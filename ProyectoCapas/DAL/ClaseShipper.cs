@@ -11,19 +11,26 @@ namespace DAL
 {
     public class ClaseShipper
     {
+        /// <summary>
+        /// Método ListarShippers
+        /// Ejecuta una consulta SQL de tipo "Select" que obtiene la data de la base de datos.
+        /// Espera como parámetro un string que definirá la consulta en caso de buscar algo en específico.
+        /// Retorna la data en formato de DataTable
+        /// </summary>
+        /// <param name="strShippers"></param>
+        /// <returns></returns>
         public static DataTable ListarShipper(string strShipper)
         {
             string strSQL = "select * from shippers";
             strSQL += " where CompanyName like '%" + strShipper + "%'";
             return Configuracion.GetDataTable(strSQL);
         }
-
-
-
+        // Editar Shipper
+        // Ejecuta un procedimiento almacenado SQL de tipo "Delete" que actualiza un registro en específico de la tabla Shippers.
         public static bool EditarShipper(Shipper Shipper)
         {
             MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "ActualizarShipper";
+            cmd.CommandText = "Actualizarshippers";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("ShipperAID", Shipper.ShipperID);
             cmd.Parameters["@ShipperAID"].Direction = ParameterDirection.Input;
@@ -33,13 +40,23 @@ namespace DAL
             cmd.Parameters["@Phone"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
         }
-
-        public static bool EliminaShipper(int ShipperID)
+        // Eliminar Shippers
+        // Ejecuta un Procedimiento almacenado SQL de tipo "Delete" que actualiza un registro en específico de la tabla Shippers.
+        // Espera como parámetro un valor entero que contiene el ID del Shipper a eliminar.
+        public static bool EliminarExpendedores( Shipper Expendedores)
         {
-            string strSQL = "Delete from Shipper where ShipperID=" + ShipperID;
-            return Configuracion.ExecTransaction(strSQL);
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "EliminarExpendedores";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ShippersID", Expendedores.ShipperID);
+            cmd.Parameters["@ShippersID"].Direction = ParameterDirection.Input;
+            return Configuracion.ExecTransactionParameters(cmd);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <returns></returns>
         public static bool InsertaShipperSP(Shipper Shipper)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -51,6 +68,7 @@ namespace DAL
             cmd.Parameters["@Phone"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
         }
+
 
 
     }

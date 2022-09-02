@@ -277,7 +277,6 @@ C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCa
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\System.Memory.dll
-C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\System.Buffers.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\K4os.Hash.xxHash.dll
@@ -311,4 +310,9 @@ C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCa
 C:\Users\Usuario\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Territorios.resources
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Territorios.resources
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Shipper.resources
+<<<<<<< Updated upstream
 C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.verOrdenes.resources
+=======
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Shipper.resources
+C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Territorios.resources
+>>>>>>> Stashed changes

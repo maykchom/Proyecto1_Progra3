@@ -49,8 +49,8 @@
             this.dgShipper.AllowUserToAddRows = false;
             this.dgShipper.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgShipper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgShipper.Location = new System.Drawing.Point(252, 102);
-            this.dgShipper.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgShipper.Location = new System.Drawing.Point(453, 115);
+            this.dgShipper.Margin = new System.Windows.Forms.Padding(2);
             this.dgShipper.Name = "dgShipper";
             this.dgShipper.RowHeadersWidth = 51;
             this.dgShipper.RowTemplate.Height = 24;
@@ -60,19 +60,21 @@
             // 
             // txCompany
             // 
-            this.txCompany.Location = new System.Drawing.Point(106, 184);
-            this.txCompany.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txCompany.Location = new System.Drawing.Point(157, 187);
+            this.txCompany.Margin = new System.Windows.Forms.Padding(2);
             this.txCompany.Name = "txCompany";
-            this.txCompany.Size = new System.Drawing.Size(110, 21);
+            this.txCompany.Size = new System.Drawing.Size(110, 24);
             this.txCompany.TabIndex = 1;
+            this.txCompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txCompany_KeyPress);
             // 
             // txphone
             // 
-            this.txphone.Location = new System.Drawing.Point(106, 231);
-            this.txphone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txphone.Location = new System.Drawing.Point(157, 234);
+            this.txphone.Margin = new System.Windows.Forms.Padding(2);
             this.txphone.Name = "txphone";
-            this.txphone.Size = new System.Drawing.Size(110, 21);
+            this.txphone.Size = new System.Drawing.Size(110, 24);
             this.txphone.TabIndex = 2;
+            this.txphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txphone_KeyPress);
             // 
             // label1
             // 
@@ -80,7 +82,7 @@
             this.label1.Location = new System.Drawing.Point(8, 184);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.Size = new System.Drawing.Size(121, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "CompanyName";
             // 
@@ -90,7 +92,7 @@
             this.label2.Location = new System.Drawing.Point(60, 234);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
+            this.label2.Size = new System.Drawing.Size(53, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Phone";
             // 
@@ -100,7 +102,7 @@
             this.label3.Location = new System.Drawing.Point(44, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(74, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "ShipperID";
             // 
@@ -110,13 +112,13 @@
             this.label4.Location = new System.Drawing.Point(103, 136);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.Size = new System.Drawing.Size(0, 19);
             this.label4.TabIndex = 6;
             // 
             // btNuevo
             // 
-            this.btNuevo.Location = new System.Drawing.Point(258, 33);
-            this.btNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btNuevo.Location = new System.Drawing.Point(459, 46);
+            this.btNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btNuevo.Name = "btNuevo";
             this.btNuevo.Size = new System.Drawing.Size(100, 64);
             this.btNuevo.TabIndex = 7;
@@ -126,18 +128,19 @@
             // 
             // btEditar
             // 
-            this.btEditar.Location = new System.Drawing.Point(363, 33);
-            this.btEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEditar.Location = new System.Drawing.Point(564, 46);
+            this.btEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(105, 64);
             this.btEditar.TabIndex = 8;
             this.btEditar.Text = "Editar";
             this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
             // 
             // btGuardar
             // 
-            this.btGuardar.Location = new System.Drawing.Point(472, 33);
-            this.btGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btGuardar.Location = new System.Drawing.Point(673, 46);
+            this.btGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btGuardar.Name = "btGuardar";
             this.btGuardar.Size = new System.Drawing.Size(93, 64);
             this.btGuardar.TabIndex = 9;
@@ -147,22 +150,23 @@
             // 
             // btEli
             // 
-            this.btEli.Location = new System.Drawing.Point(570, 33);
-            this.btEli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btEli.Location = new System.Drawing.Point(771, 46);
+            this.btEli.Margin = new System.Windows.Forms.Padding(2);
             this.btEli.Name = "btEli";
             this.btEli.Size = new System.Drawing.Size(94, 64);
             this.btEli.TabIndex = 10;
             this.btEli.Text = "Eliminar";
             this.btEli.UseVisualStyleBackColor = true;
+            this.btEli.Click += new System.EventHandler(this.btEli_Click);
             // 
             // txShipper
             // 
             this.txShipper.Enabled = false;
             this.txShipper.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txShipper.Location = new System.Drawing.Point(106, 130);
-            this.txShipper.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txShipper.Location = new System.Drawing.Point(157, 133);
+            this.txShipper.Margin = new System.Windows.Forms.Padding(2);
             this.txShipper.Name = "txShipper";
-            this.txShipper.Size = new System.Drawing.Size(110, 21);
+            this.txShipper.Size = new System.Drawing.Size(110, 24);
             this.txShipper.TabIndex = 11;
             // 
             // label5
@@ -172,15 +176,15 @@
             this.label5.Location = new System.Drawing.Point(58, 46);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 29);
+            this.label5.Size = new System.Drawing.Size(174, 36);
             this.label5.TabIndex = 12;
             this.label5.Text = "SHIPPERS";
             // 
             // Shipper
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 309);
+            this.ClientSize = new System.Drawing.Size(942, 403);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txShipper);
             this.Controls.Add(this.btEli);
@@ -195,7 +199,7 @@
             this.Controls.Add(this.txCompany);
             this.Controls.Add(this.dgShipper);
             this.Font = new System.Drawing.Font("Century Gothic", 8.25F);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Shipper";
             this.Text = "Shipper";
             this.Load += new System.EventHandler(this.Shipper_Load);
