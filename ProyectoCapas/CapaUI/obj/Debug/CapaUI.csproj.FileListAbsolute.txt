@@ -364,3 +364,4 @@ C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\CapaUI\obj\Debug\CapaUI.cspro
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Shipper.resources
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Territorios.resources
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.verOrdenes.resources
+C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Clientes.resources
