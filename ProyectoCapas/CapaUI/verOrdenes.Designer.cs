@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dtgOrdenes = new System.Windows.Forms.DataGridView();
-            this.dgtOrdenesDetalle = new System.Windows.Forms.DataGridView();
+            this.dtgOrdenesDetalle = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgtOrdenesDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenesDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgOrdenes
@@ -43,27 +43,30 @@
             this.dtgOrdenes.Name = "dtgOrdenes";
             this.dtgOrdenes.Size = new System.Drawing.Size(1165, 312);
             this.dtgOrdenes.TabIndex = 0;
+            this.dtgOrdenes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgOrdenes_CellClick);
             // 
-            // dgtOrdenesDetalle
+            // dtgOrdenesDetalle
             // 
-            this.dgtOrdenesDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgtOrdenesDetalle.Location = new System.Drawing.Point(13, 340);
-            this.dgtOrdenesDetalle.Name = "dgtOrdenesDetalle";
-            this.dgtOrdenesDetalle.Size = new System.Drawing.Size(1164, 269);
-            this.dgtOrdenesDetalle.TabIndex = 1;
+            this.dtgOrdenesDetalle.AllowUserToAddRows = false;
+            this.dtgOrdenesDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgOrdenesDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgOrdenesDetalle.Location = new System.Drawing.Point(13, 340);
+            this.dtgOrdenesDetalle.Name = "dtgOrdenesDetalle";
+            this.dtgOrdenesDetalle.Size = new System.Drawing.Size(1164, 269);
+            this.dtgOrdenesDetalle.TabIndex = 1;
             // 
             // verOrdenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1189, 621);
-            this.Controls.Add(this.dgtOrdenesDetalle);
+            this.Controls.Add(this.dtgOrdenesDetalle);
             this.Controls.Add(this.dtgOrdenes);
             this.Name = "verOrdenes";
             this.Text = "verOrdenes";
             this.Load += new System.EventHandler(this.verOrdenes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgtOrdenesDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenesDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -71,6 +74,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dtgOrdenes;
-        private System.Windows.Forms.DataGridView dgtOrdenesDetalle;
+        private System.Windows.Forms.DataGridView dtgOrdenesDetalle;
     }
 }

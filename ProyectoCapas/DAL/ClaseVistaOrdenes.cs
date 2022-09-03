@@ -17,5 +17,12 @@ namespace DAL
             ///strSQL += " where CompanyName like '%" + strShipper + "%'";
             return Configuracion.GetDataTable(strSQL);
         }
+        public static DataTable ListarOrdenesDetalles(int order)
+        {
+            //string strSQL = "select * from `order details`";
+            string strSQL = "select * from view_od";
+            strSQL += " where OrderID = "+ order;
+            return Configuracion.GetDataTable(strSQL);
+        }
     }
 }

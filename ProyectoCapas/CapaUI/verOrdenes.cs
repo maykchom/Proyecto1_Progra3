@@ -27,5 +27,20 @@ namespace CapaUI
             dtListado = BLL.BLLvistaOrdenes.ListarOrdenes("");
             dtgOrdenes.DataSource = dtListado;
         }
+
+        public void cargarOrdenesDetalles(int order)
+        {
+            dtListado = BLL.BLLvistaOrdenes.ListarOrdenesDetalles(order);
+            dtgOrdenesDetalle.DataSource = dtListado;
+        }
+
+
+        private void dtgOrdenes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int RowNo;
+            RowNo = e.RowIndex;
+            int order = Convert.ToInt32(dtgOrdenes.Rows[RowNo].Cells[0].Value.ToString());
+            cargarOrdenesDetalles(order);
+        }
     }
 }

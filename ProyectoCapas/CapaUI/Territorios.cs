@@ -71,10 +71,14 @@ namespace CapaUI
         //BOTON ELIMINAR
         private void butELiminar_Click(object sender, EventArgs e)
         {
-
             bool resultado = false;
-            resultado = BLL.BLLTerritorios.EliminaTerritorios(Convert.ToInt32(txtTerritorioID.Text));
+            Entidades.Territorios territorios = new Entidades.Territorios();
+            territorios.TerritoryID = Convert.ToInt32(txtTerritorioID.Text);
+            resultado = BLL.BLLTerritorios.EliminaTerritorios(territorios);
             if (resultado)
+            //bool resultado = false;
+            //resultado = BLL.BLLTerritorios.EliminaTerritorios(Convert.ToInt32(txtTerritorioID.Text));
+            //if (resultado)
             {
                 MessageBox.Show("Registro Eliminado correctamente");
                 Limpiarcontroles();
@@ -94,7 +98,8 @@ namespace CapaUI
             //Territorio.TerritoryID = Convert.ToInt32(txtTerritorioID.Text);
             Territorio.TerritoryDescription = txtDescripcionTerritorio.Text;
             Territorio.RegionID = Convert.ToInt32(txtRegionID.Text);
-            
+            //Territorio.RegionID = Convert.ToInt32(CbRegionID.SelectedValue);
+
 
             resultado = BLL.BLLTerritorios.InsertarTerritorios(Territorio);
             if (resultado)

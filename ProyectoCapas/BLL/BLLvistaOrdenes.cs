@@ -15,5 +15,10 @@ namespace BLL
         {
             return ClaseVistaOrdenes.ListarOrdenes(strShipper);
         }
+
+        public static DataTable ListarOrdenesDetalles(int order)
+        {
+            return ClaseVistaOrdenes.ListarOrdenesDetalles(order);
+        }
     }
 }

@@ -35,12 +35,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.btCustomers = new System.Windows.Forms.Button();
+            this.btOrdenes = new System.Windows.Forms.Button();
+            this.btEmployees = new System.Windows.Forms.Button();
+            this.pbEmployees = new System.Windows.Forms.PictureBox();
+            this.pbOrdenes = new System.Windows.Forms.PictureBox();
+            this.pbCustomers = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrdenes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -156,6 +165,88 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // btCustomers
+            // 
+            this.btCustomers.BackColor = System.Drawing.Color.White;
+            this.btCustomers.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btCustomers.FlatAppearance.BorderSize = 0;
+            this.btCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCustomers.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.btCustomers.Location = new System.Drawing.Point(145, 312);
+            this.btCustomers.Name = "btCustomers";
+            this.btCustomers.Size = new System.Drawing.Size(157, 57);
+            this.btCustomers.TabIndex = 11;
+            this.btCustomers.Text = "Clientes";
+            this.btCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btCustomers.UseVisualStyleBackColor = false;
+            this.btCustomers.Click += new System.EventHandler(this.btCustomers_Click);
+            // 
+            // btOrdenes
+            // 
+            this.btOrdenes.BackColor = System.Drawing.Color.White;
+            this.btOrdenes.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btOrdenes.FlatAppearance.BorderSize = 0;
+            this.btOrdenes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btOrdenes.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.btOrdenes.Location = new System.Drawing.Point(365, 311);
+            this.btOrdenes.Name = "btOrdenes";
+            this.btOrdenes.Size = new System.Drawing.Size(157, 57);
+            this.btOrdenes.TabIndex = 14;
+            this.btOrdenes.Text = "Ordenes";
+            this.btOrdenes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btOrdenes.UseVisualStyleBackColor = false;
+            this.btOrdenes.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // btEmployees
+            // 
+            this.btEmployees.BackColor = System.Drawing.Color.White;
+            this.btEmployees.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btEmployees.FlatAppearance.BorderSize = 0;
+            this.btEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEmployees.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.btEmployees.Location = new System.Drawing.Point(145, 375);
+            this.btEmployees.Name = "btEmployees";
+            this.btEmployees.Size = new System.Drawing.Size(157, 57);
+            this.btEmployees.TabIndex = 15;
+            this.btEmployees.Text = "Empleados";
+            this.btEmployees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btEmployees.UseVisualStyleBackColor = false;
+            this.btEmployees.Click += new System.EventHandler(this.btEmployees_Click);
+            // 
+            // pbEmployees
+            // 
+            this.pbEmployees.BackColor = System.Drawing.Color.White;
+            this.pbEmployees.Image = global::CapaUI.Properties.Resources.employees;
+            this.pbEmployees.Location = new System.Drawing.Point(94, 374);
+            this.pbEmployees.Name = "pbEmployees";
+            this.pbEmployees.Size = new System.Drawing.Size(55, 57);
+            this.pbEmployees.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEmployees.TabIndex = 16;
+            this.pbEmployees.TabStop = false;
+            this.pbEmployees.Click += new System.EventHandler(this.pbEmployees_Click);
+            // 
+            // pbOrdenes
+            // 
+            this.pbOrdenes.Image = global::CapaUI.Properties.Resources.ordenes;
+            this.pbOrdenes.Location = new System.Drawing.Point(519, 311);
+            this.pbOrdenes.Name = "pbOrdenes";
+            this.pbOrdenes.Size = new System.Drawing.Size(55, 57);
+            this.pbOrdenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbOrdenes.TabIndex = 13;
+            this.pbOrdenes.TabStop = false;
+            this.pbOrdenes.Click += new System.EventHandler(this.pbOrdenes_Click);
+            // 
+            // pbCustomers
+            // 
+            this.pbCustomers.Image = global::CapaUI.Properties.Resources.clientes;
+            this.pbCustomers.Location = new System.Drawing.Point(94, 311);
+            this.pbCustomers.Name = "pbCustomers";
+            this.pbCustomers.Size = new System.Drawing.Size(55, 57);
+            this.pbCustomers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCustomers.TabIndex = 12;
+            this.pbCustomers.TabStop = false;
+            this.pbCustomers.Click += new System.EventHandler(this.pbCustomers_Click);
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::CapaUI.Properties.Resources.terri;
@@ -165,6 +256,7 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 10;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox6
             // 
@@ -226,7 +318,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(673, 369);
+            this.ClientSize = new System.Drawing.Size(673, 490);
+            this.Controls.Add(this.pbEmployees);
+            this.Controls.Add(this.btEmployees);
+            this.Controls.Add(this.pbOrdenes);
+            this.Controls.Add(this.btOrdenes);
+            this.Controls.Add(this.pbCustomers);
+            this.Controls.Add(this.btCustomers);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox6);
@@ -244,6 +342,9 @@
             this.MaximizeBox = false;
             this.Name = "menu";
             this.Text = "menu";
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOrdenes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -270,5 +371,11 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Button btCustomers;
+        private System.Windows.Forms.PictureBox pbCustomers;
+        private System.Windows.Forms.PictureBox pbOrdenes;
+        private System.Windows.Forms.Button btOrdenes;
+        private System.Windows.Forms.PictureBox pbEmployees;
+        private System.Windows.Forms.Button btEmployees;
     }
 }

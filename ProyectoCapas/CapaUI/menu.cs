@@ -79,5 +79,47 @@ namespace CapaUI
             Shipper pro = new Shipper();
             pro.ShowDialog();
         }
+
+        private void btCustomers_Click(object sender, EventArgs e)
+        {
+            Clientes abrir = new Clientes();
+            abrir.ShowDialog();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            verOrdenes abrir = new verOrdenes();
+            abrir.ShowDialog();
+        }
+
+        private void pbOrdenes_Click(object sender, EventArgs e)
+        {
+            verOrdenes abrir = new verOrdenes();
+            abrir.ShowDialog();
+        }
+
+        private void pbCustomers_Click(object sender, EventArgs e)
+        {
+            Clientes abrir = new Clientes();
+            abrir.ShowDialog();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Territorios pro = new Territorios();
+            pro.ShowDialog();
+        }
+
+        private void btEmployees_Click(object sender, EventArgs e)
+        {
+            Employeess abrir = new Employeess();
+            abrir.ShowDialog();
+        }
+
+        private void pbEmployees_Click(object sender, EventArgs e)
+        {
+            Employeess abrir = new Employeess();
+            abrir.ShowDialog();
+        }
     }
 }

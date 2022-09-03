@@ -30,18 +30,31 @@ namespace DAL
             return Configuracion.ExecTransactionParameters(cmd);
         }
 
-        public static bool EliminaTerritorio(int TerritoryID)
+        public static bool EliminaTerritorio(Territorios Territorios)
         {
-            string strSQL = "Delete from Territories where TerritoryID=" + TerritoryID;
-            return ExecTransaction(strSQL);
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "EliminarTerritorios";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TerritoriesID", Territorios.TerritoryID);
+            cmd.Parameters["@TerritoriesID"].Direction = ParameterDirection.Input;
+            return Configuracion.ExecTransactionParameters(cmd);
         }
 
         // Editar Territorios
         // Ejecuta una consulta SQL de tipo "Delete" que actualiza un registro en específico de la tabla Territorios.
         public static bool EditarTerritorio(Territorios territorio)
         {
-            string strSQL = "Update Territories  set TerritoryDescription = '" + territorio.TerritoryDescription + "',RegionID='" + territorio.RegionID + "'where TerritoryID = '" + territorio.TerritoryID + "'";
-            return ExecTransaction(strSQL);
+            
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "ActualizarTerritories";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("TerritoryID", territorio.TerritoryID);
+            cmd.Parameters["@TerritoryID"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@TerritoryDescription", territorio.TerritoryDescription);
+            cmd.Parameters["@TerritoryDescription"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@RegionID", territorio.RegionID);
+            cmd.Parameters["@RegionID"].Direction = ParameterDirection.Input;
+            return Configuracion.ExecTransactionParameters(cmd);
         }
     }
 }

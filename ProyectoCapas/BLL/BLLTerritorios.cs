@@ -25,9 +25,10 @@ namespace BLL
 
         // METODO ELIMINAR TERRITORIOS.
         // Ejecuta el método EliminaTERRITORIOS. de la clase "ClaseTERRITORIOS." en la capa DAL.
-        public static bool EliminaTerritorios(int TerritorioID)
+
+        public static bool EliminaTerritorios(Territorios Territorio)
         {
-            return ClaseTerritorios.EliminaTerritorio(TerritorioID);
+            return ClaseTerritorios.EliminaTerritorio(Territorio);
         }
 
         // METODO EDITAR TERRITORIOS

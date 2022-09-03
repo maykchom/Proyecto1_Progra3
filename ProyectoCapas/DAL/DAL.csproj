@@ -86,13 +86,14 @@
   <ItemGroup>
     <Compile Include="ClaseCategorias.cs" />
     <Compile Include="ClaseClientes.cs" />
+    <Compile Include="ClaseEmployees.cs" />
     <Compile Include="ClaseProductos.cs" />
     <Compile Include="ClaseProveedores.cs" />
     <Compile Include="ClaseRegiones.cs" />
     <Compile Include="ClaseShipper.cs" />
+    <Compile Include="ClaseTerritorios.cs" />
     <Compile Include="Configuracion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ClaseTerritorios.cs" />
     <Compile Include="ClaseVistaOrdenes.cs" />
   </ItemGroup>
   <ItemGroup>
