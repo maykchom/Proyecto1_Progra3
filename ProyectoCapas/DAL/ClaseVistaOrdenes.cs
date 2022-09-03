@@ -20,7 +20,7 @@ namespace DAL
         public static DataTable ListarOrdenesDetalles(int order)
         {
             //string strSQL = "select * from `order details`";
-            string strSQL = "select * from view_od";
+            string strSQL = "select * from v_od";
             strSQL += " where OrderID = "+ order;
             return Configuracion.GetDataTable(strSQL);
         }
