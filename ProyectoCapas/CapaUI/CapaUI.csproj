@@ -85,6 +85,9 @@
     <Compile Include="Clientes.designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DataSetOrdenes.cs">
+      <DependentUpon>DataSetOrdenes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetOrdenes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +165,7 @@
     <EmbeddedResource Include="menu.resx">
       <DependentUpon>menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Orden.rdlc" />
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>

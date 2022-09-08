@@ -279,7 +279,7 @@ namespace CapaUI.DataSets {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class dtOrdenDataTable : global::System.Data.TypedTableBase<dtOrdenRow> {
             
-            private global::System.Data.DataColumn columnOrderID;
+            private global::System.Data.DataColumn columnOrdenID;
             
             private global::System.Data.DataColumn columnOrderDate;
             
@@ -330,9 +330,9 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OrderIDColumn {
+            public global::System.Data.DataColumn OrdenIDColumn {
                 get {
-                    return this.columnOrderID;
+                    return this.columnOrdenID;
                 }
             }
             
@@ -429,10 +429,10 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtOrdenRow AdddtOrdenRow(string OrderID, string OrderDate, string FirstName, string LastName, string ShipName, string ShipAddress, string CompanyName, string ContactName) {
+            public dtOrdenRow AdddtOrdenRow(string OrdenID, string OrderDate, string FirstName, string LastName, string ShipName, string ShipAddress, string CompanyName, string ContactName) {
                 dtOrdenRow rowdtOrdenRow = ((dtOrdenRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        OrderID,
+                        OrdenID,
                         OrderDate,
                         FirstName,
                         LastName,
@@ -462,7 +462,7 @@ namespace CapaUI.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnOrderID = base.Columns["OrderID"];
+                this.columnOrdenID = base.Columns["OrdenID"];
                 this.columnOrderDate = base.Columns["OrderDate"];
                 this.columnFirstName = base.Columns["FirstName"];
                 this.columnLastName = base.Columns["LastName"];
@@ -475,8 +475,8 @@ namespace CapaUI.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnOrderID = new global::System.Data.DataColumn("OrderID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrderID);
+                this.columnOrdenID = new global::System.Data.DataColumn("OrdenID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrdenID);
                 this.columnOrderDate = new global::System.Data.DataColumn("OrderDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrderDate);
                 this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -633,17 +633,17 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string OrderID {
+            public string OrdenID {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.OrderIDColumn]));
+                        return ((string)(this[this.tabledtOrden.OrdenIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'OrderID\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'OrdenID\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.OrderIDColumn] = value;
+                    this[this.tabledtOrden.OrdenIDColumn] = value;
                 }
             }
             
@@ -761,14 +761,14 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsOrderIDNull() {
-                return this.IsNull(this.tabledtOrden.OrderIDColumn);
+            public bool IsOrdenIDNull() {
+                return this.IsNull(this.tabledtOrden.OrdenIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetOrderIDNull() {
-                this[this.tabledtOrden.OrderIDColumn] = global::System.Convert.DBNull;
+            public void SetOrdenIDNull() {
+                this[this.tabledtOrden.OrdenIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

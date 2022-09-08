@@ -36,38 +36,42 @@
             // lbfactura
             // 
             this.lbfactura.AutoSize = true;
-            this.lbfactura.Location = new System.Drawing.Point(27, 35);
+            this.lbfactura.Location = new System.Drawing.Point(20, 28);
+            this.lbfactura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbfactura.Name = "lbfactura";
-            this.lbfactura.Size = new System.Drawing.Size(84, 16);
+            this.lbfactura.Size = new System.Drawing.Size(68, 13);
             this.lbfactura.TabIndex = 0;
             this.lbfactura.Text = "No de Orden";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(111, 35);
+            this.label2.Location = new System.Drawing.Point(83, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 16);
+            this.label2.Size = new System.Drawing.Size(13, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "0";
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(12, 65);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaUI.Orden.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(9, 53);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote;
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 373);
+            this.reportViewer1.Size = new System.Drawing.Size(582, 303);
             this.reportViewer1.TabIndex = 2;
             // 
             // visor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbfactura);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "visor";
             this.Text = "visor";
             this.Load += new System.EventHandler(this.visor_Load);
