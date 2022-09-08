@@ -12,7 +12,9 @@ namespace CapaUI
 {
     public partial class verOrdenes : Form
     {
+
         private DataTable dtListado;
+        String NoFactura;
         public verOrdenes()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace CapaUI
         {
             dtListado = BLL.BLLvistaOrdenes.ListarOrdenes("");
             dtgOrdenes.DataSource = dtListado;
+           
         }
 
         public void cargarOrdenesDetalles(int order)
@@ -41,6 +44,16 @@ namespace CapaUI
             RowNo = e.RowIndex;
             int order = Convert.ToInt32(dtgOrdenes.Rows[RowNo].Cells[0].Value.ToString());
             cargarOrdenesDetalles(order);
+            NoFactura = dtgOrdenes.Rows[RowNo].Cells[0].Value.ToString();
+
+        }
+
+        private void btImpri_Click(object sender, EventArgs e)
+        {
+            visor settingsform = new visor(NoFactura);
+            settingsform.Show();
+  
+
         }
     }
 }
