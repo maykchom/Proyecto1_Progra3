@@ -14,17 +14,15 @@ namespace DAL
         public static DataTable ListarOrdenes(string strShipper)
         {
             string strSQL = "select * from vistaOrdenes";
-            ///strSQL += " where CompanyName like '%" + strShipper + "%'";
+            strSQL += " where NombreCompania like '%" + strShipper + "%'";
             return Configuracion.GetDataTable(strSQL);
         }
-
         public static DataTable ListarOrden(string NoFactura)
         {
             string strSQL = "select * from vistaOrdenes";
-            strSQL += " where OrdenID = " + NoFactura;
+            strSQL += " where OrdenID like '% " + NoFactura + "%' order by orderID";
             return Configuracion.GetDataTable(strSQL);
         }
-
         public static DataTable ListarOrdenesDetalles(int order)
         {
             //string strSQL = "select * from `order details`";

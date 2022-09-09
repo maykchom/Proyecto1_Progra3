@@ -281,19 +281,21 @@ namespace CapaUI.DataSets {
             
             private global::System.Data.DataColumn columnOrdenID;
             
-            private global::System.Data.DataColumn columnOrderDate;
+            private global::System.Data.DataColumn columnFechaOrden;
             
-            private global::System.Data.DataColumn columnFirstName;
+            private global::System.Data.DataColumn columnFechaPeticion;
             
-            private global::System.Data.DataColumn columnLastName;
+            private global::System.Data.DataColumn columnFechaCompra;
             
-            private global::System.Data.DataColumn columnShipName;
+            private global::System.Data.DataColumn columnNombreEmpleado;
             
-            private global::System.Data.DataColumn columnShipAddress;
+            private global::System.Data.DataColumn columnNombreEnvio;
             
-            private global::System.Data.DataColumn columnCompanyName;
+            private global::System.Data.DataColumn columnDireccionEnvio;
             
-            private global::System.Data.DataColumn columnContactName;
+            private global::System.Data.DataColumn columnNombreCompania;
+            
+            private global::System.Data.DataColumn columnNombreContacto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -338,57 +340,65 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn OrderDateColumn {
+            public global::System.Data.DataColumn FechaOrdenColumn {
                 get {
-                    return this.columnOrderDate;
+                    return this.columnFechaOrden;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn FirstNameColumn {
+            public global::System.Data.DataColumn FechaPeticionColumn {
                 get {
-                    return this.columnFirstName;
+                    return this.columnFechaPeticion;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn LastNameColumn {
+            public global::System.Data.DataColumn FechaCompraColumn {
                 get {
-                    return this.columnLastName;
+                    return this.columnFechaCompra;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ShipNameColumn {
+            public global::System.Data.DataColumn NombreEmpleadoColumn {
                 get {
-                    return this.columnShipName;
+                    return this.columnNombreEmpleado;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ShipAddressColumn {
+            public global::System.Data.DataColumn NombreEnvioColumn {
                 get {
-                    return this.columnShipAddress;
+                    return this.columnNombreEnvio;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn CompanyNameColumn {
+            public global::System.Data.DataColumn DireccionEnvioColumn {
                 get {
-                    return this.columnCompanyName;
+                    return this.columnDireccionEnvio;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ContactNameColumn {
+            public global::System.Data.DataColumn NombreCompaniaColumn {
                 get {
-                    return this.columnContactName;
+                    return this.columnNombreCompania;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NombreContactoColumn {
+                get {
+                    return this.columnNombreContacto;
                 }
             }
             
@@ -429,17 +439,18 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public dtOrdenRow AdddtOrdenRow(string OrdenID, string OrderDate, string FirstName, string LastName, string ShipName, string ShipAddress, string CompanyName, string ContactName) {
+            public dtOrdenRow AdddtOrdenRow(string OrdenID, string FechaOrden, string FechaPeticion, string FechaCompra, string NombreEmpleado, string NombreEnvio, string DireccionEnvio, string NombreCompania, string NombreContacto) {
                 dtOrdenRow rowdtOrdenRow = ((dtOrdenRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OrdenID,
-                        OrderDate,
-                        FirstName,
-                        LastName,
-                        ShipName,
-                        ShipAddress,
-                        CompanyName,
-                        ContactName};
+                        FechaOrden,
+                        FechaPeticion,
+                        FechaCompra,
+                        NombreEmpleado,
+                        NombreEnvio,
+                        DireccionEnvio,
+                        NombreCompania,
+                        NombreContacto};
                 rowdtOrdenRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtOrdenRow);
                 return rowdtOrdenRow;
@@ -463,13 +474,14 @@ namespace CapaUI.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnOrdenID = base.Columns["OrdenID"];
-                this.columnOrderDate = base.Columns["OrderDate"];
-                this.columnFirstName = base.Columns["FirstName"];
-                this.columnLastName = base.Columns["LastName"];
-                this.columnShipName = base.Columns["ShipName"];
-                this.columnShipAddress = base.Columns["ShipAddress"];
-                this.columnCompanyName = base.Columns["CompanyName"];
-                this.columnContactName = base.Columns["ContactName"];
+                this.columnFechaOrden = base.Columns["FechaOrden"];
+                this.columnFechaPeticion = base.Columns["FechaPeticion"];
+                this.columnFechaCompra = base.Columns["FechaCompra"];
+                this.columnNombreEmpleado = base.Columns["NombreEmpleado"];
+                this.columnNombreEnvio = base.Columns["NombreEnvio"];
+                this.columnDireccionEnvio = base.Columns["DireccionEnvio"];
+                this.columnNombreCompania = base.Columns["NombreCompania"];
+                this.columnNombreContacto = base.Columns["NombreContacto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,20 +489,22 @@ namespace CapaUI.DataSets {
             private void InitClass() {
                 this.columnOrdenID = new global::System.Data.DataColumn("OrdenID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOrdenID);
-                this.columnOrderDate = new global::System.Data.DataColumn("OrderDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOrderDate);
-                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFirstName);
-                this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLastName);
-                this.columnShipName = new global::System.Data.DataColumn("ShipName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShipName);
-                this.columnShipAddress = new global::System.Data.DataColumn("ShipAddress", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShipAddress);
-                this.columnCompanyName = new global::System.Data.DataColumn("CompanyName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCompanyName);
-                this.columnContactName = new global::System.Data.DataColumn("ContactName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnContactName);
+                this.columnFechaOrden = new global::System.Data.DataColumn("FechaOrden", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaOrden);
+                this.columnFechaPeticion = new global::System.Data.DataColumn("FechaPeticion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaPeticion);
+                this.columnFechaCompra = new global::System.Data.DataColumn("FechaCompra", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaCompra);
+                this.columnNombreEmpleado = new global::System.Data.DataColumn("NombreEmpleado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreEmpleado);
+                this.columnNombreEnvio = new global::System.Data.DataColumn("NombreEnvio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreEnvio);
+                this.columnDireccionEnvio = new global::System.Data.DataColumn("DireccionEnvio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDireccionEnvio);
+                this.columnNombreCompania = new global::System.Data.DataColumn("NombreCompania", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreCompania);
+                this.columnNombreContacto = new global::System.Data.DataColumn("NombreContacto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreContacto);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -649,113 +663,129 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string OrderDate {
+            public string FechaOrden {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.OrderDateColumn]));
+                        return ((string)(this[this.tabledtOrden.FechaOrdenColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'OrderDate\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaOrden\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.OrderDateColumn] = value;
+                    this[this.tabledtOrden.FechaOrdenColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string FirstName {
+            public string FechaPeticion {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.FirstNameColumn]));
+                        return ((string)(this[this.tabledtOrden.FechaPeticionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FirstName\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaPeticion\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.FirstNameColumn] = value;
+                    this[this.tabledtOrden.FechaPeticionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string LastName {
+            public string FechaCompra {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.LastNameColumn]));
+                        return ((string)(this[this.tabledtOrden.FechaCompraColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'LastName\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FechaCompra\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.LastNameColumn] = value;
+                    this[this.tabledtOrden.FechaCompraColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ShipName {
+            public string NombreEmpleado {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.ShipNameColumn]));
+                        return ((string)(this[this.tabledtOrden.NombreEmpleadoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ShipName\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreEmpleado\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.ShipNameColumn] = value;
+                    this[this.tabledtOrden.NombreEmpleadoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ShipAddress {
+            public string NombreEnvio {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.ShipAddressColumn]));
+                        return ((string)(this[this.tabledtOrden.NombreEnvioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ShipAddress\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreEnvio\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.ShipAddressColumn] = value;
+                    this[this.tabledtOrden.NombreEnvioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string CompanyName {
+            public string DireccionEnvio {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.CompanyNameColumn]));
+                        return ((string)(this[this.tabledtOrden.DireccionEnvioColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CompanyName\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'DireccionEnvio\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.CompanyNameColumn] = value;
+                    this[this.tabledtOrden.DireccionEnvioColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string ContactName {
+            public string NombreCompania {
                 get {
                     try {
-                        return ((string)(this[this.tabledtOrden.ContactNameColumn]));
+                        return ((string)(this[this.tabledtOrden.NombreCompaniaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ContactName\' de la tabla \'dtOrden\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreCompania\' de la tabla \'dtOrden\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtOrden.ContactNameColumn] = value;
+                    this[this.tabledtOrden.NombreCompaniaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string NombreContacto {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtOrden.NombreContactoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'NombreContacto\' de la tabla \'dtOrden\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtOrden.NombreContactoColumn] = value;
                 }
             }
             
@@ -773,86 +803,98 @@ namespace CapaUI.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsOrderDateNull() {
-                return this.IsNull(this.tabledtOrden.OrderDateColumn);
+            public bool IsFechaOrdenNull() {
+                return this.IsNull(this.tabledtOrden.FechaOrdenColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetOrderDateNull() {
-                this[this.tabledtOrden.OrderDateColumn] = global::System.Convert.DBNull;
+            public void SetFechaOrdenNull() {
+                this[this.tabledtOrden.FechaOrdenColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsFirstNameNull() {
-                return this.IsNull(this.tabledtOrden.FirstNameColumn);
+            public bool IsFechaPeticionNull() {
+                return this.IsNull(this.tabledtOrden.FechaPeticionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetFirstNameNull() {
-                this[this.tabledtOrden.FirstNameColumn] = global::System.Convert.DBNull;
+            public void SetFechaPeticionNull() {
+                this[this.tabledtOrden.FechaPeticionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsLastNameNull() {
-                return this.IsNull(this.tabledtOrden.LastNameColumn);
+            public bool IsFechaCompraNull() {
+                return this.IsNull(this.tabledtOrden.FechaCompraColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetLastNameNull() {
-                this[this.tabledtOrden.LastNameColumn] = global::System.Convert.DBNull;
+            public void SetFechaCompraNull() {
+                this[this.tabledtOrden.FechaCompraColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsShipNameNull() {
-                return this.IsNull(this.tabledtOrden.ShipNameColumn);
+            public bool IsNombreEmpleadoNull() {
+                return this.IsNull(this.tabledtOrden.NombreEmpleadoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetShipNameNull() {
-                this[this.tabledtOrden.ShipNameColumn] = global::System.Convert.DBNull;
+            public void SetNombreEmpleadoNull() {
+                this[this.tabledtOrden.NombreEmpleadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsShipAddressNull() {
-                return this.IsNull(this.tabledtOrden.ShipAddressColumn);
+            public bool IsNombreEnvioNull() {
+                return this.IsNull(this.tabledtOrden.NombreEnvioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetShipAddressNull() {
-                this[this.tabledtOrden.ShipAddressColumn] = global::System.Convert.DBNull;
+            public void SetNombreEnvioNull() {
+                this[this.tabledtOrden.NombreEnvioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCompanyNameNull() {
-                return this.IsNull(this.tabledtOrden.CompanyNameColumn);
+            public bool IsDireccionEnvioNull() {
+                return this.IsNull(this.tabledtOrden.DireccionEnvioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCompanyNameNull() {
-                this[this.tabledtOrden.CompanyNameColumn] = global::System.Convert.DBNull;
+            public void SetDireccionEnvioNull() {
+                this[this.tabledtOrden.DireccionEnvioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsContactNameNull() {
-                return this.IsNull(this.tabledtOrden.ContactNameColumn);
+            public bool IsNombreCompaniaNull() {
+                return this.IsNull(this.tabledtOrden.NombreCompaniaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetContactNameNull() {
-                this[this.tabledtOrden.ContactNameColumn] = global::System.Convert.DBNull;
+            public void SetNombreCompaniaNull() {
+                this[this.tabledtOrden.NombreCompaniaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNombreContactoNull() {
+                return this.IsNull(this.tabledtOrden.NombreContactoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNombreContactoNull() {
+                this[this.tabledtOrden.NombreContactoColumn] = global::System.Convert.DBNull;
             }
         }
         

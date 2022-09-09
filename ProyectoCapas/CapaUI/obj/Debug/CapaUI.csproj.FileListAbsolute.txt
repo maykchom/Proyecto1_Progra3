@@ -378,7 +378,6 @@ C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCa
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\EnvDTE.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\stdole.dll
-C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
 C:\Users\Danna Cifuentes\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
