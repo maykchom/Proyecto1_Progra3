@@ -31,6 +31,36 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="OrdenID">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="No. orden " +First(Fields!OrdenID.Value, "dtOrden")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>OrdenID</rd:DefaultName>
+        <Top>2.6162cm</Top>
+        <Left>3.09245cm</Left>
+        <Height>0.6cm</Height>
+        <Width>8.215cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>3.86667in</Height>
     <Style />
@@ -67,32 +97,36 @@
           <DataField>OrdenID</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="OrderDate">
-          <DataField>OrderDate</DataField>
+        <Field Name="FechaOrden">
+          <DataField>FechaOrden</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="FirstName">
-          <DataField>FirstName</DataField>
+        <Field Name="FechaPeticion">
+          <DataField>FechaPeticion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="LastName">
-          <DataField>LastName</DataField>
+        <Field Name="FechaCompra">
+          <DataField>FechaCompra</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ShipName">
-          <DataField>ShipName</DataField>
+        <Field Name="NombreEmpleado">
+          <DataField>NombreEmpleado</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ShipAddress">
-          <DataField>ShipAddress</DataField>
+        <Field Name="NombreEnvio">
+          <DataField>NombreEnvio</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
+        <Field Name="DireccionEnvio">
+          <DataField>DireccionEnvio</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ContactName">
-          <DataField>ContactName</DataField>
+        <Field Name="NombreCompania">
+          <DataField>NombreCompania</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreContacto">
+          <DataField>NombreContacto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

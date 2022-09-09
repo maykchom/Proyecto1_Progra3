@@ -16,7 +16,7 @@ namespace CapaUI
         string parametroFactura;
         DataSet ds = new DataSet();
         DataTable dtOrden;
-        DataTable dtListadodetalle;
+        //DataTable dtListadodetalle;
         public visor(string NoFactura)
         {
             InitializeComponent();
