@@ -16,22 +16,24 @@ namespace CapaUI
         string parametroFactura;
         DataSet ds = new DataSet();
         DataTable dtOrden;
-        //DataTable dtListadodetalle;
+        DataTable dtListadodetalle;
         public visor(string NoFactura)
         {
             InitializeComponent();
             lbfactura.Text = NoFactura;
             parametroFactura = NoFactura;
             dtOrden = BLL.BLLvistaOrdenes.ListarOrden(parametroFactura);
-            //dtListadodetalle = BLL.BLLvistaOrdenes.ListarOrdenesDetalles(Convert.ToInt32(parametroFactura));
+            dtListadodetalle = BLL.BLLvistaOrdenes.ListarOrdenesDetalles(Convert.ToInt32(parametroFactura));
             ds.Tables.Add(dtOrden);
-            //ds.Tables.Add(dtListadodetalle);
+            ds.Tables.Add(dtListadodetalle);
         }
 
         private void visor_Load(object sender, EventArgs e)
         {
             ReportDataSource fuenteE;
+            ReportDataSource fuenteD;
             fuenteE = new ReportDataSource("dtOrden", ds.Tables[0]);
+            fuenteD = new ReportDataSource("dtOrden", ds.Tables[1]);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(fuenteE);
             this.reportViewer1.RefreshReport();           

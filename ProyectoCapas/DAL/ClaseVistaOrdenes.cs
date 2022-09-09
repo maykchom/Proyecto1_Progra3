@@ -20,7 +20,7 @@ namespace DAL
         public static DataTable ListarOrden(string NoFactura)
         {
             string strSQL = "select * from vistaOrdenes";
-            strSQL += " where OrdenID like '% " + NoFactura + "%'";
+            strSQL += " where OrdenID = " + NoFactura;
             return Configuracion.GetDataTable(strSQL);
         }
         public static DataTable ListarOrdenesDetalles(int order)

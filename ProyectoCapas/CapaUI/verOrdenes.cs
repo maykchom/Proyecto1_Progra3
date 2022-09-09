@@ -14,7 +14,7 @@ namespace CapaUI
     {
 
         private DataTable dtListado;
-        String NoFactura;
+        string NoFactura;
         public verOrdenes()
         {
             InitializeComponent();

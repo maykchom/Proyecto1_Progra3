@@ -36,22 +36,22 @@
             // lbfactura
             // 
             this.lbfactura.AutoSize = true;
-            this.lbfactura.Location = new System.Drawing.Point(20, 28);
+            this.lbfactura.Location = new System.Drawing.Point(100, 28);
             this.lbfactura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbfactura.Name = "lbfactura";
-            this.lbfactura.Size = new System.Drawing.Size(68, 13);
+            this.lbfactura.Size = new System.Drawing.Size(13, 13);
             this.lbfactura.TabIndex = 0;
-            this.lbfactura.Text = "No de Orden";
+            this.lbfactura.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 28);
+            this.label2.Location = new System.Drawing.Point(22, 28);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "0";
+            this.label2.Text = "No.Factura";
             // 
             // reportViewer1
             // 

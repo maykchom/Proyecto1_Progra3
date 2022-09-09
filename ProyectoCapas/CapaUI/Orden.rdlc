@@ -31,6 +31,36 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>No.Orden:</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>2.03412cm</Top>
+        <Left>2.77495cm</Left>
+        <Height>0.6cm</Height>
+        <Width>1.75917cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
       <Textbox Name="OrdenID">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -38,7 +68,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>="No. orden " +First(Fields!OrdenID.Value, "dtOrden")</Value>
+                <Value>=First(Fields!OrdenID.Value, "dtOrden")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -46,11 +76,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>OrdenID</rd:DefaultName>
-        <Top>2.6162cm</Top>
-        <Left>3.09245cm</Left>
+        <Top>2.03412cm</Top>
+        <Left>4.78578cm</Left>
         <Height>0.6cm</Height>
-        <Width>8.215cm</Width>
-        <ZIndex>1</ZIndex>
+        <Width>2.5cm</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
