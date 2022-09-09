@@ -33,9 +33,10 @@ namespace CapaUI
             ReportDataSource fuenteE;
             ReportDataSource fuenteD;
             fuenteE = new ReportDataSource("dtOrden", ds.Tables[0]);
-            fuenteD = new ReportDataSource("dtOrden", ds.Tables[1]);
+            fuenteD = new ReportDataSource("dtDetalles", ds.Tables[1]);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(fuenteE);
+            reportViewer1.LocalReport.DataSources.Add(fuenteD);
             this.reportViewer1.RefreshReport();           
         }
     }

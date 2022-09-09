@@ -85,6 +85,14 @@
     <Compile Include="Clientes.designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DataSetDetalles.cs">
+      <DependentUpon>DataSetDetalles.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetDetalles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDetalles.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetOrdenes.cs">
       <DependentUpon>DataSetOrdenes.xsd</DependentUpon>
     </Compile>
@@ -194,6 +202,17 @@
     <EmbeddedResource Include="visor.resx">
       <DependentUpon>visor.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSets\DataSetDetalles.xsc">
+      <DependentUpon>DataSetDetalles.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetDetalles.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDetalles.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetDetalles.xss">
+      <DependentUpon>DataSetDetalles.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\DataSetOrdenes.xsc">
       <DependentUpon>DataSetOrdenes.xsd</DependentUpon>
     </None>

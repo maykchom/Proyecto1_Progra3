@@ -60,14 +60,14 @@
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(582, 303);
+            this.reportViewer1.Size = new System.Drawing.Size(808, 467);
             this.reportViewer1.TabIndex = 2;
             // 
             // visor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(828, 531);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbfactura);
