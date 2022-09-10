@@ -1,5 +1,5 @@
-create view v_od
+create  view v_od
 as
-select `order details`.OrderID ,`order details`.ProductID ,products.ProductName, `order details`.UnitPrice, `order details`.Quantity,  (`order details`.UnitPrice * `order details`.Quantity)
+select `order details`.OrderID ,`order details`.ProductID ,products.ProductName, `order details`.UnitPrice, `order details`.Quantity,  (`order details`.UnitPrice * `order details`.Quantity) as subtotal
 from `order details`
-inner join products ON products.ProductID = `order details`.ProductID 
+inner join products ON products.ProductID = `order details`.ProductID

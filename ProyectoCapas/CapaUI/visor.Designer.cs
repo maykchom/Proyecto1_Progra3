@@ -36,7 +36,7 @@
             // lbfactura
             // 
             this.lbfactura.AutoSize = true;
-            this.lbfactura.Location = new System.Drawing.Point(100, 28);
+            this.lbfactura.Location = new System.Drawing.Point(85, 6);
             this.lbfactura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbfactura.Name = "lbfactura";
             this.lbfactura.Size = new System.Drawing.Size(13, 13);
@@ -46,7 +46,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 28);
+            this.label2.Location = new System.Drawing.Point(7, 6);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
@@ -56,18 +56,18 @@
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "CapaUI.Orden.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(9, 53);
+            this.reportViewer1.Location = new System.Drawing.Point(9, 24);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(808, 467);
+            this.reportViewer1.Size = new System.Drawing.Size(832, 650);
             this.reportViewer1.TabIndex = 2;
             // 
             // visor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 531);
+            this.ClientSize = new System.Drawing.Size(852, 685);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbfactura);

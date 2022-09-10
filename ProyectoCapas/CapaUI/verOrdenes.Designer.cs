@@ -40,11 +40,10 @@
             this.dtgOrdenes.AllowUserToAddRows = false;
             this.dtgOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgOrdenes.Location = new System.Drawing.Point(20, 57);
-            this.dtgOrdenes.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgOrdenes.Location = new System.Drawing.Point(15, 46);
             this.dtgOrdenes.Name = "dtgOrdenes";
             this.dtgOrdenes.RowHeadersWidth = 51;
-            this.dtgOrdenes.Size = new System.Drawing.Size(1553, 384);
+            this.dtgOrdenes.Size = new System.Drawing.Size(1165, 312);
             this.dtgOrdenes.TabIndex = 0;
             this.dtgOrdenes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgOrdenes_CellClick);
             // 
@@ -53,20 +52,21 @@
             this.dtgOrdenesDetalle.AllowUserToAddRows = false;
             this.dtgOrdenesDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgOrdenesDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgOrdenesDetalle.Location = new System.Drawing.Point(20, 460);
-            this.dtgOrdenesDetalle.Margin = new System.Windows.Forms.Padding(4);
+            this.dtgOrdenesDetalle.Location = new System.Drawing.Point(15, 374);
             this.dtgOrdenesDetalle.Name = "dtgOrdenesDetalle";
             this.dtgOrdenesDetalle.RowHeadersWidth = 51;
-            this.dtgOrdenesDetalle.Size = new System.Drawing.Size(1552, 331);
+            this.dtgOrdenesDetalle.Size = new System.Drawing.Size(1164, 269);
             this.dtgOrdenesDetalle.TabIndex = 1;
             // 
             // btImpri
             // 
+            this.btImpri.Enabled = false;
             this.btImpri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btImpri.ForeColor = System.Drawing.Color.MediumBlue;
-            this.btImpri.Location = new System.Drawing.Point(98, 12);
+            this.btImpri.Location = new System.Drawing.Point(15, 10);
+            this.btImpri.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btImpri.Name = "btImpri";
-            this.btImpri.Size = new System.Drawing.Size(142, 38);
+            this.btImpri.Size = new System.Drawing.Size(106, 31);
             this.btImpri.TabIndex = 2;
             this.btImpri.Text = "Imprimir";
             this.btImpri.UseVisualStyleBackColor = true;
@@ -74,13 +74,12 @@
             // 
             // verOrdenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1585, 764);
+            this.ClientSize = new System.Drawing.Size(1189, 657);
             this.Controls.Add(this.btImpri);
             this.Controls.Add(this.dtgOrdenesDetalle);
             this.Controls.Add(this.dtgOrdenes);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "verOrdenes";
             this.Text = "verOrdenes";
             this.Load += new System.EventHandler(this.verOrdenes_Load);

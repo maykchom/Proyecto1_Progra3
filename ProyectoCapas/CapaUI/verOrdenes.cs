@@ -42,9 +42,20 @@ namespace CapaUI
         {
             int RowNo;
             RowNo = e.RowIndex;
-            int order = Convert.ToInt32(dtgOrdenes.Rows[RowNo].Cells[0].Value.ToString());
-            cargarOrdenesDetalles(order);
-            NoFactura = dtgOrdenes.Rows[RowNo].Cells[0].Value.ToString();
+            btImpri.Enabled = true;
+            try
+            {
+                int order = Convert.ToInt32(dtgOrdenes.Rows[RowNo].Cells[0].Value.ToString());
+                cargarOrdenesDetalles(order);
+                NoFactura = dtgOrdenes.Rows[RowNo].Cells[0].Value.ToString();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                
+            }
+
+            DataGridViewColumn c1 = dtgOrdenesDetalle.Columns[1];
+            c1.Visible = false;
 
         }
 
