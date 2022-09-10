@@ -165,7 +165,6 @@ C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bi
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Ubiety.Dns.Core.dll
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Memory.dll
-C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Buffers.dll
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Hash.xxHash.dll
@@ -182,7 +181,6 @@ C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bi
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.dll
@@ -251,3 +249,4 @@ C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\BLL\bin\Debug\K4os.Compressio
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\BLL\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\BLL\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache

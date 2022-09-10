@@ -182,7 +182,6 @@ C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\bi
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\bin\Debug\System.Memory.xml
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\obj\Debug\DAL.dll
@@ -251,3 +250,4 @@ C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\DAL\obj\Debug\DAL.csproj.Core
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\DAL\obj\Debug\DAL.dll
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\DAL\obj\Debug\DAL.pdb
+C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache

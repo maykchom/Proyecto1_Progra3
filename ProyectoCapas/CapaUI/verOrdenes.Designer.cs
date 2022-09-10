@@ -41,7 +41,7 @@
             this.dtgOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgOrdenes.Location = new System.Drawing.Point(20, 57);
-            this.dtgOrdenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgOrdenes.Margin = new System.Windows.Forms.Padding(4);
             this.dtgOrdenes.Name = "dtgOrdenes";
             this.dtgOrdenes.RowHeadersWidth = 51;
             this.dtgOrdenes.Size = new System.Drawing.Size(1553, 384);
@@ -54,7 +54,7 @@
             this.dtgOrdenesDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgOrdenesDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgOrdenesDetalle.Location = new System.Drawing.Point(20, 460);
-            this.dtgOrdenesDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgOrdenesDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.dtgOrdenesDetalle.Name = "dtgOrdenesDetalle";
             this.dtgOrdenesDetalle.RowHeadersWidth = 51;
             this.dtgOrdenesDetalle.Size = new System.Drawing.Size(1552, 331);
@@ -62,9 +62,11 @@
             // 
             // btImpri
             // 
-            this.btImpri.Location = new System.Drawing.Point(497, 12);
+            this.btImpri.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btImpri.ForeColor = System.Drawing.Color.MediumBlue;
+            this.btImpri.Location = new System.Drawing.Point(98, 12);
             this.btImpri.Name = "btImpri";
-            this.btImpri.Size = new System.Drawing.Size(75, 23);
+            this.btImpri.Size = new System.Drawing.Size(142, 38);
             this.btImpri.TabIndex = 2;
             this.btImpri.Text = "Imprimir";
             this.btImpri.UseVisualStyleBackColor = true;
@@ -78,7 +80,7 @@
             this.Controls.Add(this.btImpri);
             this.Controls.Add(this.dtgOrdenesDetalle);
             this.Controls.Add(this.dtgOrdenes);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "verOrdenes";
             this.Text = "verOrdenes";
             this.Load += new System.EventHandler(this.verOrdenes_Load);
