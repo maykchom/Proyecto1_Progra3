@@ -25,6 +25,7 @@ namespace CapaUI
         private void Employeess_Load(object sender, EventArgs e)
         {
             cargarEmployees();
+            txLNam.Focus();
         }
         public void cargarEmployees()
         {
@@ -64,6 +65,7 @@ namespace CapaUI
                 MessageBox.Show("Registro ingresado correctamente");
                 Limpiarcontroles();
                 cargarEmployees();
+                dgEmpl.FirstDisplayedScrollingRowIndex = dgEmpl.RowCount - 1;
             }
             else
             {
@@ -91,6 +93,7 @@ namespace CapaUI
             txPhotPath.Clear();
             txSalary.Clear();
             txEmpID.Focus();
+            txLNam.Focus();
         }
         private void btSelectPho_Click(object sender, EventArgs e)
         {
@@ -136,37 +139,49 @@ namespace CapaUI
 
         private void dgEmpl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int RowNo;
-            RowNo = e.RowIndex;
-            txEmpID.Text = dgEmpl.Rows[RowNo].Cells[0].Value.ToString();
-            txLNam.Text = dgEmpl.Rows[RowNo].Cells[1].Value.ToString();
-            txFsNam.Text = dgEmpl.Rows[RowNo].Cells[2].Value.ToString();
-            txTitle.Text = dgEmpl.Rows[RowNo].Cells[3].Value.ToString();
-            txTitCourt.Text = dgEmpl.Rows[RowNo].Cells[4].Value.ToString();
-            dtpBirth.Text = dgEmpl.Rows[RowNo].Cells[5].Value.ToString();
-            dtpHire.Text = dgEmpl.Rows[RowNo].Cells[6].Value.ToString();
-            txAddress.Text = dgEmpl.Rows[RowNo].Cells[7].Value.ToString();
-            txCity.Text = dgEmpl.Rows[RowNo].Cells[8].Value.ToString();
-            txRegion.Text = dgEmpl.Rows[RowNo].Cells[9].Value.ToString();
-            txPCode.Text = dgEmpl.Rows[RowNo].Cells[10].Value.ToString();
-            txCountry.Text = dgEmpl.Rows[RowNo].Cells[11].Value.ToString();
-            txHPhone.Text = dgEmpl.Rows[RowNo].Cells[12].Value.ToString();
-            txExtens.Text = dgEmpl.Rows[RowNo].Cells[13].Value.ToString();
-            txNots.Text = dgEmpl.Rows[RowNo].Cells[15].Value.ToString();
-            txReports.Text = dgEmpl.Rows[RowNo].Cells[16].Value.ToString();
-            txPhotPath.Text = dgEmpl.Rows[RowNo].Cells[17].Value.ToString();
-            txSalary.Text = dgEmpl.Rows[RowNo].Cells[18].Value.ToString();
-
-
-            //Verificamos si el registro de la imagen es nulo para evitar errores en el picture box
-            if (dgEmpl.Rows[RowNo].Cells[14].Value != DBNull.Value)
+            try
             {
-               pbPhoto.Image = (Bitmap)((new ImageConverter()).ConvertFrom(dgEmpl.Rows[RowNo].Cells[14].Value));
-            }
+                panelEE.Enabled = true;
+                Limpiarcontroles();
+
+                int RowNo;
+                RowNo = e.RowIndex;
+                txEmpID.Text = dgEmpl.Rows[RowNo].Cells[0].Value.ToString();
+                txLNam.Text = dgEmpl.Rows[RowNo].Cells[1].Value.ToString();
+                txFsNam.Text = dgEmpl.Rows[RowNo].Cells[2].Value.ToString();
+                txTitle.Text = dgEmpl.Rows[RowNo].Cells[3].Value.ToString();
+                txTitCourt.Text = dgEmpl.Rows[RowNo].Cells[4].Value.ToString();
+                dtpBirth.Text = dgEmpl.Rows[RowNo].Cells[5].Value.ToString();
+                dtpHire.Text = dgEmpl.Rows[RowNo].Cells[6].Value.ToString();
+                txAddress.Text = dgEmpl.Rows[RowNo].Cells[7].Value.ToString();
+                txCity.Text = dgEmpl.Rows[RowNo].Cells[8].Value.ToString();
+                txRegion.Text = dgEmpl.Rows[RowNo].Cells[9].Value.ToString();
+                txPCode.Text = dgEmpl.Rows[RowNo].Cells[10].Value.ToString();
+                txCountry.Text = dgEmpl.Rows[RowNo].Cells[11].Value.ToString();
+                txHPhone.Text = dgEmpl.Rows[RowNo].Cells[12].Value.ToString();
+                txExtens.Text = dgEmpl.Rows[RowNo].Cells[13].Value.ToString();
+                txNots.Text = dgEmpl.Rows[RowNo].Cells[15].Value.ToString();
+                txReports.Text = dgEmpl.Rows[RowNo].Cells[16].Value.ToString();
+                txPhotPath.Text = dgEmpl.Rows[RowNo].Cells[17].Value.ToString();
+                txSalary.Text = dgEmpl.Rows[RowNo].Cells[18].Value.ToString();
+
+
+                //Verificamos si el registro de la imagen es nulo para evitar errores en el picture box
+                if (dgEmpl.Rows[RowNo].Cells[14].Value != DBNull.Value)
+                {
+                   pbPhoto.Image = (Bitmap)((new ImageConverter()).ConvertFrom(dgEmpl.Rows[RowNo].Cells[14].Value));
+                }
                 else
                 {
-                   pbPhoto.Image = null;
+                    pbPhoto.Image = null;
                 }
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                Limpiarcontroles();
+                panelEE.Enabled = false;
+                pbPhoto.Image = null;
+            }
             
         }
         private void btEditar_Click(object sender, EventArgs e)
@@ -212,7 +227,9 @@ namespace CapaUI
 
         private void btNuevo_Click(object sender, EventArgs e)
         {
-
+            Limpiarcontroles();
+            panelEE.Enabled = false;
+            pbPhoto.Image = null;
         }
 
         

@@ -533,3 +533,4 @@ C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Territorios.resources
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.verOrdenes.resources
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.visor.resources
+C:\Users\Mike\Documents\Proyectos C#\Proyecto1_Progra3\ProyectoCapas\CapaUI\obj\Debug\CapaUI.Creditos.resources

@@ -39,12 +39,14 @@ namespace CapaUI
         private void butNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
+            panelEE.Enabled = false;
         }
         public void Limpiarcontroles()
         {
             txtTerritorioID.Text = "";
             txtDescripcionTerritorio.Text = "";
-            txtRegionID.Text = "";          
+            txtRegionID.Text = "";
+            txtDescripcionTerritorio.Focus();
         }
         // BOTON DE EDITAR
         private void butEditar_Click(object sender, EventArgs e)
@@ -107,6 +109,7 @@ namespace CapaUI
                 MessageBox.Show("Registro ingresado correctamente");
                 Limpiarcontroles();
                 Listar();
+                dgTerritorios.FirstDisplayedScrollingRowIndex = dgTerritorios.RowCount - 1;
             }
             else
             {
@@ -117,17 +120,27 @@ namespace CapaUI
    
         private void dgTerritorios_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            Limpiarcontroles();
-            int RowNo;
-            RowNo = e.RowIndex;
-            txtTerritorioID.Text = dgTerritorios.Rows[RowNo].Cells[0].Value.ToString();
-            txtDescripcionTerritorio.Text = dgTerritorios.Rows[RowNo].Cells[1].Value.ToString();
-            txtRegionID.Text = dgTerritorios.Rows[RowNo].Cells[2].Value.ToString();
+            try
+            {
+                panelEE.Enabled = true;
+                Limpiarcontroles();
+                int RowNo;
+                RowNo = e.RowIndex;
+                txtTerritorioID.Text = dgTerritorios.Rows[RowNo].Cells[0].Value.ToString();
+                txtDescripcionTerritorio.Text = dgTerritorios.Rows[RowNo].Cells[1].Value.ToString();
+                txtRegionID.Text = dgTerritorios.Rows[RowNo].Cells[2].Value.ToString();
+
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                panelEE.Enabled = false;
+            }
         }
 
         private void Territorios_Load_1(object sender, EventArgs e)
         {
             Listar();
+            Limpiarcontroles();
         }
     }
 }

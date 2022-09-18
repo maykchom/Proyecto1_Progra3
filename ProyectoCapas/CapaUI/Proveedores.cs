@@ -25,6 +25,7 @@ namespace CapaUI
         private void Proveedores_Load(object sender, EventArgs e)
         {
             Listar();
+            Limpiarcontroles();
         }
         // El método Listar obtiene la data de la base de datos y la muestra através de una data grid view
         private void Listar()
@@ -76,6 +77,7 @@ namespace CapaUI
         private void button1_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
+            panelEE.Enabled = false;
         }
         public void Limpiarcontroles()
         {
@@ -91,6 +93,7 @@ namespace CapaUI
             txtTelefono .Text = "";
             txtFax. Text = "";
             txtPaginaWeb .Text = "";
+            txtCompania.Focus();
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -145,6 +148,7 @@ namespace CapaUI
                 MessageBox.Show("Registro ingresado correctamente");
                 Limpiarcontroles();
                 Listar();
+                dgProveedores.FirstDisplayedScrollingRowIndex = dgProveedores.RowCount - 1;
             }
             else
             {
@@ -156,21 +160,31 @@ namespace CapaUI
         // con el fin de aplicarle un mantenimiento posterior.
         private void dgProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Limpiarcontroles();
-            int RowNo;
-            RowNo = e.RowIndex;
-            txtProveedorID.Text = dgProveedores.Rows[RowNo].Cells[0].Value.ToString();
-            txtCompania.Text = dgProveedores.Rows[RowNo].Cells[1].Value.ToString();
-            txtNombreContacto.Text = dgProveedores.Rows[RowNo].Cells[2].Value.ToString();
-            txtCargoContacto.Text = dgProveedores.Rows[RowNo].Cells[3].Value.ToString();
-            txtDireccion.Text = dgProveedores.Rows[RowNo].Cells[4].Value.ToString();
-            txtCiudad.Text = dgProveedores.Rows[RowNo].Cells[5].Value.ToString();
-            txtRegion.Text = dgProveedores.Rows[RowNo].Cells[6].Value.ToString();
-            txtCodigoPostal.Text = dgProveedores.Rows[RowNo].Cells[7].Value.ToString();
-            txtPais.Text = dgProveedores.Rows[RowNo].Cells[8].Value.ToString();
-            txtTelefono.Text = dgProveedores.Rows[RowNo].Cells[9].Value.ToString();
-            txtFax.Text = dgProveedores.Rows[RowNo].Cells[10].Value.ToString();
-            txtPaginaWeb.Text = dgProveedores.Rows[RowNo].Cells[11].Value.ToString();
+            try
+            {
+                panelEE.Enabled = true;
+                Limpiarcontroles();
+                int RowNo;
+                RowNo = e.RowIndex;
+                txtProveedorID.Text = dgProveedores.Rows[RowNo].Cells[0].Value.ToString();
+                txtCompania.Text = dgProveedores.Rows[RowNo].Cells[1].Value.ToString();
+                txtNombreContacto.Text = dgProveedores.Rows[RowNo].Cells[2].Value.ToString();
+                txtCargoContacto.Text = dgProveedores.Rows[RowNo].Cells[3].Value.ToString();
+                txtDireccion.Text = dgProveedores.Rows[RowNo].Cells[4].Value.ToString();
+                txtCiudad.Text = dgProveedores.Rows[RowNo].Cells[5].Value.ToString();
+                txtRegion.Text = dgProveedores.Rows[RowNo].Cells[6].Value.ToString();
+                txtCodigoPostal.Text = dgProveedores.Rows[RowNo].Cells[7].Value.ToString();
+                txtPais.Text = dgProveedores.Rows[RowNo].Cells[8].Value.ToString();
+                txtTelefono.Text = dgProveedores.Rows[RowNo].Cells[9].Value.ToString();
+                txtFax.Text = dgProveedores.Rows[RowNo].Cells[10].Value.ToString();
+                txtPaginaWeb.Text = dgProveedores.Rows[RowNo].Cells[11].Value.ToString();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                Limpiarcontroles();
+                panelEE.Enabled = false;
+            }
+
         }
     }
 }

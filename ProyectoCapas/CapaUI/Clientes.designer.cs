@@ -63,8 +63,12 @@ namespace CapaUI
             this.ButEditar = new System.Windows.Forms.Button();
             this.butEliminar = new System.Windows.Forms.Button();
             this.butGuardar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelEE = new System.Windows.Forms.Panel();
             this.gControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelEE.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -125,7 +129,7 @@ namespace CapaUI
             this.gControles.Controls.Add(this.label15);
             this.gControles.Controls.Add(this.label16);
             this.gControles.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gControles.Location = new System.Drawing.Point(11, 11);
+            this.gControles.Location = new System.Drawing.Point(884, 171);
             this.gControles.Margin = new System.Windows.Forms.Padding(2);
             this.gControles.Name = "gControles";
             this.gControles.Padding = new System.Windows.Forms.Padding(2);
@@ -157,7 +161,7 @@ namespace CapaUI
             this.label11.Location = new System.Drawing.Point(88, 366);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(30, 16);
+            this.label11.Size = new System.Drawing.Size(29, 16);
             this.label11.TabIndex = 20;
             this.label11.Text = "Fax:";
             // 
@@ -183,7 +187,7 @@ namespace CapaUI
             this.label12.Location = new System.Drawing.Point(62, 331);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 16);
+            this.label12.Size = new System.Drawing.Size(55, 16);
             this.label12.TabIndex = 17;
             this.label12.Text = "Teléfono:";
             // 
@@ -193,7 +197,7 @@ namespace CapaUI
             this.label13.Location = new System.Drawing.Point(86, 297);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(32, 16);
+            this.label13.Size = new System.Drawing.Size(31, 16);
             this.label13.TabIndex = 16;
             this.label13.Text = "País:";
             // 
@@ -219,7 +223,7 @@ namespace CapaUI
             this.label6.Location = new System.Drawing.Point(32, 264);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.Size = new System.Drawing.Size(85, 16);
             this.label6.TabIndex = 13;
             this.label6.Text = "Codigo Postal:";
             // 
@@ -229,7 +233,7 @@ namespace CapaUI
             this.label7.Location = new System.Drawing.Point(70, 231);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 16);
+            this.label7.Size = new System.Drawing.Size(47, 16);
             this.label7.TabIndex = 12;
             this.label7.Text = "Región:";
             // 
@@ -255,7 +259,7 @@ namespace CapaUI
             this.label8.Location = new System.Drawing.Point(65, 196);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 16);
+            this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 9;
             this.label8.Text = "Ciudad:";
             // 
@@ -265,7 +269,7 @@ namespace CapaUI
             this.label9.Location = new System.Drawing.Point(57, 162);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 16);
+            this.label9.Size = new System.Drawing.Size(60, 16);
             this.label9.TabIndex = 8;
             this.label9.Text = "Dirección:";
             // 
@@ -291,7 +295,7 @@ namespace CapaUI
             this.label5.Location = new System.Drawing.Point(17, 130);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 16);
+            this.label5.Size = new System.Drawing.Size(100, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "Cargo Contacto:";
             // 
@@ -301,7 +305,7 @@ namespace CapaUI
             this.label14.Location = new System.Drawing.Point(8, 97);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(110, 16);
+            this.label14.Size = new System.Drawing.Size(109, 16);
             this.label14.TabIndex = 4;
             this.label14.Text = "Nombre Contacto:";
             // 
@@ -316,6 +320,7 @@ namespace CapaUI
             // 
             // txtClienteID
             // 
+            this.txtClienteID.Enabled = false;
             this.txtClienteID.Location = new System.Drawing.Point(135, 28);
             this.txtClienteID.Margin = new System.Windows.Forms.Padding(2);
             this.txtClienteID.Name = "txtClienteID";
@@ -329,7 +334,7 @@ namespace CapaUI
             this.label15.Location = new System.Drawing.Point(48, 62);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 16);
+            this.label15.Size = new System.Drawing.Size(69, 16);
             this.label15.TabIndex = 1;
             this.label15.Text = "Compania:";
             // 
@@ -339,7 +344,7 @@ namespace CapaUI
             this.label16.Location = new System.Drawing.Point(36, 28);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(63, 16);
+            this.label16.Size = new System.Drawing.Size(62, 16);
             this.label16.TabIndex = 0;
             this.label16.Text = "Cliente ID:";
             // 
@@ -347,7 +352,7 @@ namespace CapaUI
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(309, 31);
+            this.label17.Location = new System.Drawing.Point(5, 54);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -359,19 +364,22 @@ namespace CapaUI
             // dgClientes
             // 
             this.dgClientes.AllowUserToAddRows = false;
+            this.dgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgClientes.Location = new System.Drawing.Point(271, 151);
+            this.dgClientes.Location = new System.Drawing.Point(11, 171);
             this.dgClientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgClientes.Name = "dgClientes";
+            this.dgClientes.ReadOnly = true;
             this.dgClientes.RowHeadersWidth = 51;
             this.dgClientes.RowTemplate.Height = 24;
-            this.dgClientes.Size = new System.Drawing.Size(518, 233);
+            this.dgClientes.Size = new System.Drawing.Size(869, 537);
             this.dgClientes.TabIndex = 10;
             this.dgClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgClientes_CellClick);
             // 
             // butNuevo
             // 
-            this.butNuevo.Location = new System.Drawing.Point(279, 99);
+            this.butNuevo.Location = new System.Drawing.Point(919, 630);
             this.butNuevo.Name = "butNuevo";
             this.butNuevo.Size = new System.Drawing.Size(75, 23);
             this.butNuevo.TabIndex = 11;
@@ -381,7 +389,7 @@ namespace CapaUI
             // 
             // ButEditar
             // 
-            this.ButEditar.Location = new System.Drawing.Point(388, 99);
+            this.ButEditar.Location = new System.Drawing.Point(9, 3);
             this.ButEditar.Name = "ButEditar";
             this.ButEditar.Size = new System.Drawing.Size(75, 23);
             this.ButEditar.TabIndex = 12;
@@ -391,7 +399,7 @@ namespace CapaUI
             // 
             // butEliminar
             // 
-            this.butEliminar.Location = new System.Drawing.Point(519, 99);
+            this.butEliminar.Location = new System.Drawing.Point(105, 3);
             this.butEliminar.Name = "butEliminar";
             this.butEliminar.Size = new System.Drawing.Size(75, 23);
             this.butEliminar.TabIndex = 13;
@@ -401,7 +409,7 @@ namespace CapaUI
             // 
             // butGuardar
             // 
-            this.butGuardar.Location = new System.Drawing.Point(630, 99);
+            this.butGuardar.Location = new System.Drawing.Point(1015, 630);
             this.butGuardar.Name = "butGuardar";
             this.butGuardar.Size = new System.Drawing.Size(75, 23);
             this.butGuardar.TabIndex = 14;
@@ -409,15 +417,35 @@ namespace CapaUI
             this.butGuardar.UseVisualStyleBackColor = true;
             this.butGuardar.Click += new System.EventHandler(this.butGuardar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaUI.Properties.Resources.clienTitulo;
+            this.pictureBox1.Location = new System.Drawing.Point(11, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1101, 110);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panelEE
+            // 
+            this.panelEE.Controls.Add(this.ButEditar);
+            this.panelEE.Controls.Add(this.butEliminar);
+            this.panelEE.Enabled = false;
+            this.panelEE.Location = new System.Drawing.Point(910, 659);
+            this.panelEE.Name = "panelEE";
+            this.panelEE.Size = new System.Drawing.Size(190, 34);
+            this.panelEE.TabIndex = 16;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.butGuardar);
-            this.Controls.Add(this.butEliminar);
-            this.Controls.Add(this.ButEditar);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1151, 786);
             this.Controls.Add(this.butNuevo);
+            this.Controls.Add(this.panelEE);
+            this.Controls.Add(this.butGuardar);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgClientes);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.gControles);
@@ -431,6 +459,8 @@ namespace CapaUI
             this.gControles.ResumeLayout(false);
             this.gControles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelEE.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,5 +502,7 @@ namespace CapaUI
         private System.Windows.Forms.Button butEliminar;
         private System.Windows.Forms.Button butGuardar;
         private System.Windows.Forms.TextBox txtClienteID;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelEE;
     }
 }

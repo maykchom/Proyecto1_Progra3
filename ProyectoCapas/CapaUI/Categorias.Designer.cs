@@ -42,20 +42,31 @@
             this.tbCatID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbImagen = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbImagen = new System.Windows.Forms.PictureBox();
+            this.panelEE = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgCat)).BeginInit();
             this.gControles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
+            this.panelEE.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgCat
             // 
+            this.dgCat.AllowUserToAddRows = false;
+            this.dgCat.AllowUserToDeleteRows = false;
+            this.dgCat.AllowUserToResizeColumns = false;
+            this.dgCat.AllowUserToResizeRows = false;
+            this.dgCat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgCat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCat.Location = new System.Drawing.Point(12, 86);
+            this.dgCat.Location = new System.Drawing.Point(12, 139);
             this.dgCat.Name = "dgCat";
+            this.dgCat.ReadOnly = true;
             this.dgCat.RowHeadersWidth = 51;
-            this.dgCat.Size = new System.Drawing.Size(525, 302);
+            this.dgCat.Size = new System.Drawing.Size(910, 549);
             this.dgCat.TabIndex = 0;
             this.dgCat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCat_CellClick);
             // 
@@ -63,7 +74,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(134, 21);
+            this.label1.Location = new System.Drawing.Point(27, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 49);
@@ -74,10 +85,10 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(670, 320);
+            this.btnGuardar.Location = new System.Drawing.Point(1041, 543);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(66, 48);
+            this.btnGuardar.Size = new System.Drawing.Size(87, 30);
             this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -86,10 +97,10 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(594, 320);
+            this.btnEliminar.Location = new System.Drawing.Point(103, 2);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(66, 48);
+            this.btnEliminar.Size = new System.Drawing.Size(87, 30);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -98,10 +109,10 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(672, 256);
+            this.btnEditar.Location = new System.Drawing.Point(4, 2);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(66, 48);
+            this.btnEditar.Size = new System.Drawing.Size(87, 30);
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -110,13 +121,14 @@
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(594, 256);
+            this.btnNuevo.Location = new System.Drawing.Point(942, 543);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(66, 48);
+            this.btnNuevo.Size = new System.Drawing.Size(87, 30);
             this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // gControles
             // 
@@ -128,7 +140,7 @@
             this.gControles.Controls.Add(this.label3);
             this.gControles.Controls.Add(this.label2);
             this.gControles.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gControles.Location = new System.Drawing.Point(558, 86);
+            this.gControles.Location = new System.Drawing.Point(927, 359);
             this.gControles.Margin = new System.Windows.Forms.Padding(2);
             this.gControles.Name = "gControles";
             this.gControles.Padding = new System.Windows.Forms.Padding(2);
@@ -202,30 +214,51 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Categoria ID";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaUI.Properties.Resources.cateTitulo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1101, 110);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // pbImagen
             // 
-            this.pbImagen.Location = new System.Drawing.Point(647, 12);
+            this.pbImagen.BackColor = System.Drawing.Color.Gainsboro;
+            this.pbImagen.Location = new System.Drawing.Point(928, 139);
             this.pbImagen.Name = "pbImagen";
-            this.pbImagen.Size = new System.Drawing.Size(120, 69);
+            this.pbImagen.Size = new System.Drawing.Size(209, 146);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagen.TabIndex = 11;
             this.pbImagen.TabStop = false;
             // 
-            // openFileDialog1
+            // panelEE
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panelEE.Controls.Add(this.btnEliminar);
+            this.panelEE.Controls.Add(this.btnEditar);
+            this.panelEE.Enabled = false;
+            this.panelEE.Location = new System.Drawing.Point(938, 578);
+            this.panelEE.Name = "panelEE";
+            this.panelEE.Size = new System.Drawing.Size(194, 41);
+            this.panelEE.TabIndex = 14;
             // 
             // Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 400);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1149, 784);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.panelEE);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbImagen);
             this.Controls.Add(this.gControles);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgCat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -236,7 +269,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgCat)).EndInit();
             this.gControles.ResumeLayout(false);
             this.gControles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).EndInit();
+            this.panelEE.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,5 +295,7 @@
         private System.Windows.Forms.Button btnImg;
         private System.Windows.Forms.PictureBox pbImagen;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelEE;
     }
 }

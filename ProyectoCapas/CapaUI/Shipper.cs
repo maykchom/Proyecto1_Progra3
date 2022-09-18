@@ -27,6 +27,7 @@ namespace CapaUI
         private void Shipper_Load(object sender, EventArgs e)
         {
             cargarShipper();
+            Limpiarcontroles();
         }
         /// <summary>
         /// El método Cargar obtiene la data de la base de datos y la muestra através de una data grid view
@@ -43,6 +44,7 @@ namespace CapaUI
         {
             txCompany.Text = "";
             txphone.Text = "";
+            txCompany.Focus();
         }
         /// <summary>
         /// Evento click del botón nuevo.
@@ -56,6 +58,7 @@ namespace CapaUI
         private void btNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
+            panelEE.Enabled = false;
         }
 
         private void btGuardar_Click(object sender, EventArgs e)
@@ -73,9 +76,8 @@ namespace CapaUI
             {
                 MessageBox.Show("Registro ingresado correctamente");
                 cargarShipper();
-
                 Limpiarcontroles();
-           
+                dgShipper.FirstDisplayedScrollingRowIndex = dgShipper.RowCount - 1;
             }
             else
             {
@@ -86,14 +88,21 @@ namespace CapaUI
 
         private void dgShipper_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Limpiarcontroles();
-            int RowNo;
-            RowNo = e.RowIndex;
-            txShipper.Text = dgShipper.Rows[RowNo].Cells[0].Value.ToString();
-            txCompany.Text = dgShipper.Rows[RowNo].Cells[1].Value.ToString();
-            txphone.Text = dgShipper.Rows[RowNo].Cells[2].Value.ToString();
-            
-           
+            try
+            {
+                panelEE.Enabled = true;
+                Limpiarcontroles();
+                int RowNo;
+                RowNo = e.RowIndex;
+                txShipper.Text = dgShipper.Rows[RowNo].Cells[0].Value.ToString();
+                txCompany.Text = dgShipper.Rows[RowNo].Cells[1].Value.ToString();
+                txphone.Text = dgShipper.Rows[RowNo].Cells[2].Value.ToString();            
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                Limpiarcontroles();
+                panelEE.Enabled = false;
+            }
         }
         /// <summary>
         /// Evento click del botón de eliminar.

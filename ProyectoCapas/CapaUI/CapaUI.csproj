@@ -85,6 +85,12 @@
     <Compile Include="Clientes.designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Creditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Creditos.Designer.cs">
+      <DependentUpon>Creditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetDetalles.cs">
       <DependentUpon>DataSetDetalles.xsd</DependentUpon>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="menu.Designer.cs">
       <DependentUpon>menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes.Designer.cs">
+      <DependentUpon>Ordenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +181,9 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Creditos.resx">
+      <DependentUpon>Creditos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employeess.resx">
       <DependentUpon>Employeess.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,19 +194,17 @@
       <DependentUpon>menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Orden.rdlc" />
+    <EmbeddedResource Include="Ordenes.resx">
+      <DependentUpon>Ordenes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,6 +294,16 @@
     <None Include="Resources\employees.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\lm_.png" />
+    <None Include="Resources\cateTitulo.jpg" />
+    <None Include="Resources\proveeTitulo.jpg" />
+    <None Include="Resources\terriTitulo.jpg" />
+    <None Include="Resources\clienTitulo.jpg" />
+    <None Include="Resources\empleTitulo.jpg" />
+    <None Include="Resources\producTitulo.jpg" />
+    <None Include="Resources\RegiTitulo.jpg" />
+    <None Include="Resources\ExpenTItulo.jpg" />
+    <None Include="Resources\ordenesTitulo.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

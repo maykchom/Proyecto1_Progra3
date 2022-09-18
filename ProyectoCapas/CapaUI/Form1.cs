@@ -23,6 +23,7 @@ namespace CapaUI
         private void Form1_Load(object sender, EventArgs e)
         {
             Listar();
+            Limpiarcontroles(); 
         }
 
         private void Listar()
@@ -54,6 +55,7 @@ namespace CapaUI
                 MessageBox.Show("Registro ingresado correctamente");
                 Limpiarcontroles();
                 Listar();
+                dgRegiones.FirstDisplayedScrollingRowIndex = dgRegiones.RowCount - 1;
             }
             else
             {
@@ -64,11 +66,13 @@ namespace CapaUI
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
+            panelEE.Enabled = false;
         }
         public void Limpiarcontroles()
         {
             txtRegionID.Text = "";
             txtRegionNombre.Text = "";
+            txtRegionNombre.Focus();
         }
 
         private void dgRegiones_SelectionChanged(object sender, EventArgs e)
@@ -78,11 +82,22 @@ namespace CapaUI
 
         private void dgRegiones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Limpiarcontroles();
-            int RowNo;
-            RowNo = e.RowIndex;
-            txtRegionID.Text = dgRegiones.Rows[RowNo].Cells[0].Value.ToString();
-            txtRegionNombre.Text= dgRegiones.Rows[RowNo].Cells[1].Value.ToString();
+
+            try
+            {
+                panelEE.Enabled = true;
+                Limpiarcontroles();
+                int RowNo;
+                RowNo = e.RowIndex;
+                txtRegionID.Text = dgRegiones.Rows[RowNo].Cells[0].Value.ToString();
+                txtRegionNombre.Text= dgRegiones.Rows[RowNo].Cells[1].Value.ToString();
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                Limpiarcontroles();
+                panelEE.Enabled = false;
+            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

@@ -15,7 +15,7 @@ namespace CapaUI
     public partial class Productos : Form
     {
         private DataTable dtListado;
-        private int supplierIDactual;
+
         public Productos()
         {
             InitializeComponent();
@@ -32,6 +32,7 @@ namespace CapaUI
             cargarSuppliers();
             cargarCategory();
             cbDescon.SelectedIndex = 0;
+            Limpiarcontroles();
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace CapaUI
                 txunitInstock.Text = "";
                 txUnitonOrder.Text = "";
                 txRecorder.Text = "";
-
+                txproName.Focus();
             }
             /// <summary>
             /// Evento click del botón editar.
@@ -131,6 +132,7 @@ namespace CapaUI
         private void BtNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
+            panelEE.Enabled = false;
         }
 
         private void BtEditar_Click(object sender, EventArgs e)
@@ -197,45 +199,55 @@ namespace CapaUI
         /// <param name="e"></param>
         private void dgPro_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int RowNo;
-            RowNo = e.RowIndex;
-            Limpiarcontroles();
-
-            //Obtener el ID de la suppliers
-            DataTable tablaSup = new DataTable();
-            string SupBus = dgPro.Rows[RowNo].Cells[2].Value.ToString();
-            tablaSup = BLLProductos.ConsultaAbierta("SupplierID", "Suppliers where companyName = \""+SupBus+ "\"");            
-            int SupID = Convert.ToInt32(tablaSup.Rows[0][0]);
-
-            //Obtener el ID de la cateogoria
-            DataTable tablaCat = new DataTable();
-            string CatBus = dgPro.Rows[RowNo].Cells[3].Value.ToString();
-            tablaCat = BLLProductos.ConsultaAbierta("CategoryID", "Categories where CategoryName = \"" + CatBus + "\"");
-            int CatID = Convert.ToInt32(tablaCat.Rows[0][0]);
-
-            //Asignar datos a componentes          
-            txProduct.Text = dgPro.Rows[RowNo].Cells[0].Value.ToString();
-            txproName.Text = dgPro.Rows[RowNo].Cells[1].Value.ToString();
-            CbSupplier.SelectedValue = SupID;
-            CbCategory.SelectedValue = CatID;
-            //CbCategory.SelectedValue = 4;
-            CbCategory.SelectedItem = "Pavlova, Ltd.";
-            txQuantity.Text = dgPro.Rows[RowNo].Cells[4].Value.ToString();
-            txUnitPrice.Text = dgPro.Rows[RowNo].Cells[5].Value.ToString();
-            txunitInstock.Text = dgPro.Rows[RowNo].Cells[6].Value.ToString();
-            txUnitonOrder.Text = dgPro.Rows[RowNo].Cells[7].Value.ToString();
-            txRecorder.Text = dgPro.Rows[RowNo].Cells[8].Value.ToString();            
-
-            //Asignar valor a ComboBox
-            int valorDiscontinued = Convert.ToInt32(dgPro.Rows[RowNo].Cells[9].Value);
-            if (valorDiscontinued == 0)
+            try
             {
-                cbDescon.SelectedIndex = 0;
+                panelEE.Enabled = true;
+                int RowNo;
+                RowNo = e.RowIndex;
+                Limpiarcontroles();
+
+                //Obtener el ID de la suppliers
+                DataTable tablaSup = new DataTable();
+                string SupBus = dgPro.Rows[RowNo].Cells[2].Value.ToString();
+                tablaSup = BLLProductos.ConsultaAbierta("SupplierID", "Suppliers where companyName = \""+SupBus+ "\"");            
+                int SupID = Convert.ToInt32(tablaSup.Rows[0][0]);
+
+                //Obtener el ID de la cateogoria
+                DataTable tablaCat = new DataTable();
+                string CatBus = dgPro.Rows[RowNo].Cells[3].Value.ToString();
+                tablaCat = BLLProductos.ConsultaAbierta("CategoryID", "Categories where CategoryName = \"" + CatBus + "\"");
+                int CatID = Convert.ToInt32(tablaCat.Rows[0][0]);
+
+                //Asignar datos a componentes          
+                txProduct.Text = dgPro.Rows[RowNo].Cells[0].Value.ToString();
+                txproName.Text = dgPro.Rows[RowNo].Cells[1].Value.ToString();
+                CbSupplier.SelectedValue = SupID;
+                CbCategory.SelectedValue = CatID;
+                //CbCategory.SelectedValue = 4;
+                CbCategory.SelectedItem = "Pavlova, Ltd.";
+                txQuantity.Text = dgPro.Rows[RowNo].Cells[4].Value.ToString();
+                txUnitPrice.Text = dgPro.Rows[RowNo].Cells[5].Value.ToString();
+                txunitInstock.Text = dgPro.Rows[RowNo].Cells[6].Value.ToString();
+                txUnitonOrder.Text = dgPro.Rows[RowNo].Cells[7].Value.ToString();
+                txRecorder.Text = dgPro.Rows[RowNo].Cells[8].Value.ToString();            
+
+                //Asignar valor a ComboBox
+                int valorDiscontinued = Convert.ToInt32(dgPro.Rows[RowNo].Cells[9].Value);
+                if (valorDiscontinued == 0)
+                {
+                    cbDescon.SelectedIndex = 0;
+                }
+                else
+                {
+                    cbDescon.SelectedIndex = 1;
+                }
             }
-            else
+            catch (System.ArgumentOutOfRangeException)
             {
-                cbDescon.SelectedIndex = 1;
+                Limpiarcontroles();
+                panelEE.Enabled = false;
             }
+
             
         }
 

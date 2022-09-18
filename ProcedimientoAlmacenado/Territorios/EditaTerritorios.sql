@@ -1,9 +1,9 @@
 use northwind;
 DELIMITER $$
-CREATE PROCEDURE ActualizarTerritories (IN TerritoryID INT, IN TerritoryDescription varchar(50), IN RegionID INT)
-BEGIN	
+CREATE PROCEDURE ActualizarTerritories (IN IDTerritory varchar(20), IN TerritoryDes varchar(50), IN IDRegion INT)
+BEGIN
 Update Territories 
-Set TerritoryDescription = TerritoryDescription, RegionID = RegionID
-Where TerritoryID = TerritoryID;
+Set TerritoryDescription = TerritoryDes, RegionID = IDRegion
+Where TerritoryID = IDTerritory;
 END
 $$

@@ -48,12 +48,12 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = "ActualizarTerritories";
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("TerritoryID", territorio.TerritoryID);
-            cmd.Parameters["@TerritoryID"].Direction = ParameterDirection.Input;
-            cmd.Parameters.AddWithValue("@TerritoryDescription", territorio.TerritoryDescription);
-            cmd.Parameters["@TerritoryDescription"].Direction = ParameterDirection.Input;
-            cmd.Parameters.AddWithValue("@RegionID", territorio.RegionID);
-            cmd.Parameters["@RegionID"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("IDTerritory", territorio.TerritoryID);
+            cmd.Parameters["@IDTerritory"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@TerritoryDes", territorio.TerritoryDescription);
+            cmd.Parameters["@TerritoryDes"].Direction = ParameterDirection.Input;
+            cmd.Parameters.AddWithValue("@IDRegion", territorio.RegionID);
+            cmd.Parameters["@IDRegion"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
         }
     }

@@ -25,6 +25,7 @@ namespace CapaUI
         private void Categorias_Load(object sender, EventArgs e)
         {
             cargarCategorias();
+            tbNombre.Focus();
         }
 
         public void cargarCategorias()
@@ -63,6 +64,8 @@ namespace CapaUI
             tbNombre.Clear();
             tbDescri.Clear();
             tbCatID.Focus();
+            pbImagen.Image = null;
+            tbNombre.Focus();
         }
 
         private void btnImg_Click(object sender, EventArgs e)
@@ -107,20 +110,30 @@ namespace CapaUI
 
         private void dgCat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int RowNo;
-            RowNo = e.RowIndex;
-            tbCatID.Text = dgCat.Rows[RowNo].Cells[0].Value.ToString();
-            tbNombre.Text = dgCat.Rows[RowNo].Cells[1].Value.ToString();
-            tbDescri.Text = dgCat.Rows[RowNo].Cells[2].Value.ToString();
-            
-            //Verificamos si el registro de la imagen es nulo para evitar errores en el picture box
-            if (dgCat.Rows[RowNo].Cells[3].Value != DBNull.Value)
-            {                
-                pbImagen.Image = (Bitmap)((new ImageConverter()).ConvertFrom(dgCat.Rows[RowNo].Cells[3].Value));
-            }
-            else
+
+            try
             {
-                pbImagen.Image = null;
+                panelEE.Enabled = true;
+                int RowNo;
+                RowNo = e.RowIndex;
+                tbCatID.Text = dgCat.Rows[RowNo].Cells[0].Value.ToString();
+                tbNombre.Text = dgCat.Rows[RowNo].Cells[1].Value.ToString();
+                tbDescri.Text = dgCat.Rows[RowNo].Cells[2].Value.ToString();
+
+                //Verificamos si el registro de la imagen es nulo para evitar errores en el picture box
+                if (dgCat.Rows[RowNo].Cells[3].Value != DBNull.Value)
+                {
+                    pbImagen.Image = (Bitmap)((new ImageConverter()).ConvertFrom(dgCat.Rows[RowNo].Cells[3].Value));
+                }
+                else
+                {
+                    pbImagen.Image = null;
+                }
+            }
+            catch (System.ArgumentOutOfRangeException)
+            {
+                Limpiarcontroles();
+                panelEE.Enabled =false;
             }
         }
 
@@ -146,6 +159,12 @@ namespace CapaUI
             {
                 MessageBox.Show("No se pudo editar el registro");
             }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Limpiarcontroles();
+            panelEE.Enabled = false;
         }
     }
 }
