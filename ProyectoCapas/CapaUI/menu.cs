@@ -170,7 +170,7 @@ namespace CapaUI
         private void button3_Click_1(object sender, EventArgs e)
         {
             activarBoton(sender);
-            abrirFormularioHijo(new verOrdenes());
+            abrirFormularioHijo(new Ordenes());
         }
 
         private void pbCustomers_Click(object sender, EventArgs e)

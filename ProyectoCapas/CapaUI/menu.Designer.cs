@@ -39,7 +39,6 @@
             this.btOrdenes = new System.Windows.Forms.Button();
             this.btEmployees = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelItem = new System.Windows.Forms.Panel();
             this.btCreditos = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,6 +50,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pbCustomers = new System.Windows.Forms.PictureBox();
+            this.panelItem = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -250,15 +250,6 @@
             this.panelMenu.Size = new System.Drawing.Size(241, 817);
             this.panelMenu.TabIndex = 17;
             // 
-            // panelItem
-            // 
-            this.panelItem.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelItem.Location = new System.Drawing.Point(241, 0);
-            this.panelItem.Name = "panelItem";
-            this.panelItem.Size = new System.Drawing.Size(1159, 817);
-            this.panelItem.TabIndex = 18;
-            // 
             // btCreditos
             // 
             this.btCreditos.BackColor = System.Drawing.Color.White;
@@ -375,6 +366,15 @@
             this.pbCustomers.TabIndex = 12;
             this.pbCustomers.TabStop = false;
             this.pbCustomers.Click += new System.EventHandler(this.pbCustomers_Click);
+            // 
+            // panelItem
+            // 
+            this.panelItem.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelItem.Location = new System.Drawing.Point(241, 0);
+            this.panelItem.Name = "panelItem";
+            this.panelItem.Size = new System.Drawing.Size(1159, 817);
+            this.panelItem.TabIndex = 18;
             // 
             // menu
             // 

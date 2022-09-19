@@ -87,6 +87,7 @@
     <Compile Include="ClaseCategorias.cs" />
     <Compile Include="ClaseClientes.cs" />
     <Compile Include="ClaseEmployees.cs" />
+    <Compile Include="ClaseOrdenes.cs" />
     <Compile Include="ClaseProductos.cs" />
     <Compile Include="ClaseProveedores.cs" />
     <Compile Include="ClaseRegiones.cs" />

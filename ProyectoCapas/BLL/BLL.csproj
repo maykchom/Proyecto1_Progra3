@@ -44,6 +44,7 @@
     <Compile Include="BLLCategorias.cs" />
     <Compile Include="BLLClientes.cs" />
     <Compile Include="BLLEmployees.cs" />
+    <Compile Include="BLLOrdenes.cs" />
     <Compile Include="BLLProductos.cs" />
     <Compile Include="BLLProveedores.cs" />
     <Compile Include="BLLRegiones.cs" />

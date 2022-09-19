@@ -44,6 +44,7 @@
     <Compile Include="categorias.cs" />
     <Compile Include="Clientes.cs" />
     <Compile Include="Employees.cs" />
+    <Compile Include="Ordenes.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Proveedores.cs" />
     <Compile Include="Regiones.cs" />

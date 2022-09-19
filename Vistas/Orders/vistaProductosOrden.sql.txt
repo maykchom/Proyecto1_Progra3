@@ -1,0 +1,4 @@
+create view vista_productos_orden
+as
+select ProductID as ID, ProductName as Nombre, UnitPrice as Precio, UnitsInStock as Disponibles  
+from products
