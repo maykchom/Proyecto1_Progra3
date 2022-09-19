@@ -117,19 +117,26 @@ namespace CapaUI
         {
             if (disProsele >= Convert.ToInt32(tbCantidad.Text))
             {
-                int nuevaRow = dgvOrden.Rows.Count;
+                if (Convert.ToInt32(tbCantidad.Text) > 0)
+                {
+                    int nuevaRow = dgvOrden.Rows.Count;
 
-                dgvOrden.Rows.Add(1);
+                    dgvOrden.Rows.Add(1);
 
-                dgvOrden.Rows[nuevaRow].Cells[0].Value = idProdSele;
-                dgvOrden.Rows[nuevaRow].Cells[1].Value = nomProdSele;
-                dgvOrden.Rows[nuevaRow].Cells[2].Value = preProdSele;
-                dgvOrden.Rows[nuevaRow].Cells[3].Value = tbCantidad.Text;
-                dgvOrden.Rows[nuevaRow].Cells[4].Value = tbDescuento.Text;
+                    dgvOrden.Rows[nuevaRow].Cells[0].Value = idProdSele;
+                    dgvOrden.Rows[nuevaRow].Cells[1].Value = nomProdSele;
+                    dgvOrden.Rows[nuevaRow].Cells[2].Value = preProdSele;
+                    dgvOrden.Rows[nuevaRow].Cells[3].Value = tbCantidad.Text;
+                    dgvOrden.Rows[nuevaRow].Cells[4].Value = tbDescuento.Text;
 
-                btOrdenar.Enabled=true;
-                btAgregar.Enabled = false;
-                lbAviso.Text = "";
+                    btOrdenar.Enabled=true;
+                    btAgregar.Enabled = false;
+                    lbAviso.Text = "";
+                }
+                else
+                {
+                    lbAviso.Text = "Revise" + "\n" + "la cantidad";
+                }
             }
             else
             {
@@ -203,7 +210,7 @@ namespace CapaUI
         {
             if ((string.IsNullOrEmpty(tbFreight.Text)) || (string.IsNullOrEmpty(tbShipName.Text)) || (string.IsNullOrEmpty(tbShipAddress.Text)) || (string.IsNullOrEmpty(tbShipCity.Text)) || (string.IsNullOrEmpty(tbRegDes.Text)) || (string.IsNullOrEmpty(tbCodPosDes.Text)) || (string.IsNullOrEmpty(tbPaisDes.Text)))
             {
-                MessageBox.Show("Datos faltantes, favor de revisar", "Revise...", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Datos de orden faltantes, favor de revisar", "Revise...", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -230,7 +237,7 @@ namespace CapaUI
             tbPaisDes.Clear();
             tbCantidad.Text = "1";
             tbDescuento.Text = "0";
-            dgvOrden.Rows.Clear();
+            dgvOrden.Rows.Clear();            
         }
 
         private void dgvOrden_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -249,7 +256,7 @@ namespace CapaUI
                 if (Convert.ToInt32(dgvProductos.Rows[i].Cells[0].Value) == idProductoBuscado)
                 {
                     cantidadStock = Convert.ToInt32(dgvProductos.Rows[i].Cells[3].Value);
-                    MessageBox.Show(cantidadStock.ToString());
+                    //MessageBox.Show(cantidadStock.ToString());
                     break;
                 }
             }
@@ -270,7 +277,7 @@ namespace CapaUI
             {
                 dgvOrden.Rows[filaEditar].Cells[3].Value = cantidadNueva.ToString();
                 dgvOrden.Rows[filaEditar].Cells[4].Value = tbDescuEdit.Text;
-                MessageBox.Show("Listo");
+                panelEditar.Visible = false;
             }
         }
 
