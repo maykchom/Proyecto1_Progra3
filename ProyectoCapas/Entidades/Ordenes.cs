@@ -27,4 +27,11 @@ namespace Entidades
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
     }
+
+    public class OrdenesRespuesta
+    {
+        public bool respuesta { get; set; }
+        public int ID { get; set; }
+    }
+
 }

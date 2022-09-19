@@ -1,0 +1,5 @@
+CREATE PROCEDURE insertaOrderDetails(IN OrderIDD int, IN ProductIDD int, IN UnitPricee decimal(10,4), IN Quantityy SMALLINT(2), IN Discountt double(8,0))
+BEGIN
+	INSERT INTO `order details` (OrderID, ProductID, UnitPrice, Quantity, Discount)
+	VALUES(OrderIDD, ProductIDD, UnitPricee, Quantityy, Discountt);	
+END
