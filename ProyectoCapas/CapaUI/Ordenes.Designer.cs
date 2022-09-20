@@ -371,7 +371,7 @@
             // tbDescuento
             // 
             this.tbDescuento.Location = new System.Drawing.Point(322, 122);
-            this.tbDescuento.MaxLength = 2;
+            this.tbDescuento.MaxLength = 8;
             this.tbDescuento.Name = "tbDescuento";
             this.tbDescuento.Size = new System.Drawing.Size(100, 21);
             this.tbDescuento.TabIndex = 5;

@@ -180,7 +180,8 @@ namespace CapaUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            verOrdenes vo = new verOrdenes();
+            vo.ShowDialog();
         }
 
         private void insertaOrdenDetails()
