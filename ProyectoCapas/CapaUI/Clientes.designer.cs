@@ -320,7 +320,6 @@ namespace CapaUI
             // 
             // txtClienteID
             // 
-            this.txtClienteID.Enabled = false;
             this.txtClienteID.Location = new System.Drawing.Point(135, 28);
             this.txtClienteID.Margin = new System.Windows.Forms.Padding(2);
             this.txtClienteID.Name = "txtClienteID";
