@@ -255,5 +255,45 @@ namespace CapaUI
         {
             BLL.BLLProductos.ConsultaAbierta("SupplierID", "CompanyName = " + valor);
         }
+
+        //En el txtbox de UnitPrice permite el ingreso de numeros enteros con decimal
+        private void txUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //En el txtbox de UnitInStock solo permite el ingreso de numeros enteros
+        private void txunitInstock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //En el txtbox de UnitOnOrder solo permite el ingreso de numeros enteros
+        private void txUnitonOrder_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+
+        //En el txtbox de ReorderLevel solo permite el ingreso de numeros enteros
+        private void txRecorder_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -231,9 +231,73 @@ namespace CapaUI
             panelEE.Enabled = false;
             pbPhoto.Image = null;
         }
-
-        
-
-       
+        //En el txtbox de LastName solo permite el ingreso de letras
+        private void txLNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de FirstName solo permite el ingreso de letras
+        private void txFsNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de Title solo permite el ingreso de letras
+        private void txTitle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de Region solo permite el ingreso de letras
+        private void txRegion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de Country solo permite el ingreso de letras
+        private void txCountry_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de Extension solo permite el ingreso de numeros enteros
+        private void txExtens_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de Salary permite el ingreso de numeros enteros con decimal
+        private void txSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de Reports solo permite el ingreso de numeros enteros
+        private void txReports_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

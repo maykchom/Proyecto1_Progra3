@@ -157,27 +157,18 @@ namespace CapaUI
                 MessageBox.Show("No se pudo editar el registro");
             }
         }
-
+        //En el txtbox de CompanyName solo permite el ingreso de letras
         private void txCompany_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
         }
-        /// <summary>
-        /// Evento validacion de datos.
-        /// Realiza la acción que no permite ingresar datos datos.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void txphone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+           
         }
     }
     

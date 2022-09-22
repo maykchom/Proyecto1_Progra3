@@ -142,5 +142,22 @@ namespace CapaUI
             Listar();
             Limpiarcontroles();
         }
+
+        //En el txtbox de DescripcionTerritorio solo permite el ingreso de letras
+        private void txtDescripcionTerritorio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
+        //En el txtbox de RegionID solo permite el ingreso de numeros enteros
+        private void txtRegionID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

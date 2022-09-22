@@ -129,7 +129,7 @@
             this.lbClienteID.AutoSize = true;
             this.lbClienteID.Location = new System.Drawing.Point(85, 31);
             this.lbClienteID.Name = "lbClienteID";
-            this.lbClienteID.Size = new System.Drawing.Size(46, 16);
+            this.lbClienteID.Size = new System.Drawing.Size(60, 19);
             this.lbClienteID.TabIndex = 24;
             this.lbClienteID.Text = "label13";
             this.lbClienteID.Visible = false;
@@ -137,32 +137,36 @@
             // tbFreight
             // 
             this.tbFreight.Location = new System.Drawing.Point(10, 123);
+            this.tbFreight.MaxLength = 10;
             this.tbFreight.Name = "tbFreight";
-            this.tbFreight.Size = new System.Drawing.Size(121, 21);
+            this.tbFreight.Size = new System.Drawing.Size(121, 24);
             this.tbFreight.TabIndex = 11;
-            this.tbFreight.Text = "0";
+            this.tbFreight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbFreight_KeyPress);
             // 
             // tbPaisDes
             // 
             this.tbPaisDes.Location = new System.Drawing.Point(885, 123);
+            this.tbPaisDes.MaxLength = 20;
             this.tbPaisDes.Name = "tbPaisDes";
-            this.tbPaisDes.Size = new System.Drawing.Size(121, 21);
+            this.tbPaisDes.Size = new System.Drawing.Size(121, 24);
             this.tbPaisDes.TabIndex = 23;
+            this.tbPaisDes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPaisDes_KeyPress);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(882, 101);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 16);
+            this.label12.Size = new System.Drawing.Size(89, 19);
             this.label12.TabIndex = 22;
             this.label12.Text = "País destino";
             // 
             // tbCodPosDes
             // 
             this.tbCodPosDes.Location = new System.Drawing.Point(745, 123);
+            this.tbCodPosDes.MaxLength = 10;
             this.tbCodPosDes.Name = "tbCodPosDes";
-            this.tbCodPosDes.Size = new System.Drawing.Size(121, 21);
+            this.tbCodPosDes.Size = new System.Drawing.Size(121, 24);
             this.tbCodPosDes.TabIndex = 21;
             // 
             // label11
@@ -170,31 +174,34 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(742, 101);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 16);
+            this.label11.Size = new System.Drawing.Size(127, 19);
             this.label11.TabIndex = 20;
             this.label11.Text = "Cod. Pos. destino";
             // 
             // tbRegDes
             // 
             this.tbRegDes.Location = new System.Drawing.Point(605, 123);
+            this.tbRegDes.MaxLength = 20;
             this.tbRegDes.Name = "tbRegDes";
-            this.tbRegDes.Size = new System.Drawing.Size(121, 21);
+            this.tbRegDes.Size = new System.Drawing.Size(121, 24);
             this.tbRegDes.TabIndex = 19;
+            this.tbRegDes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRegDes_KeyPress);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(602, 101);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 16);
+            this.label10.Size = new System.Drawing.Size(111, 19);
             this.label10.TabIndex = 18;
             this.label10.Text = "Región destino";
             // 
             // tbShipCity
             // 
             this.tbShipCity.Location = new System.Drawing.Point(464, 123);
+            this.tbShipCity.MaxLength = 20;
             this.tbShipCity.Name = "tbShipCity";
-            this.tbShipCity.Size = new System.Drawing.Size(121, 21);
+            this.tbShipCity.Size = new System.Drawing.Size(121, 24);
             this.tbShipCity.TabIndex = 17;
             // 
             // label9
@@ -202,15 +209,16 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(461, 101);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 16);
+            this.label9.Size = new System.Drawing.Size(116, 19);
             this.label9.TabIndex = 16;
             this.label9.Text = "Cuidad destino";
             // 
             // tbShipAddress
             // 
             this.tbShipAddress.Location = new System.Drawing.Point(313, 123);
+            this.tbShipAddress.MaxLength = 60;
             this.tbShipAddress.Name = "tbShipAddress";
-            this.tbShipAddress.Size = new System.Drawing.Size(121, 21);
+            this.tbShipAddress.Size = new System.Drawing.Size(121, 24);
             this.tbShipAddress.TabIndex = 15;
             // 
             // label8
@@ -218,15 +226,16 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(310, 101);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(109, 16);
+            this.label8.Size = new System.Drawing.Size(139, 19);
             this.label8.TabIndex = 14;
             this.label8.Text = "Dirección de envio";
             // 
             // tbShipName
             // 
             this.tbShipName.Location = new System.Drawing.Point(166, 123);
+            this.tbShipName.MaxLength = 40;
             this.tbShipName.Name = "tbShipName";
-            this.tbShipName.Size = new System.Drawing.Size(121, 21);
+            this.tbShipName.Size = new System.Drawing.Size(121, 24);
             this.tbShipName.TabIndex = 13;
             // 
             // label7
@@ -234,7 +243,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(163, 101);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 16);
+            this.label7.Size = new System.Drawing.Size(129, 19);
             this.label7.TabIndex = 12;
             this.label7.Text = "Nombre de envío";
             // 
@@ -243,7 +252,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(7, 101);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 16);
+            this.label6.Size = new System.Drawing.Size(105, 19);
             this.label6.TabIndex = 10;
             this.label6.Text = "Peso de envío";
             // 
@@ -253,7 +262,7 @@
             this.cbShipper.FormattingEnabled = true;
             this.cbShipper.Location = new System.Drawing.Point(779, 55);
             this.cbShipper.Name = "cbShipper";
-            this.cbShipper.Size = new System.Drawing.Size(121, 24);
+            this.cbShipper.Size = new System.Drawing.Size(121, 27);
             this.cbShipper.TabIndex = 9;
             // 
             // label5
@@ -261,7 +270,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(776, 35);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 16);
+            this.label5.Size = new System.Drawing.Size(94, 19);
             this.label5.TabIndex = 8;
             this.label5.Text = "Expendedor";
             // 
@@ -269,7 +278,7 @@
             // 
             this.dtpFeEnvi.Location = new System.Drawing.Point(550, 55);
             this.dtpFeEnvi.Name = "dtpFeEnvi";
-            this.dtpFeEnvi.Size = new System.Drawing.Size(200, 21);
+            this.dtpFeEnvi.Size = new System.Drawing.Size(200, 24);
             this.dtpFeEnvi.TabIndex = 7;
             // 
             // label4
@@ -277,7 +286,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(547, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(118, 19);
             this.label4.TabIndex = 6;
             this.label4.Text = "Fecha de envio";
             // 
@@ -285,7 +294,7 @@
             // 
             this.dtpFeReque.Location = new System.Drawing.Point(313, 54);
             this.dtpFeReque.Name = "dtpFeReque";
-            this.dtpFeReque.Size = new System.Drawing.Size(200, 21);
+            this.dtpFeReque.Size = new System.Drawing.Size(200, 24);
             this.dtpFeReque.TabIndex = 5;
             // 
             // label3
@@ -293,7 +302,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(310, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 16);
+            this.label3.Size = new System.Drawing.Size(125, 19);
             this.label3.TabIndex = 4;
             this.label3.Text = "Fecha requerida";
             // 
@@ -303,7 +312,7 @@
             this.cbEmpleado.FormattingEnabled = true;
             this.cbEmpleado.Location = new System.Drawing.Point(166, 51);
             this.cbEmpleado.Name = "cbEmpleado";
-            this.cbEmpleado.Size = new System.Drawing.Size(121, 24);
+            this.cbEmpleado.Size = new System.Drawing.Size(121, 27);
             this.cbEmpleado.TabIndex = 3;
             // 
             // label2
@@ -311,7 +320,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(163, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 16);
+            this.label2.Size = new System.Drawing.Size(81, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Empleado";
             // 
@@ -321,7 +330,7 @@
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(10, 51);
             this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(121, 24);
+            this.cbCliente.Size = new System.Drawing.Size(121, 27);
             this.cbCliente.TabIndex = 1;
             // 
             // label1
@@ -329,7 +338,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.Size = new System.Drawing.Size(58, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cliente";
             // 
@@ -355,7 +364,7 @@
             this.lbAviso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lbAviso.Location = new System.Drawing.Point(328, 210);
             this.lbAviso.Name = "lbAviso";
-            this.lbAviso.Size = new System.Drawing.Size(0, 16);
+            this.lbAviso.Size = new System.Drawing.Size(0, 19);
             this.lbAviso.TabIndex = 7;
             // 
             // btAgregar
@@ -373,16 +382,17 @@
             this.tbDescuento.Location = new System.Drawing.Point(322, 122);
             this.tbDescuento.MaxLength = 8;
             this.tbDescuento.Name = "tbDescuento";
-            this.tbDescuento.Size = new System.Drawing.Size(100, 21);
+            this.tbDescuento.Size = new System.Drawing.Size(100, 24);
             this.tbDescuento.TabIndex = 5;
             this.tbDescuento.Text = "0";
+            this.tbDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDescuento_KeyPress);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(319, 103);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 16);
+            this.label15.Size = new System.Drawing.Size(83, 19);
             this.label15.TabIndex = 4;
             this.label15.Text = "Descuento";
             // 
@@ -391,16 +401,17 @@
             this.tbCantidad.Location = new System.Drawing.Point(322, 61);
             this.tbCantidad.MaxLength = 2;
             this.tbCantidad.Name = "tbCantidad";
-            this.tbCantidad.Size = new System.Drawing.Size(100, 21);
+            this.tbCantidad.Size = new System.Drawing.Size(100, 24);
             this.tbCantidad.TabIndex = 3;
             this.tbCantidad.Text = "1";
+            this.tbCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidad_KeyPress);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(319, 41);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(61, 16);
+            this.label14.Size = new System.Drawing.Size(77, 19);
             this.label14.TabIndex = 2;
             this.label14.Text = "Cantidad";
             // 
@@ -415,6 +426,7 @@
             this.dgvProductos.Location = new System.Drawing.Point(21, 41);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
+            this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.Size = new System.Drawing.Size(292, 519);
             this.dgvProductos.TabIndex = 1;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
@@ -458,32 +470,36 @@
             // tbDescuEdit
             // 
             this.tbDescuEdit.Location = new System.Drawing.Point(9, 124);
+            this.tbDescuEdit.MaxLength = 8;
             this.tbDescuEdit.Name = "tbDescuEdit";
-            this.tbDescuEdit.Size = new System.Drawing.Size(86, 21);
+            this.tbDescuEdit.Size = new System.Drawing.Size(86, 24);
             this.tbDescuEdit.TabIndex = 4;
+            this.tbDescuEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDescuEdit_KeyPress);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(22, 105);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 16);
+            this.label17.Size = new System.Drawing.Size(83, 19);
             this.label17.TabIndex = 3;
             this.label17.Text = "Descuento";
             // 
             // tbCantidadEdit
             // 
             this.tbCantidadEdit.Location = new System.Drawing.Point(9, 59);
+            this.tbCantidadEdit.MaxLength = 2;
             this.tbCantidadEdit.Name = "tbCantidadEdit";
-            this.tbCantidadEdit.Size = new System.Drawing.Size(86, 21);
+            this.tbCantidadEdit.Size = new System.Drawing.Size(86, 24);
             this.tbCantidadEdit.TabIndex = 2;
+            this.tbCantidadEdit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCantidadEdit_KeyPress);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(22, 39);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(61, 16);
+            this.label16.Size = new System.Drawing.Size(77, 19);
             this.label16.TabIndex = 1;
             this.label16.Text = "Cantidad";
             // 
@@ -492,7 +508,7 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(30, 10);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 16);
+            this.label13.Size = new System.Drawing.Size(49, 19);
             this.label13.TabIndex = 0;
             this.label13.Text = "Editar";
             // 
@@ -523,6 +539,7 @@
             this.dgvOrden.Location = new System.Drawing.Point(23, 41);
             this.dgvOrden.Name = "dgvOrden";
             this.dgvOrden.ReadOnly = true;
+            this.dgvOrden.RowHeadersWidth = 51;
             this.dgvOrden.Size = new System.Drawing.Size(549, 519);
             this.dgvOrden.TabIndex = 0;
             this.dgvOrden.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrden_CellDoubleClick);
@@ -531,36 +548,46 @@
             // 
             this.Column1.Frozen = true;
             this.Column1.HeaderText = "IDPro";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
             // 
             // Column2
             // 
             this.Column2.Frozen = true;
             this.Column2.HeaderText = "Producto";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
             // 
             // Column3
             // 
             this.Column3.Frozen = true;
             this.Column3.HeaderText = "Precio";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
             // 
             // Column4
             // 
             this.Column4.Frozen = true;
             this.Column4.HeaderText = "Cantidad";
+            this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
             // 
             // Column5
             // 
             this.Column5.Frozen = true;
             this.Column5.HeaderText = "Descuento";
+            this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
             // 
             // groupBox4
             // 
@@ -584,7 +611,7 @@
             // 
             // Ordenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1151, 786);

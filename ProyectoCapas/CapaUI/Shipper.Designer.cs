@@ -73,8 +73,9 @@
             // 
             this.txCompany.Location = new System.Drawing.Point(110, 66);
             this.txCompany.Margin = new System.Windows.Forms.Padding(2);
+            this.txCompany.MaxLength = 40;
             this.txCompany.Name = "txCompany";
-            this.txCompany.Size = new System.Drawing.Size(110, 21);
+            this.txCompany.Size = new System.Drawing.Size(110, 24);
             this.txCompany.TabIndex = 1;
             this.txCompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txCompany_KeyPress);
             // 
@@ -82,8 +83,9 @@
             // 
             this.txphone.Location = new System.Drawing.Point(111, 105);
             this.txphone.Margin = new System.Windows.Forms.Padding(2);
+            this.txphone.MaxLength = 24;
             this.txphone.Name = "txphone";
-            this.txphone.Size = new System.Drawing.Size(110, 21);
+            this.txphone.Size = new System.Drawing.Size(110, 24);
             this.txphone.TabIndex = 2;
             this.txphone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txphone_KeyPress);
             // 
@@ -93,7 +95,7 @@
             this.label1.Location = new System.Drawing.Point(11, 69);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 16);
+            this.label1.Size = new System.Drawing.Size(121, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "CompanyName";
             // 
@@ -103,7 +105,7 @@
             this.label2.Location = new System.Drawing.Point(64, 111);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
+            this.label2.Size = new System.Drawing.Size(53, 19);
             this.label2.TabIndex = 4;
             this.label2.Text = "Phone";
             // 
@@ -113,7 +115,7 @@
             this.label3.Location = new System.Drawing.Point(47, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(74, 19);
             this.label3.TabIndex = 5;
             this.label3.Text = "ShipperID";
             // 
@@ -123,7 +125,7 @@
             this.label4.Location = new System.Drawing.Point(106, 38);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 16);
+            this.label4.Size = new System.Drawing.Size(0, 19);
             this.label4.TabIndex = 6;
             // 
             // btNuevo
@@ -177,7 +179,7 @@
             this.txShipper.Location = new System.Drawing.Point(110, 29);
             this.txShipper.Margin = new System.Windows.Forms.Padding(2);
             this.txShipper.Name = "txShipper";
-            this.txShipper.Size = new System.Drawing.Size(110, 21);
+            this.txShipper.Size = new System.Drawing.Size(110, 24);
             this.txShipper.TabIndex = 11;
             // 
             // label5
@@ -187,7 +189,7 @@
             this.label5.Location = new System.Drawing.Point(3, 140);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(193, 49);
+            this.label5.Size = new System.Drawing.Size(241, 61);
             this.label5.TabIndex = 12;
             this.label5.Text = "SHIPPERS";
             // 
@@ -228,7 +230,7 @@
             // 
             // Shipper
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1151, 786);
