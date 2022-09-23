@@ -33,13 +33,19 @@ namespace BLL
         /// Espera como parámetro un valor entero que tendrá el Id del cliente a eliminar.
         /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
         /// </summary>
-        /// <param name="customerId"></param>
+        /// <param name="ClienteID"></param>
         /// <returns></returns>
         public static bool EliminaClientes(string ClienteID)
         {
             return ClaseClientes.EliminarCustomer(ClienteID);
         }
-
+        /// <summary>
+        /// Ejecuta el método EditarCliente de la clase "ClaseClientes" en la capa DAL
+        /// Espera como parámetro una clase que contendrá como atributos los valores de los campos a editar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
         public static bool EditarClientes(Clientes Cliente)
         {
             return ClaseClientes.EditarCliente(Cliente);

@@ -20,12 +20,14 @@ namespace CapaUI
             InitializeComponent();
         }
 
+        // Evento de carga del formulario, ejecuta el método de Listar que muestra las regiones
         private void Form1_Load(object sender, EventArgs e)
         {
             Listar();
             Limpiarcontroles(); 
         }
 
+        // El método Cargar obtiene la data de la base de datos y la muestra através de una data grid view
         private void Listar()
         {
             dtListado = BLL.BLLRegiones.ListarRegiones("");
@@ -43,6 +45,10 @@ namespace CapaUI
 
         }
 
+        // Evento click del botón de Guardar.
+        // Realiza la acción de agregar un registro de regiones.
+        // Ejecuta el método de InsertarRegionesSP con los parámetros previamente asigandos a la clase regiones
+        // Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -63,11 +69,16 @@ namespace CapaUI
             }
         }
 
+        // Evento click del botón nuevo.
+        // Realiza la función de limpiar los controles de regiones.
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
             panelEE.Enabled = false;
         }
+
+        // El evento Limpiarcontroles borra el texto ingresado en los TextBox de regiones
+        // para un posterior ingreso de datos
         public void Limpiarcontroles()
         {
             txtRegionID.Text = "";
@@ -80,6 +91,9 @@ namespace CapaUI
            
         }
 
+        // evento que se acciona al hacer click en una celda del dgCat
+        // Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados 
+        // con el fin de aplicarle un mantenimiento posterior.
         private void dgRegiones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -100,6 +114,10 @@ namespace CapaUI
 
         }
 
+        // Evento click del botón de eliminar.
+        // Realiza la acción de eliminar un registro de regiones.
+        // Ejecuta el método de EliminaRegiones con el ID del region como parámetro
+        // Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
         private void btnEliminar_Click(object sender, EventArgs e)
         {
            
@@ -132,6 +150,10 @@ namespace CapaUI
 
         }
 
+        // Evento click del botón editar.
+        // Realiza la función de editar un registro en las regiones.
+        // Ejecuta método de EditarRegiones con los parámetros previamente asigandos a la clase de regiones
+        // Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
         private void btnEditar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -155,6 +177,7 @@ namespace CapaUI
         {
 
         }
+
         //En el txtbox de RegionNombre solo permite el ingreso de letras
         private void txtRegionNombre_KeyPress(object sender, KeyPressEventArgs e)
         {

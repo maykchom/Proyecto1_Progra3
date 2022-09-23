@@ -65,7 +65,14 @@ namespace BLL
         {
             return ClaseProductos.EditarProducto(Producto);
         }
-
+        /// <summary>
+        /// Método InsertarProductosSP.
+        /// Ejecuta el método InsertarProductosSP de la clase "ClaseProductos" en la capa DAL
+        /// Espera como parámetro una clase que contendrá como atributos los valores de los campos a editar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="productos"></param>
+        /// <returns></returns>
         public static bool InsertarProductosSP(Productos productos)
         {
             return ClaseProductos.InsertaProductoSP(productos);

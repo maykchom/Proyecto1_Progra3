@@ -25,7 +25,11 @@ namespace CapaUI
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Evento de carga del formulario, ejecuta el método de Listar que muestra las ordenes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Ordenes_Load(object sender, EventArgs e)
         {
             cargarClientes();
@@ -35,12 +39,17 @@ namespace CapaUI
             btAgregar.Enabled = false;
         }
 
+        /// <summary>
+        /// El método Cargar obtiene la data de la base de datos y la muestra através de una data grid view
+        /// </summary>
         private void cargarProductos()
         {
             dtListado = BLL.BLLOrdenes.ConsultaAbierta("Select * from vista_productos_orden");
             dgvProductos.DataSource = dtListado;
         }
-
+        /// <summary>
+        /// El método CargarClientes obtiene dos campos que son CUSTOMERID, COMPANYNAME de CUSTOMERS
+        /// </summary>
         private void cargarClientes()
         {
             DataTable dtz = new DataTable();
@@ -50,7 +59,9 @@ namespace CapaUI
             cbCliente.ValueMember = "CUSTOMERID";
             cbCliente.DataSource = dtz;
         }
-
+        /// <summary>
+        /// El método CargarEmpleados obtiene dos campos que son EMPLOYEEID, FIRSTNAME de EMPLOYEES 
+        /// </summary>
         private void cargarEmpleados()
         {
             DataTable dtz = new DataTable();
@@ -60,6 +71,9 @@ namespace CapaUI
             cbEmpleado.ValueMember = "EMPLOYEEID";
             cbEmpleado.DataSource = dtz;
         }
+        /// <summary>
+        /// El método cargarExpendedores obtiene dos campos que son SHIPPERID, COMPANYNAME de SHIPPERS
+        /// </summary>
         private void cargarExpendedores()
         {
             DataTable dtz = new DataTable();
@@ -69,7 +83,13 @@ namespace CapaUI
             cbShipper.ValueMember = "SHIPPERID";
             cbShipper.DataSource = dtz;
         }
-
+        /// <summary>
+        /// evento que se acciona al hacer click en una celda del dgCat
+        /// Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados 
+        /// con el fin de aplicarle un mantenimiento posterior.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -112,7 +132,12 @@ namespace CapaUI
 
             }
         }
-
+        /// <summary>
+        /// Evento click del botón de Agregar.
+        /// Realiza la acción de agregar un registro de productos a la orden.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btAgregar_Click(object sender, EventArgs e)
         {
             if (disProsele >= Convert.ToInt32(tbCantidad.Text))
@@ -144,7 +169,12 @@ namespace CapaUI
                 lbAviso.Text = "¡Unidades" + "\n" + "insuficientes!";
             }
         }
-
+        /// <summary>
+        /// Evento de insertarOrden.
+        /// Realiza la acción de insertar un registro de productos a la orden.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void insertarOrden()
         {
             Entidades.OrdenesRespuesta resultado = new Entidades.OrdenesRespuesta();            
@@ -177,13 +207,23 @@ namespace CapaUI
                 MessageBox.Show("No se pudo ingresar el registro");
             }
         }
-
+        /// <summary>
+        /// El boton, lo que hace es mostrar el formulario de las ordenes registradas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             verOrdenes vo = new verOrdenes();
             vo.ShowDialog();
         }
-
+        /// <summary>
+        /// Evento de insertarOrdenDetails.
+        /// Realiza la acción de insertar un registro de productos detallados a la orden.
+        /// Ejecuta el método de InsertarOrdenDetails con los parámetros previamente asigandos a la clase ordenes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void insertaOrdenDetails()
         {
             bool resultado = false;
@@ -206,7 +246,11 @@ namespace CapaUI
                 MessageBox.Show("No se pudo ingresar el registro");
             }
         }
-
+        /// <summary>
+        /// El tb ordenar, lo que hace es enviar los datos completos a la orden
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btOrdenar_Click(object sender, EventArgs e)
         {
             if ((string.IsNullOrEmpty(tbFreight.Text)) || (string.IsNullOrEmpty(tbShipName.Text)) || (string.IsNullOrEmpty(tbShipAddress.Text)) || (string.IsNullOrEmpty(tbShipCity.Text)) || (string.IsNullOrEmpty(tbRegDes.Text)) || (string.IsNullOrEmpty(tbCodPosDes.Text)) || (string.IsNullOrEmpty(tbPaisDes.Text)))
@@ -221,7 +265,9 @@ namespace CapaUI
                 limpiarControles();
             }
         }
-
+        /// <summary>
+        /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
+        /// </summary>
         private void limpiarControles()
         {
             cbCliente.SelectedIndex = 0;
@@ -240,7 +286,13 @@ namespace CapaUI
             tbDescuento.Text = "0";
             dgvOrden.Rows.Clear();            
         }
-
+        /// <summary>
+        /// evento que se acciona al hacer doble click en una celda del dgCat
+        /// Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados 
+        /// con el fin de editar los datos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvOrden_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -266,7 +318,13 @@ namespace CapaUI
             tbDescuEdit.Text = descuento.ToString();
             panelEditar.Visible = true;
         }
-
+        /// <summary>
+        /// Evento click del botón editar.
+        /// Realiza la función de editar la cantidad de producto y el descuento.
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btEditar_Click(object sender, EventArgs e)
         {
             int cantidadNueva = Convert.ToInt32(tbCantidadEdit.Text);

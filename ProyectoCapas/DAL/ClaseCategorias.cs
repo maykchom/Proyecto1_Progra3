@@ -96,7 +96,14 @@ namespace DAL
             return ExecTransaction(strSQL);
         }
 
-
+        /// <summary>
+        /// Método InsetaCategoriasSP
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de categoria.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla categoria que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="categorias"></param>
+        /// <returns></returns>
         public static bool InsertaCategoriasSP(categorias categorias)
         {
             MySqlCommand cmd = new MySqlCommand();

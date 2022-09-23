@@ -17,6 +17,10 @@ namespace CapaUI
         DataSet ds = new DataSet();
         DataTable dtOrden;
         DataTable dtListadodetalle;
+        /// <summary>
+        /// Se muestra el NoFactura en un Label
+        /// </summary>
+        /// <param name="NoFactura"></param>
         public visor(string NoFactura)
         {
             InitializeComponent();
@@ -27,7 +31,11 @@ namespace CapaUI
             ds.Tables.Add(dtOrden);
             ds.Tables.Add(dtListadodetalle);
         }
-
+        /// <summary>
+        /// Evento de carga del formulario, ejecuta el método de Listar que muestra los productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void visor_Load(object sender, EventArgs e)
         {
             ReportDataSource fuenteE;

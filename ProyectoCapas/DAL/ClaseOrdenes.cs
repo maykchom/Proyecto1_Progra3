@@ -17,7 +17,26 @@ namespace DAL
             string cadena = consulta;
             return Configuracion.GetDataTable(cadena);
         }
-
+        /// <summary>
+        /// Método InsertaOrdenES
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de Ordenes.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla ordenes que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="customerID"></param>
+        /// <param name="employeedID"></param>
+        /// <param name="orderDate"></param>
+        /// <param name="requiereDate"></param>
+        /// <param name="shippedDate"></param>
+        /// <param name="shipvia"></param>
+        /// <param name="freight"></param>
+        /// <param name="shipName"></param>
+        /// <param name="shipAddress"></param>
+        /// <param name="shipCity"></param>
+        /// <param name="shipRegion"></param>
+        /// <param name="shipPosCod"></param>
+        /// <param name="shipCountry"></param>
+        /// <returns></returns>
         public static OrdenesRespuesta InsertaOrdenES(string customerID, int employeedID, DateTime orderDate, DateTime requiereDate, DateTime shippedDate, 
             int shipvia, double freight, string shipName, string shipAddress, string shipCity, string shipRegion, string shipPosCod, string shipCountry)
         {
@@ -72,7 +91,18 @@ namespace DAL
             or.ID = (int)result;
             return or;            
         }
-
+        /// <summary>
+        /// Método InsertaOrdenDetails
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de Ordenes.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla ordenes que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="OrderID"></param>
+        /// <param name="ProductID"></param>
+        /// <param name="UnitPrice"></param>
+        /// <param name="Quantity"></param>
+        /// <param name="Discount"></param>
+        /// <returns></returns>
         public static bool InsertaOrdenDetails(int OrderID, int ProductID, decimal UnitPrice, int Quantity, double Discount)
         {
             MySqlCommand cmd = new MySqlCommand();

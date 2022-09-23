@@ -24,7 +24,16 @@ namespace BLL
             {
                 return ClaseShipper.ListarShipper(strShipper);
             }
-            public static bool EditarShipper(Shipper Shipper)
+        /// <summary>
+        /// Método EdirarShipper.
+        /// Ejecuta el método InsertarShipper de la clase "ClaseShipper" en la capa DAL
+        /// Espera como parámetro una clase que contendrá como atributos los valores de los campos a insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="Shipper"></param>
+        /// <returns></returns>
+       
+        public static bool EditarShipper(Shipper Shipper)
             {
                 return ClaseShipper.EditarShipper(Shipper);
             }

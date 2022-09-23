@@ -11,13 +11,28 @@ namespace DAL
 {
     public class ClaseTerritorios : Configuracion
     {
+        /// <summary>
+        /// Método ListarTerritorios
+        /// Ejecuta una consulta SQL de tipo "Select" que obtiene la data de la base de datos.
+        /// Espera como parámetro un string que definirá la consulta en caso de buscar algo en específico.
+        /// Retorna la data en formato de DataTable
+        /// </summary>
+        /// <param name="strTerritorio"></param>
+        /// <returns></returns>
         public static DataTable ListarTerritorios(string strTerritorio)
         {
             string strSQL = "select * from Territories";
             strSQL += " where TerritoryDescription like '%" + strTerritorio + "%'";
             return GetDataTable(strSQL);
         }
-
+        /// <summary>
+        /// Método InsetarTerritorios
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de territorios.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla territorios que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="Territorio"></param>
+        /// <returns></returns>
         public static bool InsertaTerritorios(Territorios Territorio)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -29,7 +44,14 @@ namespace DAL
             cmd.Parameters["@RegionID"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
         }
-
+        /// <summary>
+        /// Método EliminarTerritorios
+        /// Ejecuta una consulta SQL de tipo "Delete" que inserta un nuevo registro a la tabla de territorios.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla territorios que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="Territorios"></param>
+        /// <returns></returns>
         public static bool EliminaTerritorio(Territorios Territorios)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -40,8 +62,14 @@ namespace DAL
             return Configuracion.ExecTransactionParameters(cmd);
         }
 
-        // Editar Territorios
-        // Ejecuta una consulta SQL de tipo "Delete" que actualiza un registro en específico de la tabla Territorios.
+        /// <summary>
+        /// Método EditarTerritorios
+        /// Ejecuta una consulta SQL de tipo "Update" que inserta un nuevo registro a la tabla de territorios.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla territorios que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="territorio"></param>
+        /// <returns></returns>
         public static bool EditarTerritorio(Territorios territorio)
         {
             

@@ -21,13 +21,19 @@ namespace CapaUI
             InitializeComponent();
         }
 
-        //Evento carga de formulario, ejecula el metodo listar.
+        /// <summary>
+        /// Evento carga de formulario, ejecula el metodo listar.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Proveedores_Load(object sender, EventArgs e)
         {
             Listar();
             Limpiarcontroles();
         }
-        // El método Listar obtiene la data de la base de datos y la muestra através de una data grid view
+        /// <summary>
+        /// El método Listar obtiene la data de la base de datos y la muestra através de una data grid view
+        /// </summary>
         private void Listar()
         {
             dtListado = BLL.BLLProveedores.ListarProveedores("");
@@ -40,8 +46,15 @@ namespace CapaUI
 
         }
 
-        // boton de Editar
-        // Realiza la acción de editar un registro
+
+        /// <summary>
+        /// boton de Editar
+        /// Realiza la función de editar un registro en productos.
+        /// Ejecuta método de EditarProveedores con los parámetros previamente asigandos a la clase de proveedores
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -71,9 +84,13 @@ namespace CapaUI
                 MessageBox.Show("No se pudo editar el registro");
             }
         }
-
-        // BOTON DE NUEVO
-        // EJECUTA EL METODO DE LIMPIAR BOTONES
+        /// <summary>
+        /// BtNuevo
+        /// Evento de click del botón "Nuevo", ejecuta el método "Limpiarcontroles".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+    
         private void button1_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
@@ -100,11 +117,14 @@ namespace CapaUI
         {
             
         }
-
-        //BOTON DE ELIMINAR
-        //ELIMINA UN REGISTRO
-        //REALIZA LA ACCION DE ELIMINAR UN REGISTRO DE PROVEEDORES
-        //EJECUTA EL METODO DE ELIMINAR PROVEEDORES CON EL ID DEL PROVEEDOR.
+        /// <summary>
+        /// Evento click del botón de eliminar.
+        /// Realiza la acción de eliminar un registro de productos.
+        /// Ejecuta el método de EliminaProveedores con el ID del producto como parámetro
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void butELiminar_Click(object sender, EventArgs e)
         {
 
@@ -121,10 +141,14 @@ namespace CapaUI
                 MessageBox.Show("No se pudo Eliminar el registro");
             }
         }
-
-        // BOTON DE GUARDAR
-        // Implementa una instancia de la clase proveedores para la asignación de atributos.
-        // Ejecuta método de InsertarProveedores con los parámetros previamente asigandos a la clase Productos.
+        /// <summary>
+        /// Evento click del botón editar.
+        /// Realiza la función de agregar un registro a los proveedores.
+        /// Ejecuta método de InsertarProveedores con los parámetros previamente asigandos a la clase Proveedores
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void butGuardar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -155,9 +179,12 @@ namespace CapaUI
                 MessageBox.Show("No se pudo ingresar el registro");
             }
         }
-        // EVENTO QUE SE ACCIONA AL HACER CLICK EN UNA CELDA DATA GRID VIEW.
-        // Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados 
-        // con el fin de aplicarle un mantenimiento posterior.
+        /// <summary>
+        /// Evento que se acciona al hacer click en una celda del data grid view.
+        /// Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados con el fin de aplicarle un mantenimiento posterior
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

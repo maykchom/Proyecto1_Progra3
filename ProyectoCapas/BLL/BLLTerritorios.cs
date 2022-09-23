@@ -11,6 +11,14 @@ namespace BLL
 {
     public class BLLTerritorios
     {
+        /// <summary>
+        /// Método ListarTerritorios.
+        /// Ejecuta el método ListarTerritorios de la clase "ClaseTerritorios" en la capa DAL
+        /// Espera como parámetro un string que contendrá el valor de la consulta a buscar.
+        /// La data que devolverá será en formato DataTable
+        /// </summary>
+        /// <param name="strTerritorios"></param>
+        /// <returns></returns>
         public static DataTable ListarTerritorios(string strTerritorios)
         {
             return ClaseTerritorios.ListarTerritorios(strTerritorios);
@@ -37,7 +45,14 @@ namespace BLL
         {
             return ClaseTerritorios.EditarTerritorio(Territorio);
         }
-
+        /// <summary>
+        /// Método ListarTerritorios.
+        /// Ejecuta el método ListarTerritorios de la clase "ClaseTerritorios" en la capa DAL
+        /// Espera como parámetro un string que contendrá el valor de la consulta a buscar.
+        /// La data que devolverá será en formato DataTable
+        /// </summary>
+        /// <param name="Territorios"></param>
+        /// <returns></returns>
         public static bool InsertarTerritoriosSP(Territorios Territorios)
         {
             return ClaseTerritorios.InsertaTerritorios(Territorios);

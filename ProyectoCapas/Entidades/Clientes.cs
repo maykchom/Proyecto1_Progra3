@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
     /// <summary>
+    /// La clase Clientes
     ///  representa a la entidad de clientes de la base de datos
     ///  Los atributos de la clase representan a los campos de la entidad clientes
     /// </summary>

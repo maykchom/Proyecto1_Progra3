@@ -60,7 +60,14 @@ namespace CapaUI
             Limpiarcontroles();
             panelEE.Enabled = false;
         }
-
+        /// <summary>
+        /// Evento click del botón de Guardar.
+        /// Realiza la acción de agregar un registro de shipper.
+        /// Ejecuta el método de InsertarShipperSP con los parámetros previamente asigandos a la clase categorias
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btGuardar_Click(object sender, EventArgs e)
         {
 
@@ -85,7 +92,13 @@ namespace CapaUI
 
             }
         }
-
+        /// <summary>
+        /// evento que se acciona al hacer click en una celda del dgCat
+        /// Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados 
+        /// con el fin de aplicarle un mantenimiento posterior.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgShipper_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try

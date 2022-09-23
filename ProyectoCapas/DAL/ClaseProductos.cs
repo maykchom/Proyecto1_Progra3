@@ -26,19 +26,17 @@ namespace DAL
             //strSQL += " where ProductName like '%" + Productos + "%'";
             return Configuracion.GetDataTable(strSQL);
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="campos"></param>
-        /// <param name="consulta"></param>
-        /// <returns></returns>
+       
         public static DataTable ConsultaAbierta(string campos, string consulta)
         {
             string cadena = "select " + campos + " from " + consulta;
             return Configuracion.GetDataTable(cadena);
         }
         /// <summary>
-        /// 
+        /// Método InsertarProductosSP
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de producto.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla Products que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
         /// </summary>
         /// <param name="productos"></param>
         /// <returns></returns>

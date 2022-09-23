@@ -9,9 +9,12 @@ using Entidades;
 
 namespace BLL
 {
-    // METODO LISTAR PROVEEDORES.
-    // Espera como parámetro un string que contendrá el valor de la consulta a buscar.
-    // La data que devolverá será en formato DataTable
+
+    /// <summary>
+    /// METODO LISTAR PROVEEDORES.
+    /// Espera como parámetro un string que contendrá el valor de la consulta a buscar.
+    /// La data que devolverá será en formato DataTable
+    /// </summary>
     public class BLLProveedores
     {
         public static DataTable ListarProveedores(string strProveedores)
@@ -20,7 +23,7 @@ namespace BLL
         }
 
         // METODO INSERTAR PROVEEDORES.
-        /// Ejecuta el método InsertarProveedores de la clase "ClaseProveedores" en la capa DAL.
+        // Ejecuta el método InsertarProveedores de la clase "ClaseProveedores" en la capa DAL.
         public static bool InsertarProveedores(Proveedores Proveedor)
         {
             return ClaseProveedores.InsertaProveedores(Proveedor);
@@ -39,7 +42,12 @@ namespace BLL
         {
             return ClaseProveedores.EditarProveedor(Proveedor);
         }
-
+        /// <summary>
+        /// Método InsertarProveedoresSP.
+        /// Ejecuta el método InsertarProveedores de la clase "ClaseProveedores" en la capa DAL
+        /// </summary>
+        /// <param name="proveedores"></param>
+        /// <returns></returns>
         public static bool InsertarProveedoresSP(Proveedores proveedores)
         {
             return ClaseProveedores.InsertaProveedorSP(proveedores);

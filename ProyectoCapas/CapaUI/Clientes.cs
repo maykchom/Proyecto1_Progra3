@@ -40,12 +40,7 @@ namespace CapaUI
             dgClientes.DataSource = dtListado;
 
         }
-        /// <summary>
-        /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
-        /// </summary>
-
-
-
+        
         private void label17_Click(object sender, EventArgs e)
         {
 
@@ -57,6 +52,10 @@ namespace CapaUI
             Limpiarcontroles();
             panelEE.Enabled = false;
         }
+        /// <summary>
+        /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
+        /// </summary>
+
         public void Limpiarcontroles()
         {
             txtClienteID.Text = "";
@@ -137,9 +136,14 @@ namespace CapaUI
             }
         }
 
-
-
-
+        /// <summary>
+        /// Evento click del botón de Guardar.
+        /// Realiza la acción de agregar un registro de clientes.
+        /// Ejecuta el método de InsertarClientes con los parámetros previamente asigandos a la clase Clientes
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void butGuardar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -175,6 +179,13 @@ namespace CapaUI
         {
         }
 
+        /// <summary>
+        /// evento que se acciona al hacer click en una celda del dgCat
+        /// Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados 
+        /// con el fin de aplicarle un mantenimiento posterior.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -211,6 +222,7 @@ namespace CapaUI
         {
 
         }
+
         //En el txtbox de ClienteID solo permite el ingreso de 5 letras
         private void txtClienteID_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -219,6 +231,7 @@ namespace CapaUI
                 e.Handled = true;
             }
         }
+
         //En el txtbox de NombreContacto solo permite el ingreso de letras
         private void txtNombreContacto_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -227,6 +240,7 @@ namespace CapaUI
                 e.Handled = true;
             }
         }
+
         //En el txtbox de CargoContacto solo permite el ingreso de letras
         private void txtCargoContacto_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -235,6 +249,7 @@ namespace CapaUI
                 e.Handled = true;
             }
         }
+
         //En el txtbox de País solo permite el ingreso de letras
         private void txtPais_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -243,6 +258,7 @@ namespace CapaUI
                 e.Handled = true;
             }
         }
+
         //En el txtbox de Region solo permite el ingreso de letras
         private void txtRegion_KeyPress(object sender, KeyPressEventArgs e)
         {

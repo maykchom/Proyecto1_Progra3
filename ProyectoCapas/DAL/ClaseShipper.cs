@@ -53,7 +53,10 @@ namespace DAL
             return Configuracion.ExecTransactionParameters(cmd);
         }
         /// <summary>
-        /// 
+        /// Método InsetarShipperSP
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de Shipper.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla Regiones que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
         /// </summary>
         /// <param name="productos"></param>
         /// <returns></returns>

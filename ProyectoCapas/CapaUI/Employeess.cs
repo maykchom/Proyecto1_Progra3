@@ -22,16 +22,29 @@ namespace CapaUI
         {
             InitializeComponent();
         }
+
+        // Evento de carga del formulario, ejecuta el método de Listar que muestra los Employeess
         private void Employeess_Load(object sender, EventArgs e)
         {
             cargarEmployees();
             txLNam.Focus();
         }
+
+        // El método Cargar obtiene la data de la base de datos y la muestra através de una data grid view
         public void cargarEmployees()
         {
             dataEmpl = BLLEmployees.ListarEmployees("");
             dgEmpl.DataSource = dataEmpl;
         }
+
+        /// <summary>
+        /// Evento click del botón de Guardar.
+        /// Realiza la acción de agregar un registro de employeess.
+        /// Ejecuta el método de InsertaEmployees con los parámetros previamente asigandos a la clase employeess
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btGuardar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -72,6 +85,9 @@ namespace CapaUI
                 MessageBox.Show("No se pudo ingresar el registro");
             }
         }
+
+        // El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos.
+        
         private void Limpiarcontroles()
         {
             txEmpID.Clear();
@@ -95,6 +111,14 @@ namespace CapaUI
             txEmpID.Focus();
             txLNam.Focus();
         }
+
+        /// <summary>
+        /// Evento click del botón SelectPho.
+        /// Realiza la acción de agregar una imagen al registro de employeess.
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btSelectPho_Click(object sender, EventArgs e)
         {
             int size = -1;
@@ -118,6 +142,15 @@ namespace CapaUI
 
             }
         }
+
+        /// <summary>
+        /// Evento click del botón de eliminar.
+        /// Realiza la acción de eliminar un registro de employees.
+        /// Ejecuta el método de EliminarEmployees con el ID del Employeess como parámetro
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btEliminar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -137,6 +170,12 @@ namespace CapaUI
 
         }
 
+        /// <summary>
+        /// evento que se acciona al hacer click en una celda del dgCatEmpl para obtener los datos deseados en los tx
+        /// con el fin de aplicarle un mantenimiento posterior.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgEmpl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -184,6 +223,15 @@ namespace CapaUI
             }
             
         }
+
+        /// <summary>
+        /// Evento click del botón editar.
+        /// Realiza la función de editar un registro de employeess.
+        /// Ejecuta método de EditarEmployees con los parámetros previamente asigandos a la clase de employeess
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btEditar_Click(object sender, EventArgs e)
         {
 
@@ -224,13 +272,19 @@ namespace CapaUI
             }
         }
 
-
+        /// <summary>
+        /// Evento click del botón nuevo.
+        /// Realiza la función de limpiar los controles de categorias.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
             panelEE.Enabled = false;
             pbPhoto.Image = null;
         }
+
         //En el txtbox de LastName solo permite el ingreso de letras
         private void txLNam_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -11,12 +11,28 @@ namespace DAL
 {
     public class ClaseEmployees
     {
+        /// <summary>
+        /// Método ListarEmployees
+        /// Ejecuta una consulta SQL de tipo "Select" que obtiene la data de la base de datos.
+        /// Espera como parámetro un string que definirá la consulta en caso de buscar algo en específico.
+        /// Retorna la data en formato de DataTable
+        /// </summary>
+        /// <param name="strEmpl"></param>
+        /// <returns></returns>
         public static DataTable ListarEmployees(string strEmpl)
         {
             string strSQL = "select * from cargaremployees";
             strSQL += " where LastName like '%" + strEmpl + "%'";
             return Configuracion.GetDataTable(strSQL);
         }
+        /// <summary>
+        /// Método InsetarEmployees
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla de Employees.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla employees que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="employees"></param>
+        /// <returns></returns>
         public static bool InsertarEmployees(Employees employees)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -60,6 +76,14 @@ namespace DAL
             cmd.Parameters["@Salary"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
         }
+        /// <summary>
+        /// Método EditarEmployees
+        /// Ejecuta una consulta SQL de tipo "Update" que inserta un nuevo registro a la tabla de Employees.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla employees que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="employees"></param>
+        /// <returns></returns>
         public static bool EditarEmployees(Employees employees)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -105,7 +129,14 @@ namespace DAL
             cmd.Parameters["@Salary"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
         }
-
+        /// <summary>
+        /// Método EliminarEmployees
+        /// Ejecuta una consulta SQL de tipo "Delete" que inserta un nuevo registro a la tabla de Employees.
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla employees que se desean insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="employees"></param>
+        /// <returns></returns>
         public static bool EliminaEmployees(Employees employees)
         {
             MySqlCommand cmd = new MySqlCommand();

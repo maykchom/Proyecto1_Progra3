@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
+    /// <summary>
+    /// La clase Employees representa a la entidad employees de la base de datos
+    /// Los atributos de la clase representan a los campos de la entidad employees
+    /// </summary>
     public class Employees
     {
         public int EmployeeID { get; set; }

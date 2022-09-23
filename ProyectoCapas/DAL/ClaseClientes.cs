@@ -26,12 +26,14 @@ namespace DAL
             return GetDataTable(strSQL);
         }
 
-        // Eliminar Clientes
-        // Ejecuta un Procedimiento almacenado SQL de tipo "Delete" que actualiza un registro en específico de la tabla customers.
-        // Espera como parámetro un valor entero que contiene el ID del curtomer a eliminar.
-       
-        // Editar Cliente
-        // Ejecuta un procedimiento almacenado SQL de tipo "Delete" que actualiza un registro en específico de la tabla costumers.
+        /// <summary>
+        /// Método EditarCliente
+        /// Ejecuta una consulta SQL de tipo "Update" que actualiza un registro en específico de la tabla cliente
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla cliente que se desean actualizar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
         public static bool EditarCliente(Clientes Cliente)
         {
             
@@ -63,7 +65,10 @@ namespace DAL
         
     }
         /// <summary>
-        /// 
+        /// Método InsertarClientes
+        /// Ejecuta una consulta SQL de tipo "Insert" que inserta un nuevo registro a la tabla cliente
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla cliente que se desean actualizar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
         /// </summary>
         /// <param name="clientes"></param>
         /// <returns></returns>
@@ -95,9 +100,15 @@ namespace DAL
             cmd.Parameters.AddWithValue("@Fax", Cliente.Fax);
             return Configuracion.ExecTransactionParameters(cmd);
         }
-        // Eliminar clientes
-        // Ejecuta un Procedimiento almacenado SQL de tipo "Delete" que actualiza un registro en específico de la tabla customers.
-       
+
+        /// <summary>
+        /// Método EliminarCustomer
+        /// Ejecuta una consulta SQL de tipo "Delete" que inserta un nuevo registro a la tabla cliente
+        /// Espera como parámetro una clase que contiene los atributos que son equivalentes a los campos de la tabla cliente que se desean actualizar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="Cliente"></param>
+        /// <returns></returns>
         public static bool EliminarCustomer(string Cliente)
         {
 

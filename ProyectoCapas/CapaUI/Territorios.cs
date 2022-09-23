@@ -19,10 +19,18 @@ namespace CapaUI
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Evento de carga del formulario, ejecuta el método de Listar que muestra los productos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Territorios_Load(object sender, EventArgs e)
         {
             Listar();
         }
+        /// <summary>
+        /// El método Listar obtiene la data de la base de datos y la muestra através de una data grid view
+        /// </summary>
         private void Listar()
         {
             dtListado = BLL.BLLTerritorios.ListarTerritorios("");
@@ -34,13 +42,19 @@ namespace CapaUI
         {
 
         }
-
-        //BOTON NUEVO, LIMPIA LAS CASILLAS.
+        /// <summary>
+        /// Evento de click del botón "Nuevo", ejecuta el método "Limpiarcontroles".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void butNuevo_Click(object sender, EventArgs e)
         {
             Limpiarcontroles();
             panelEE.Enabled = false;
         }
+        /// <summary>
+        /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
+        /// </summary>
         public void Limpiarcontroles()
         {
             txtTerritorioID.Text = "";
@@ -48,7 +62,14 @@ namespace CapaUI
             txtRegionID.Text = "";
             txtDescripcionTerritorio.Focus();
         }
-        // BOTON DE EDITAR
+        /// <summary>
+        /// Evento click del botón editar.
+        /// Realiza la función de editar un registro en Territorios.
+        /// Ejecuta método de EditarTerritorios con los parámetros previamente asigandos a la clase de Territorios
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void butEditar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -70,7 +91,14 @@ namespace CapaUI
                 MessageBox.Show("No se pudo editar el registro");
             }
         }
-        //BOTON ELIMINAR
+        /// <summary>
+        /// Evento click del botón de eliminar.
+        /// Realiza la acción de eliminar un registro de territorios.
+        /// Ejecuta el método de EliminaTerritorios con el ID del territorio como parámetro
+        /// Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void butELiminar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -91,8 +119,15 @@ namespace CapaUI
                 MessageBox.Show("No se pudo Eliminar el registro");
             }
         }
-        
-        //BOTON GUARDAR
+
+        /// <summary>
+        /// Evento click del botón guardar.
+        /// Realiza la función de agregar un registro a los territorios.
+        /// Ejecuta método de InsertarTerritorios con los parámetros previamente asigandos a la clase territorios
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void butGuardar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -116,8 +151,12 @@ namespace CapaUI
                 MessageBox.Show("No se pudo ingresar el registro");
             }
         }
-
-   
+        /// <summary>
+        /// Evento que se acciona al hacer click en una celda del data grid view.
+        /// Obtiene la coordenada de la fila y columna de la celda para obtener los datos deseados con el fin de aplicarle un mantenimiento posterior
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgTerritorios_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -136,7 +175,11 @@ namespace CapaUI
                 panelEE.Enabled = false;
             }
         }
-
+        /// <summary>
+        /// Evento listar territorios y ejecuta el método "Limpiarcontroles".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Territorios_Load_1(object sender, EventArgs e)
         {
             Listar();

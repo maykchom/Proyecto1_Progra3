@@ -250,3 +250,35 @@ C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\BLL\bin\Debug\K4os.Hash.xxHas
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\BLL\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Mike\Documents\Proyectos C#\ProyectoCapas\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\50253\OneDrive\Documentos\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\BLL.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\BLL.pdb
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\DAL.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Entidades.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\MySql.Data.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Google.Protobuf.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\ZstdNet.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Memory.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\DAL.pdb
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\DAL.dll.config
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Entidades.pdb
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\MySql.Data.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\Google.Protobuf.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Memory.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.dll
+C:\Users\ASUS\Documents\GitHub\Proyecto1_Progra3\ProyectoCapas\BLL\obj\Debug\BLL.pdb

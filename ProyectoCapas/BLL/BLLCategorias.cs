@@ -77,7 +77,14 @@ namespace BLL
         {
             return ClaseCategorias.EliminaCategoria(CatID);
         }
-
+        /// <summary>
+        /// Método InsertarCategoriasSP.
+        /// Ejecuta el método InsertarCategoriasSP de la clase "ClaseCategorias" en la capa DAL
+        /// Espera como parámetro una clase que contendrá como atributos los valores de los campos a insertar.
+        /// Retorna un valor booleano con el fin de informar el éxito que tuvo la transacción.
+        /// </summary>
+        /// <param name="categoria"></param>
+        /// <returns></returns>
         public static bool InsertarCategoriasSP(categorias categorias)
         {
             return ClaseCategorias.InsertaCategoriasSP(categorias);

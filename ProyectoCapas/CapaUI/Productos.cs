@@ -44,7 +44,9 @@ namespace CapaUI
             dgPro.DataSource = dtListado;
 
         }
-
+        /// <summary>
+        /// El método Cargar obtiene campos de la consulta abierta que esta en la BLLProductos
+        /// </summary>
         private void cargarSuppliers()
         {
             DataTable dtz = new DataTable();
@@ -79,7 +81,7 @@ namespace CapaUI
                 txproName.Focus();
             }
             /// <summary>
-            /// Evento click del botón editar.
+            /// Evento click del botón guardar.
             /// Realiza la función de agregar un registro a los productos.
             /// Implementa una instancia de la clase regiones para la asignación de atributos 
             /// Ejecuta método de InsertarProductos con los parámetros previamente asigandos a la clase Productos
@@ -134,7 +136,14 @@ namespace CapaUI
             Limpiarcontroles();
             panelEE.Enabled = false;
         }
-
+        /// <summary>
+        /// Evento click del botón editar.
+        /// Realiza la función de editar un registro en productos.
+        /// Ejecuta método de EditarProducto con los parámetros previamente asigandos a la clase de productos
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtEditar_Click(object sender, EventArgs e)
         {
             bool resultado = false;
@@ -250,7 +259,10 @@ namespace CapaUI
 
             
         }
-
+        /// <summary>
+        /// Obtiene dos campos de otra tabla
+        /// </summary>
+        /// <param name="valor"></param>
         public void obtenerIDSupplier(string valor)
         {
             BLL.BLLProductos.ConsultaAbierta("SupplierID", "CompanyName = " + valor);
