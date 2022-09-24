@@ -33,9 +33,22 @@ namespace CapaUI
         /// </summary>
         private void Listar()
         {
-            dtListado = BLL.BLLTerritorios.ListarTerritorios("");
+            dtListado = BLL.BLLTerritorios.ListarTerritorios();
             dgTerritorios.DataSource = dtListado;
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void cargarRegiones()
+        {
+            DataTable dtz = new DataTable();
+            dtz.Clear();
+            dtz = BLL.BLLProductos.ConsultaAbierta("RegionID, RegionDescription", "Region");
+            cbRegion.DisplayMember = "RegionDescription";
+            cbRegion.ValueMember = "RegionID";
+            cbRegion.DataSource = dtz;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -58,9 +71,8 @@ namespace CapaUI
         public void Limpiarcontroles()
         {
             txtTerritorioID.Text = "";
-            txtDescripcionTerritorio.Text = "";
-            txtRegionID.Text = "";
-            txtDescripcionTerritorio.Focus();
+            txtDescripcionTerritorio.Text = "";            
+            txtDescripcionTerritorio.Focus();            
         }
         /// <summary>
         /// Evento click del botón editar.
@@ -72,23 +84,30 @@ namespace CapaUI
         /// <param name="e"></param>
         private void butEditar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Territorios Territorio = new Entidades.Territorios();
-            Territorio.TerritoryID = Convert.ToInt32(txtTerritorioID.Text);
-            Territorio.TerritoryDescription = txtDescripcionTerritorio.Text;
-            Territorio.RegionID = Convert.ToInt32(txtRegionID.Text);
-          
-
-            resultado = BLL.BLLTerritorios.EditarTerritorios(Territorio);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtDescripcionTerritorio.Text)))
             {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                Listar();
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo editar el registro");
+                bool resultado = false;
+                Entidades.Territorios Territorio = new Entidades.Territorios();
+                Territorio.TerritoryID = Convert.ToInt32(txtTerritorioID.Text);
+                Territorio.TerritoryDescription = txtDescripcionTerritorio.Text;
+                Territorio.RegionID = Convert.ToInt32(cbRegion.SelectedValue);
+          
+
+                resultado = BLL.BLLTerritorios.EditarTerritorios(Territorio);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro editado correctamente");
+                    Limpiarcontroles();
+                    Listar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar el registro");
+                }
             }
         }
         /// <summary>
@@ -130,25 +149,30 @@ namespace CapaUI
         /// <param name="e"></param>
         private void butGuardar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Territorios Territorio = new Entidades.Territorios();
-            //Territorio.TerritoryID = Convert.ToInt32(txtTerritorioID.Text);
-            Territorio.TerritoryDescription = txtDescripcionTerritorio.Text;
-            Territorio.RegionID = Convert.ToInt32(txtRegionID.Text);
-            //Territorio.RegionID = Convert.ToInt32(CbRegionID.SelectedValue);
-
-
-            resultado = BLL.BLLTerritorios.InsertarTerritorios(Territorio);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtDescripcionTerritorio.Text)))
             {
-                MessageBox.Show("Registro ingresado correctamente");
-                Limpiarcontroles();
-                Listar();
-                dgTerritorios.FirstDisplayedScrollingRowIndex = dgTerritorios.RowCount - 1;
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo ingresar el registro");
+                bool resultado = false;
+                Entidades.Territorios Territorio = new Entidades.Territorios();
+                Territorio.TerritoryDescription = txtDescripcionTerritorio.Text;
+                Territorio.RegionID = Convert.ToInt32(cbRegion.SelectedValue);
+
+                resultado = BLL.BLLTerritorios.InsertarTerritorios(Territorio);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro ingresado correctamente");
+                    Limpiarcontroles();
+                    Listar();
+                    dgTerritorios.FirstDisplayedScrollingRowIndex = dgTerritorios.RowCount - 1;
+                    cbRegion.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo ingresar el registro");
+                }
             }
         }
         /// <summary>
@@ -167,8 +191,13 @@ namespace CapaUI
                 RowNo = e.RowIndex;
                 txtTerritorioID.Text = dgTerritorios.Rows[RowNo].Cells[0].Value.ToString();
                 txtDescripcionTerritorio.Text = dgTerritorios.Rows[RowNo].Cells[1].Value.ToString();
-                txtRegionID.Text = dgTerritorios.Rows[RowNo].Cells[2].Value.ToString();
 
+                //Obtener el ID de la region
+                DataTable tablaSup = new DataTable();
+                string regBus = dgTerritorios.Rows[RowNo].Cells[2].Value.ToString();
+                tablaSup = BLLProductos.ConsultaAbierta("RegionID", "Region where RegionDescription = \"" + regBus + "\"");
+                int IdReg = Convert.ToInt32(tablaSup.Rows[0][0]);
+                cbRegion.SelectedValue = IdReg;
             }
             catch (System.ArgumentOutOfRangeException)
             {
@@ -184,6 +213,7 @@ namespace CapaUI
         {
             Listar();
             Limpiarcontroles();
+            cargarRegiones();
         }
 
         //En el txtbox de DescripcionTerritorio solo permite el ingreso de letras

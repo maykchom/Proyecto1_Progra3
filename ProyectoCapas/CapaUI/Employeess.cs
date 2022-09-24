@@ -18,6 +18,7 @@ namespace CapaUI
     {
         private DataTable dataEmpl;
         string nombre;
+        bool imagenLista = false;
         public Employeess()
         {
             InitializeComponent();
@@ -27,7 +28,19 @@ namespace CapaUI
         private void Employeess_Load(object sender, EventArgs e)
         {
             cargarEmployees();
+            cargarReportsTo();
+            Limpiarcontroles();
             txLNam.Focus();
+        }
+
+        private void cargarReportsTo()
+        {
+            DataTable dtz = new DataTable();
+            dtz.Clear();
+            dtz = BLL.BLLEmployees.ConsultaAbierta("EmployeeID, FirstName", "employees");
+            cbReport.DisplayMember = "FirstName";
+            cbReport.ValueMember = "EmployeeID";
+            cbReport.DataSource = dtz;
         }
 
         // El método Cargar obtiene la data de la base de datos y la muestra através de una data grid view
@@ -47,42 +60,62 @@ namespace CapaUI
         /// <param name="e"></param>
         private void btGuardar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Employees employees = new Employees();
-            //employees.EmployeeID = Convert.ToInt32(txEmpID.Text);
-            employees.LastName = txLNam.Text.ToString();
-            employees.FirstName = txFsNam.Text.ToString();
-            employees.Title = txTitle.Text.ToString();
-            employees.TitleOfCourtesy = txTitCourt.Text.ToString();
-            employees.BirthDate = Convert.ToDateTime(dtpBirth.Text);
-            employees.HireDate = Convert.ToDateTime(dtpHire.Text);
-            employees.Address = txAddress.Text.ToString();
-            employees.City = txCity.Text.ToString();
-            employees.Region = txRegion.Text.ToString();
-            employees.PostalCode = txPCode.Text.ToString();
-            employees.Country = txCountry.Text.ToString();
-            employees.HomePhone = txHPhone.Text.ToString();
-            employees.Extension = txExtens.Text.ToString();
-            employees.Notes = txNots.Text.ToString();
-            employees.ReportsTo = Convert.ToInt32(txReports.Text);
-            //employees.ReportsTo = 2;
-            employees.PhotoPath = txPhotPath.Text.ToString();
-            employees.Salary = Convert.ToDecimal(txSalary.Text);
-            MemoryStream ms = new MemoryStream();
-            Image photo = Image.FromFile(nombre);
-            photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-            employees.Photo = (ms.ToArray());
-            resultado = BLL.BLLEmployees.InsertaEmployees(employees);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txLNam.Text)) || (string.IsNullOrEmpty(txFsNam.Text)) || (string.IsNullOrEmpty(txTitle.Text)) || (string.IsNullOrEmpty(txHPhone.Text)) || (string.IsNullOrEmpty(txExtens.Text)) || (string.IsNullOrEmpty(txTitCourt.Text)) || (string.IsNullOrEmpty(txAddress.Text)) || (string.IsNullOrEmpty(txSalary.Text)))
             {
-                MessageBox.Show("Registro ingresado correctamente");
-                Limpiarcontroles();
-                cargarEmployees();
-                dgEmpl.FirstDisplayedScrollingRowIndex = dgEmpl.RowCount - 1;
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo ingresar el registro");
+                bool resultado = false;
+                Employees employees = new Employees();
+                //employees.EmployeeID = Convert.ToInt32(txEmpID.Text);
+                employees.LastName = txLNam.Text.ToString();
+                employees.FirstName = txFsNam.Text.ToString();
+                employees.Title = txTitle.Text.ToString();
+                employees.TitleOfCourtesy = txTitCourt.Text.ToString();
+                employees.BirthDate = Convert.ToDateTime(dtpBirth.Text);
+                employees.HireDate = Convert.ToDateTime(dtpHire.Text);
+                employees.Address = txAddress.Text.ToString();
+                employees.City = txCity.Text.ToString();
+                employees.Region = txRegion.Text.ToString();
+                employees.PostalCode = txPCode.Text.ToString();
+                employees.Country = txCountry.Text.ToString();
+                employees.HomePhone = txHPhone.Text.ToString();
+                employees.Extension = txExtens.Text.ToString();
+                employees.Notes = txNots.Text.ToString();
+                employees.ReportsTo = Convert.ToInt32(cbReport.SelectedValue);
+                //employees.ReportsTo = 2;
+                employees.PhotoPath = txPhotPath.Text.ToString();
+                employees.Salary = Convert.ToDecimal(txSalary.Text);
+
+                // verifica si existe una imagen seleccionada desde fromFile
+                //si existen imagen, se guarda en la base de datos
+                //de lo contrario, se guarda el campo como nulo
+                if (imagenLista)
+                {                
+                    MemoryStream ms = new MemoryStream();
+                    Image photo = Image.FromFile(nombre);
+                    photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    employees.Photo = (ms.ToArray());
+                    imagenLista = false;
+                }
+                else
+                {
+                    employees.Photo = null;
+                }
+
+                resultado = BLL.BLLEmployees.InsertaEmployees(employees);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro ingresado correctamente");
+                    Limpiarcontroles();
+                    cargarEmployees();
+                    dgEmpl.FirstDisplayedScrollingRowIndex = dgEmpl.RowCount - 1;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo ingresar el registro");
+                }
             }
         }
 
@@ -105,11 +138,12 @@ namespace CapaUI
             txHPhone.Clear();
             txExtens.Clear();
             txNots.Clear();
-            txReports.Clear();
+            cbReport.SelectedIndex = 0;
             txPhotPath.Clear();
             txSalary.Clear();
-            txEmpID.Focus();
             txLNam.Focus();
+            nombre = null;
+            pbPhoto.Image = null;
         }
 
         /// <summary>
@@ -133,6 +167,7 @@ namespace CapaUI
                     string text = File.ReadAllText(file);
                     size = text.Length;
                     pbPhoto.Image = new Bitmap(openFileDialog1.FileName);
+                    imagenLista = true;
                 }
                 catch (IOException)
                 {
@@ -200,10 +235,13 @@ namespace CapaUI
                 txHPhone.Text = dgEmpl.Rows[RowNo].Cells[12].Value.ToString();
                 txExtens.Text = dgEmpl.Rows[RowNo].Cells[13].Value.ToString();
                 txNots.Text = dgEmpl.Rows[RowNo].Cells[15].Value.ToString();
-                txReports.Text = dgEmpl.Rows[RowNo].Cells[16].Value.ToString();
+                //txReports.Text = dgEmpl.Rows[RowNo].Cells[16].Value.ToString();
                 txPhotPath.Text = dgEmpl.Rows[RowNo].Cells[17].Value.ToString();
                 txSalary.Text = dgEmpl.Rows[RowNo].Cells[18].Value.ToString();
 
+                //Obtener el ID del empleado para mostrarlo en el cbReport
+                int empBus = Convert.ToInt32(dgEmpl.Rows[RowNo].Cells[16].Value);
+                cbReport.SelectedValue = empBus;
 
                 //Verificamos si el registro de la imagen es nulo para evitar errores en el picture box
                 if (dgEmpl.Rows[RowNo].Cells[14].Value != DBNull.Value)
@@ -234,7 +272,6 @@ namespace CapaUI
         /// <param name="e"></param>
         private void btEditar_Click(object sender, EventArgs e)
         {
-
             bool resultado = false;
             Employees employees = new Employees();
             employees.EmployeeID = Convert.ToInt32(txEmpID.Text);
@@ -252,14 +289,43 @@ namespace CapaUI
             employees.HomePhone = txHPhone.Text.ToString();
             employees.Extension = txExtens.Text.ToString();
             employees.Notes = txNots.Text.ToString();
-            employees.ReportsTo = Convert.ToInt32(txReports.Text);
+            employees.ReportsTo = Convert.ToInt32(cbReport.SelectedValue);
             employees.PhotoPath = txPhotPath.Text.ToString();
             employees.Salary = Convert.ToDecimal(txSalary.Text);
-            MemoryStream ms = new MemoryStream();
-            Image photo = Image.FromFile(nombre);
-            photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-            employees.Photo = (ms.ToArray());
+
+
+            // verifica si existe una imagen seleccionada desde fromFile
+            //si existen imagen, se guarda en la base de datos
+            //de lo contrario, se guarda el campo como nulo
+            if (imagenLista)
+            {
+                MessageBox.Show("Imagen lista!");
+                MemoryStream ms = new MemoryStream();
+                Image photo = Image.FromFile(nombre);
+                photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                employees.Photo = (ms.ToArray());
+                imagenLista = false;
+            }
+            else
+            {
+                //verifica si no existe previamente una imagen en el pciture box para guardar el campo de la imagen como nulo
+                //de lo contrario se guarda la imagen del picture box en el campo de la imagen
+                MessageBox.Show("Imagen NO lista!");
+                if (pbPhoto.Image == null)
+                {
+                    employees.Photo = null;
+                }
+                else
+                {
+                    MemoryStream ms = new MemoryStream();
+                    Image photo = pbPhoto.Image;
+                    photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    employees.Photo = (ms.ToArray());
+                    imagenLista = false;
+                }
+            }
             resultado = BLL.BLLEmployees.EditarEmployees(employees);
+
             if (resultado)
             {
                 MessageBox.Show("Registro editado correctamente");

@@ -19,10 +19,9 @@ namespace DAL
         /// </summary>
         /// <param name="strTerritorio"></param>
         /// <returns></returns>
-        public static DataTable ListarTerritorios(string strTerritorio)
+        public static DataTable ListarTerritorios()
         {
-            string strSQL = "select * from Territories";
-            strSQL += " where TerritoryDescription like '%" + strTerritorio + "%'";
+            string strSQL = "select * from vistaTerritorios order by TerritoryID";
             return GetDataTable(strSQL);
         }
         /// <summary>
@@ -83,6 +82,12 @@ namespace DAL
             cmd.Parameters.AddWithValue("@IDRegion", territorio.RegionID);
             cmd.Parameters["@IDRegion"].Direction = ParameterDirection.Input;
             return Configuracion.ExecTransactionParameters(cmd);
+        }
+
+        public static DataTable ConsultaAbierta(string campos, string consulta)
+        {
+            string cadena = "select " + campos + " from " + consulta;
+            return Configuracion.GetDataTable(cadena);
         }
     }
 }

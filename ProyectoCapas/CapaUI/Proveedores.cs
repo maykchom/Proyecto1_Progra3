@@ -57,31 +57,38 @@ namespace CapaUI
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Proveedores Proveedor = new Entidades.Proveedores();
-            Proveedor.SupplierID = Convert.ToInt32(txtProveedorID.Text);
-            Proveedor.CompanyName = txtCompania.Text;
-            Proveedor.ContactName = txtNombreContacto.Text;
-            Proveedor.ContactTitle = txtCargoContacto.Text;
-            Proveedor.Address = txtDireccion.Text;
-            Proveedor.City = txtCiudad.Text;
-            Proveedor.Region = txtRegion.Text;
-            Proveedor.PostalCode = txtCodigoPostal.Text;
-            Proveedor.Country = txtCiudad.Text;
-            Proveedor.Phone = txtTelefono.Text;
-            Proveedor.Fax = txtFax.Text;
-            Proveedor.HomePage = txtPaginaWeb.Text;
-         
-            resultado = BLL.BLLProveedores.EditarProveedores(Proveedor);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtCompania.Text)) || (string.IsNullOrEmpty(txtNombreContacto.Text)) || (string.IsNullOrEmpty(txtCargoContacto.Text)) || (string.IsNullOrEmpty(txtDireccion.Text)))
             {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                Listar();
+                MessageBox.Show("Algunos campos no deben quedar vacíos");
             }
             else
-            {
-                MessageBox.Show("No se pudo editar el registro");
+            {             
+                bool resultado = false;
+                Entidades.Proveedores Proveedor = new Entidades.Proveedores();
+                Proveedor.SupplierID = Convert.ToInt32(txtProveedorID.Text);
+                Proveedor.CompanyName = txtCompania.Text;
+                Proveedor.ContactName = txtNombreContacto.Text;
+                Proveedor.ContactTitle = txtCargoContacto.Text;
+                Proveedor.Address = txtDireccion.Text;
+                Proveedor.City = txtCiudad.Text;
+                Proveedor.Region = txtRegion.Text;
+                Proveedor.PostalCode = txtCodigoPostal.Text;
+                Proveedor.Country = txtCiudad.Text;
+                Proveedor.Phone = txtTelefono.Text;
+                Proveedor.Fax = txtFax.Text;
+                Proveedor.HomePage = txtPaginaWeb.Text;
+         
+                resultado = BLL.BLLProveedores.EditarProveedores(Proveedor);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro editado correctamente");
+                    Limpiarcontroles();
+                    Listar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar el registro");
+                }
             }
         }
         /// <summary>
@@ -151,32 +158,39 @@ namespace CapaUI
         /// <param name="e"></param>
         private void butGuardar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Proveedores Proveedor = new Entidades.Proveedores();
-            //Proveedor.SupplierID = Convert.ToInt32(txtProveedorID.Text);
-            Proveedor.CompanyName = txtCompania.Text;
-            Proveedor.ContactName = txtNombreContacto.Text;
-            Proveedor.ContactTitle = txtCargoContacto.Text;
-            Proveedor.Address = txtDireccion.Text;
-            Proveedor.City = txtCiudad.Text;
-            Proveedor.Region = txtRegion.Text;
-            Proveedor.PostalCode = txtCodigoPostal.Text;
-            Proveedor.Country = txtCiudad.Text;
-            Proveedor.Phone = txtTelefono.Text;
-            Proveedor.Fax = txtFax.Text;
-            Proveedor.HomePage = txtPaginaWeb.Text;
-
-            resultado = BLL.BLLProveedores.InsertarProveedores(Proveedor);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtCompania.Text)) || (string.IsNullOrEmpty(txtNombreContacto.Text)) || (string.IsNullOrEmpty(txtCargoContacto.Text)) || (string.IsNullOrEmpty(txtDireccion.Text)))
             {
-                MessageBox.Show("Registro ingresado correctamente");
-                Limpiarcontroles();
-                Listar();
-                dgProveedores.FirstDisplayedScrollingRowIndex = dgProveedores.RowCount - 1;
+                MessageBox.Show("Algunos campos no deben quedar vacíos");
             }
             else
             {
-                MessageBox.Show("No se pudo ingresar el registro");
+                bool resultado = false;
+                Entidades.Proveedores Proveedor = new Entidades.Proveedores();
+                //Proveedor.SupplierID = Convert.ToInt32(txtProveedorID.Text);
+                Proveedor.CompanyName = txtCompania.Text;
+                Proveedor.ContactName = txtNombreContacto.Text;
+                Proveedor.ContactTitle = txtCargoContacto.Text;
+                Proveedor.Address = txtDireccion.Text;
+                Proveedor.City = txtCiudad.Text;
+                Proveedor.Region = txtRegion.Text;
+                Proveedor.PostalCode = txtCodigoPostal.Text;
+                Proveedor.Country = txtCiudad.Text;
+                Proveedor.Phone = txtTelefono.Text;
+                Proveedor.Fax = txtFax.Text;
+                Proveedor.HomePage = txtPaginaWeb.Text;
+
+                resultado = BLL.BLLProveedores.InsertarProveedores(Proveedor);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro ingresado correctamente");
+                    Limpiarcontroles();
+                    Listar();
+                    dgProveedores.FirstDisplayedScrollingRowIndex = dgProveedores.RowCount - 1;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo ingresar el registro");
+                }
             }
         }
         /// <summary>

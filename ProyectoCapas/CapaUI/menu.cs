@@ -175,8 +175,7 @@ namespace CapaUI
 
         private void pbCustomers_Click(object sender, EventArgs e)
         {
-            Clientes abrir = new Clientes();
-            abrir.ShowDialog();
+
         }
 
         private void btEmployees_Click(object sender, EventArgs e)

@@ -411,6 +411,11 @@ namespace CapaUI
             }
         }
 
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         //DUDAAAAAAA
         //private int BuscarCantidad(int idPro)
         //{

@@ -29,10 +29,10 @@ namespace CapaUI
         private void Productos_Load(object sender, EventArgs e)
         {
             Listar();
+            Limpiarcontroles();
             cargarSuppliers();
             cargarCategory();
             cbDescon.SelectedIndex = 0;
-            Limpiarcontroles();
         }
 
         /// <summary>
@@ -56,40 +56,49 @@ namespace CapaUI
             CbSupplier.ValueMember = "SupplierID";
             CbSupplier.DataSource = dtz;
         }
-            private void cargarCategory()
-            {
-                DataTable dtz = new DataTable();
-                dtz.Clear();
-                dtz = BLL.BLLProductos.ConsultaAbierta("CategoryID, CategoryName", "Categories");
-                CbCategory.DisplayMember = "CategoryName";
-                CbCategory.ValueMember = "CategoryID";
-                CbCategory.DataSource = dtz;
-            }
+        private void cargarCategory()
+        {
+            DataTable dtz = new DataTable();
+            dtz.Clear();
+            dtz = BLL.BLLProductos.ConsultaAbierta("CategoryID, CategoryName", "Categories");
+            CbCategory.DisplayMember = "CategoryName";
+            CbCategory.ValueMember = "CategoryID";
+            CbCategory.DataSource = dtz;
+        }
 
-            /// <summary>
-            /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
-            /// </summary>
-            public void Limpiarcontroles()
-            {
-                txProduct.Text = "";
-                txproName.Text = "";
-                txQuantity.Text = "";
-                txUnitPrice.Text = "";
-                txunitInstock.Text = "";
-                txUnitonOrder.Text = "";
-                txRecorder.Text = "";
-                txproName.Focus();
-            }
-            /// <summary>
-            /// Evento click del botón guardar.
-            /// Realiza la función de agregar un registro a los productos.
-            /// Implementa una instancia de la clase regiones para la asignación de atributos 
-            /// Ejecuta método de InsertarProductos con los parámetros previamente asigandos a la clase Productos
-            /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
-            /// </summary>
-            /// <param name="sender"></param>
-            /// <param name="e"></param>
-            private void BtGuardar_Click(object sender, EventArgs e)
+        /// <summary>
+        /// El evento Limpiarcontroles borra el texto ingresado en los TextBox para un posterior ingreso de datos
+        /// </summary>
+        public void Limpiarcontroles()
+        {
+            txProduct.Text = "";
+            txproName.Text = "";
+            txQuantity.Text = "";
+            txUnitPrice.Text = "";
+            txunitInstock.Text = "";
+            txUnitonOrder.Text = "";
+            txRecorder.Text = "";
+            txproName.Focus();
+            //CbSupplier.SelectedIndex = 0;
+            //CbCategory.SelectedIndex = 0;
+            //cbDescon.SelectedIndex = 0;
+        }
+        /// <summary>
+        /// Evento click del botón guardar.
+        /// Realiza la función de agregar un registro a los productos.
+        /// Implementa una instancia de la clase regiones para la asignación de atributos 
+        /// Ejecuta método de InsertarProductos con los parámetros previamente asigandos a la clase Productos
+        /// Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtGuardar_Click(object sender, EventArgs e)
+        {
+        if ((string.IsNullOrEmpty(txproName.Text)) || (string.IsNullOrEmpty(txQuantity.Text)) || (string.IsNullOrEmpty(txUnitPrice.Text)) || (string.IsNullOrEmpty(txunitInstock.Text)) || (string.IsNullOrEmpty(txUnitonOrder.Text)) || (string.IsNullOrEmpty(txRecorder.Text)))
+        {
+            MessageBox.Show("Campo(s) vacio(s), revise");
+        }
+        else
         {
             bool resultado = false;
             Entidades.Productos Productos = new Entidades.Productos();
@@ -126,6 +135,7 @@ namespace CapaUI
                 MessageBox.Show("No se pudo ingresar el registro");
             }
         }
+        }
         /// <summary>
         /// Evento de click del botón "Nuevo", ejecuta el método "Limpiarcontroles".
         /// </summary>
@@ -146,28 +156,35 @@ namespace CapaUI
         /// <param name="e"></param>
         private void BtEditar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Productos productos = new Entidades.Productos();
-            productos.ProductID = Convert.ToInt32(txProduct.Text);
-            productos.ProductName = txproName.Text;
-            productos.SupplierID = Convert.ToInt32(CbSupplier.SelectedValue);
-            productos.CategoryID = Convert.ToInt32(CbCategory.SelectedValue);
-            productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
-            productos.UnitPrice = Convert.ToDouble(txUnitPrice.Text);
-            productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
-            productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
-            productos.RecorderLevel = Convert.ToInt32(txRecorder.Text);
-
-            resultado = BLL.BLLProductos.EditarProducto(productos);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txproName.Text)) || (string.IsNullOrEmpty(txQuantity.Text)) || (string.IsNullOrEmpty(txUnitPrice.Text)) || (string.IsNullOrEmpty(txunitInstock.Text)) || (string.IsNullOrEmpty(txUnitonOrder.Text)) || (string.IsNullOrEmpty(txRecorder.Text)))
             {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                Listar();
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo editar el registro");
+                bool resultado = false;
+                Entidades.Productos productos = new Entidades.Productos();
+                productos.ProductID = Convert.ToInt32(txProduct.Text);
+                productos.ProductName = txproName.Text;
+                productos.SupplierID = Convert.ToInt32(CbSupplier.SelectedValue);
+                productos.CategoryID = Convert.ToInt32(CbCategory.SelectedValue);
+                productos.QuantityPerUnit = Convert.ToString(txQuantity.Text);
+                productos.UnitPrice = Convert.ToDouble(txUnitPrice.Text);
+                productos.UnitsInStock = Convert.ToInt32(txunitInstock.Text);
+                productos.UnitsonOrder = Convert.ToInt32(txUnitonOrder.Text);
+                productos.RecorderLevel = Convert.ToInt32(txRecorder.Text);
+
+                resultado = BLL.BLLProductos.EditarProducto(productos);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro editado correctamente");
+                    Limpiarcontroles();
+                    Listar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar el registro");
+                }
             }
         }
         /// <summary>

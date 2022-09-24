@@ -19,9 +19,9 @@ namespace BLL
         /// </summary>
         /// <param name="strTerritorios"></param>
         /// <returns></returns>
-        public static DataTable ListarTerritorios(string strTerritorios)
+        public static DataTable ListarTerritorios()
         {
-            return ClaseTerritorios.ListarTerritorios(strTerritorios);
+            return ClaseTerritorios.ListarTerritorios();
         }
 
         // METODO INSERTAR TERRITORIOS.
@@ -56,6 +56,11 @@ namespace BLL
         public static bool InsertarTerritoriosSP(Territorios Territorios)
         {
             return ClaseTerritorios.InsertaTerritorios(Territorios);
+        }
+
+        public static DataTable ConsultaAbierta(string campos, string consulta)
+        {
+            return ClaseTerritorios.ConsultaAbierta(campos, consulta);
         }
     }
 }

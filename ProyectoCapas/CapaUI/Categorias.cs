@@ -17,6 +17,7 @@ namespace CapaUI
     {
         private DataTable dataCat;
         string nombre;
+        bool imagenLista = false;
         public Categorias()
         {
             InitializeComponent();
@@ -52,25 +53,46 @@ namespace CapaUI
         /// <param name="e"></param>
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            categorias categorias = new categorias();
-            //categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
-            categorias.CategoryName = tbNombre.Text.ToString();
-            categorias.Description = tbDescri.Text.ToString();
-            MemoryStream ms = new MemoryStream();
-            Image image = Image.FromFile(nombre);
-            image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-            categorias.Picture = (ms.ToArray());
-            resultado = BLL.BLLCategorias.InsertarCategoriasSP(categorias);
-            if (resultado)
+            if ((string.IsNullOrEmpty(tbNombre.Text)) || (string.IsNullOrEmpty(tbDescri.Text)))
             {
-                MessageBox.Show("Registro ingresado correctamente");
-                Limpiarcontroles();
-                cargarCategorias();
+                MessageBox.Show("No se pueden dejar campos vacios");
             }
             else
             {
-                MessageBox.Show("No se pudo ingresar el registro");
+                bool resultado = false;
+                categorias categorias = new categorias();
+                //categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
+                categorias.CategoryName = tbNombre.Text.ToString();
+                categorias.Description = tbDescri.Text.ToString();
+
+                // verifica si existe una imagen seleccionada desde fromFile
+                //si existen imagen, se guarda en la base de datos
+                //de lo contrario, se guarda el campo como nulo
+                if (imagenLista)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    Image image = Image.FromFile(nombre);
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    categorias.Picture = (ms.ToArray());
+                    imagenLista = false;
+
+                }
+                else
+                {
+                    categorias.Picture = null;
+                }
+
+                resultado = BLL.BLLCategorias.InsertarCategoriasSP(categorias);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro ingresado correctamente");
+                    Limpiarcontroles();
+                    cargarCategorias();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo ingresar el registro");
+                }                               
             }
         }
 
@@ -85,6 +107,7 @@ namespace CapaUI
             tbCatID.Focus();
             pbImagen.Image = null;
             tbNombre.Focus();
+            nombre = null;
         }
         /// <summary>
         /// Evento click del botón btnImg_Click.
@@ -107,6 +130,7 @@ namespace CapaUI
                     string text = File.ReadAllText(file);
                     size = text.Length;
                     pbImagen.Image = new Bitmap(openFileDialog1.FileName);
+                    imagenLista = true;
                 }
                 catch (IOException)
                 {
@@ -186,26 +210,59 @@ namespace CapaUI
         /// <param name="e"></param>
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            categorias categorias = new categorias();
-            categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
-            categorias.CategoryName = tbNombre.Text.ToString();
-            categorias.Description = tbDescri.Text.ToString();
-            MemoryStream ms = new MemoryStream();
-            Image image = Image.FromFile(nombre);
-            image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-            categorias.Picture = (ms.ToArray());
-            resultado = BLL.BLLCategorias.EditarCategoriasFotos(categorias);
-            if (resultado)
+            if ((string.IsNullOrEmpty(tbNombre.Text)) || (string.IsNullOrEmpty(tbDescri.Text)))
             {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                cargarCategorias();
+                MessageBox.Show("No se pueden dejar campos vacios");
             }
             else
             {
-                MessageBox.Show("No se pudo editar el registro");
+                bool resultado = false;
+                categorias categorias = new categorias();
+                categorias.CategoriaID = Convert.ToInt32(tbCatID.Text);
+                categorias.CategoryName = tbNombre.Text.ToString();
+                categorias.Description = tbDescri.Text.ToString();
+
+                // verifica si existe una imagen seleccionada desde fromFile
+                //si existen imagen, se guarda en la base de datos
+                //de lo contrario, se guarda el campo como nulo
+                if (imagenLista)
+                {
+                    MemoryStream ms = new MemoryStream();
+                    Image image = Image.FromFile(nombre);
+                    image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                    categorias.Picture = (ms.ToArray());
+                    imagenLista = false;
+                }
+                else
+                {
+                    //verifica si no existe previamente una imagen en el pciture box para guardar el campo de la imagen como nulo
+                    //de lo contrario se guarda la imagen del picture box en el campo de la imagen
+                    if (pbImagen.Image == null)
+                    {
+                        categorias.Picture = null;
+                    }
+                    else
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        Image image = pbImagen.Image;
+                        image.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                        categorias.Picture = (ms.ToArray());
+                        imagenLista = false;
+                    }
+                }
+                resultado = BLL.BLLCategorias.EditarCategoriasFotos(categorias);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro editado correctamente");
+                    Limpiarcontroles();
+                    cargarCategorias();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar el registro");
+                }
             }
+            
         }
 
         /// <summary>
@@ -228,5 +285,6 @@ namespace CapaUI
                 e.Handled = true;
             }
         }
+
     }
 }

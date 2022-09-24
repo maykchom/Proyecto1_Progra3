@@ -147,6 +147,10 @@ namespace DAL
             return Configuracion.ExecTransactionParameters(cmd);
         }
 
-       
+        public static DataTable ConsultaAbierta(string campos, string consulta)
+        {
+            string cadena = "select " + campos + " from " + consulta;
+            return Configuracion.GetDataTable(cadena);
+        }
     }
 }

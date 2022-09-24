@@ -51,21 +51,28 @@ namespace CapaUI
         // Verifica si la transacción fué exitosa para mostrar el mensaje correspondiente
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Regiones Region=new Regiones();
-            //Region.RegionID = Convert.ToInt32(txtRegionID.Text);
-            Region.RegionDescripcion = txtRegionNombre.Text;
-            resultado = BLL.BLLRegiones.InsertarRegionesSP(Region);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtRegionNombre.Text)))
             {
-                MessageBox.Show("Registro ingresado correctamente");
-                Limpiarcontroles();
-                Listar();
-                dgRegiones.FirstDisplayedScrollingRowIndex = dgRegiones.RowCount - 1;
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo ingresar el registro");
+                bool resultado = false;
+                Regiones Region=new Regiones();
+                //Region.RegionID = Convert.ToInt32(txtRegionID.Text);
+                Region.RegionDescripcion = txtRegionNombre.Text;
+                resultado = BLL.BLLRegiones.InsertarRegionesSP(Region);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro ingresado correctamente");
+                    Limpiarcontroles();
+                    Listar();
+                    dgRegiones.FirstDisplayedScrollingRowIndex = dgRegiones.RowCount - 1;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo ingresar el registro");
+                }
             }
         }
 
@@ -156,20 +163,27 @@ namespace CapaUI
         // Verifica si la transacción resultó exitosa para mostrar un mensaje correspondiente
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Regiones Region = new Regiones();
-            Region.RegionID = Convert.ToInt32(txtRegionID.Text);
-            Region.RegionDescripcion = txtRegionNombre.Text;
-            resultado = BLL.BLLRegiones.EditarRegiones(Region);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtRegionNombre.Text)))
             {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                Listar();
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo editar el registro");
+                bool resultado = false;
+                Regiones Region = new Regiones();
+                Region.RegionID = Convert.ToInt32(txtRegionID.Text);
+                Region.RegionDescripcion = txtRegionNombre.Text;
+                resultado = BLL.BLLRegiones.EditarRegiones(Region);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro editado correctamente");
+                    Limpiarcontroles();
+                    Listar();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar el registro");
+                }
             }
         }
 

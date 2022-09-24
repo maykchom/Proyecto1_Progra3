@@ -42,6 +42,7 @@ namespace CapaUI
         /// </summary>
         public void Limpiarcontroles()
         {
+            txShipper.Text = "";
             txCompany.Text = "";
             txphone.Text = "";
             txCompany.Focus();
@@ -70,26 +71,33 @@ namespace CapaUI
         /// <param name="e"></param>
         private void btGuardar_Click(object sender, EventArgs e)
         {
-
-            bool resultado = false;
-            Entidades.Shipper shipper = new Entidades.Shipper();
-           // shipper.ShipperID = Convert.ToInt32(txShipper.Text);
-            shipper.CompanyName = txCompany.Text;
-            shipper.Phone = txphone.Text;
-
-
-            resultado = BLL.BLLShipper.InsertarShipperSP(shipper);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txCompany.Text)))
             {
-                MessageBox.Show("Registro ingresado correctamente");
-                cargarShipper();
-                Limpiarcontroles();
-                dgShipper.FirstDisplayedScrollingRowIndex = dgShipper.RowCount - 1;
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo ingresar el registro");
+                bool resultado = false;
+                Entidades.Shipper shipper = new Entidades.Shipper();
+               // shipper.ShipperID = Convert.ToInt32(txShipper.Text);
+                shipper.CompanyName = txCompany.Text;
+                shipper.Phone = txphone.Text;
 
+
+                resultado = BLL.BLLShipper.InsertarShipperSP(shipper);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro ingresado correctamente");
+                    cargarShipper();
+                    Limpiarcontroles();
+                    dgShipper.FirstDisplayedScrollingRowIndex = dgShipper.RowCount - 1;
+                    panelEE.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo ingresar el registro");
+
+                }
             }
         }
         /// <summary>
@@ -153,21 +161,29 @@ namespace CapaUI
         /// <param name="e"></param>
         private void btEditar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Shipper shipper = new Entidades.Shipper();
-            shipper.ShipperID = Convert.ToInt32(txShipper.Text);
-            shipper.CompanyName = (txCompany.Text);
-            shipper.Phone = (txphone.Text);
-            resultado = BLL.BLLShipper.EditarShipper(shipper);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txCompany.Text)))
             {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                cargarShipper();
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo editar el registro");
+                bool resultado = false;
+                Entidades.Shipper shipper = new Entidades.Shipper();
+                shipper.ShipperID = Convert.ToInt32(txShipper.Text);
+                shipper.CompanyName = (txCompany.Text);
+                shipper.Phone = (txphone.Text);
+                resultado = BLL.BLLShipper.EditarShipper(shipper);
+                if (resultado)
+                {
+                    MessageBox.Show("Registro editado correctamente");
+                    Limpiarcontroles();
+                    cargarShipper();
+                    panelEE.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar el registro");
+                }
             }
         }
         //En el txtbox de CompanyName solo permite el ingreso de letras

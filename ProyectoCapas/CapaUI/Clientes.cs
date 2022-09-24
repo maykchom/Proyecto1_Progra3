@@ -70,6 +70,7 @@ namespace CapaUI
             txtTelefono.Text = "";
             txtFax.Text = "";
             txtCompania.Focus();
+            txtClienteID.Focus();
         }
         /// <summary>
         /// Evento click del botón editar.
@@ -83,31 +84,45 @@ namespace CapaUI
 
         private void Editar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Clientes Cliente = new Entidades.Clientes();
-            Cliente.CustomerID = txtClienteID.Text;
-            Cliente.CompanyName = txtCompania.Text;
-            Cliente.ContactName = txtNombreContacto.Text;
-            Cliente.ContactTitle = txtCargoContacto.Text;
-            Cliente.Address = txtDireccion.Text;
-            Cliente.City = txtCiudad.Text;
-            Cliente.Region = txtRegion.Text;
-            Cliente.PostalCode = txtCodigoPostal.Text;
-            Cliente.Country = txtCiudad.Text;
-            Cliente.Phone = txtTelefono.Text;
-            Cliente.Fax = txtFax.Text;
-        
-
-            resultado = BLL.BLLClientes.EditarClientes(Cliente);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtClienteID.Text)) || (string.IsNullOrEmpty(txtCompania.Text)) || (string.IsNullOrEmpty(txtCargoContacto.Text)) || (string.IsNullOrEmpty(txtDireccion.Text)))
             {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                Listar();
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo editar el registro");
+                if (usuarioExistente() == 1)
+                {
+                    bool resultado = false;
+                    Entidades.Clientes Cliente = new Entidades.Clientes();
+                    Cliente.CustomerID = txtClienteID.Text;
+                    Cliente.CompanyName = txtCompania.Text;
+                    Cliente.ContactName = txtNombreContacto.Text;
+                    Cliente.ContactTitle = txtCargoContacto.Text;
+                    Cliente.Address = txtDireccion.Text;
+                    Cliente.City = txtCiudad.Text;
+                    Cliente.Region = txtRegion.Text;
+                    Cliente.PostalCode = txtCodigoPostal.Text;
+                    Cliente.Country = txtCiudad.Text;
+                    Cliente.Phone = txtTelefono.Text;
+                    Cliente.Fax = txtFax.Text;
+        
+
+                    resultado = BLL.BLLClientes.EditarClientes(Cliente);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Registro editado correctamente");
+                        Limpiarcontroles();
+                        Listar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo editar el registro");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El usuario no existe");
+                }
             }
         }
         /// <summary>
@@ -146,33 +161,56 @@ namespace CapaUI
         /// <param name="e"></param>
         private void butGuardar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Entidades.Clientes Cliente= new Entidades.Clientes();
-            Cliente.CustomerID = txtClienteID.Text;
-            Cliente.CompanyName = txtCompania.Text;
-            Cliente.ContactName = txtNombreContacto.Text;
-            Cliente.ContactTitle = txtCargoContacto.Text;
-            Cliente.Address = txtDireccion.Text;
-            Cliente.City = txtCiudad.Text;
-            Cliente.Region = txtRegion.Text;
-            Cliente.PostalCode = txtCodigoPostal.Text;
-            Cliente.Country = txtCiudad.Text;
-            Cliente.Phone = txtTelefono.Text;
-            Cliente.Fax = txtFax.Text;
-            
-
-            resultado = BLL.BLLClientes.InsertaClientes(Cliente);
-            if (resultado)
+            if ((string.IsNullOrEmpty(txtClienteID.Text)) || (string.IsNullOrEmpty(txtCompania.Text)) || (string.IsNullOrEmpty(txtCargoContacto.Text)) || (string.IsNullOrEmpty(txtDireccion.Text)))
             {
-                MessageBox.Show("Registro ingresado correctamente");
-                Limpiarcontroles();
-                Listar();
-                dgClientes.FirstDisplayedScrollingRowIndex = dgClientes.RowCount - 1;
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                MessageBox.Show("No se pudo ingresar el registro");
+                if (usuarioExistente() == 0)
+                {
+                    bool resultado = false;
+                    Entidades.Clientes Cliente = new Entidades.Clientes();
+                    Cliente.CustomerID = txtClienteID.Text;
+                    Cliente.CompanyName = txtCompania.Text;
+                    Cliente.ContactName = txtNombreContacto.Text;
+                    Cliente.ContactTitle = txtCargoContacto.Text;
+                    Cliente.Address = txtDireccion.Text;
+                    Cliente.City = txtCiudad.Text;
+                    Cliente.Region = txtRegion.Text;
+                    Cliente.PostalCode = txtCodigoPostal.Text;
+                    Cliente.Country = txtCiudad.Text;
+                    Cliente.Phone = txtTelefono.Text;
+                    Cliente.Fax = txtFax.Text;
+
+
+                    resultado = BLL.BLLClientes.InsertaClientes(Cliente);
+                    if (resultado)
+                    {
+                        MessageBox.Show("Registro ingresado correctamente");
+                        Limpiarcontroles();
+                        Listar();
+                        dgClientes.FirstDisplayedScrollingRowIndex = dgClientes.RowCount - 1;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo ingresar el registro");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El usuario ya existe");
+                }
             }
+        }
+
+        private int usuarioExistente()
+        {
+            //Obtener el ID de la region
+            DataTable tablaSup = new DataTable();
+            string idCliente = txtClienteID.Text;
+            tablaSup = BLLProductos.ConsultaAbierta("CustomerID", "Customers where CustomerID = \"" + idCliente + "\"");
+            return tablaSup.Rows.Count;
         }
 
         private void dgClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

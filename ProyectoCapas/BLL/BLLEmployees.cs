@@ -63,5 +63,10 @@ namespace BLL
         {
             return ClaseEmployees.EliminaEmployees(employees);
         }
+
+        public static DataTable ConsultaAbierta(string campos, string consulta)
+        {
+            return ClaseEmployees.ConsultaAbierta(campos, consulta);
+        }
     }
 }
