@@ -328,16 +328,24 @@ namespace CapaUI
         private void btEditar_Click(object sender, EventArgs e)
         {
             int cantidadNueva = Convert.ToInt32(tbCantidadEdit.Text);
-            if (cantidadNueva > cantidadStock)
+            if (cantidadNueva <= 0)
             {
-                MessageBox.Show("Sin unidades suficientes", "Revise...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se puede agregar cero unidades");
                 panelEditar.Visible = false;
             }
             else
             {
-                dgvOrden.Rows[filaEditar].Cells[3].Value = cantidadNueva.ToString();
-                dgvOrden.Rows[filaEditar].Cells[4].Value = tbDescuEdit.Text;
-                panelEditar.Visible = false;
+                if (cantidadNueva > cantidadStock)
+                {
+                    MessageBox.Show("Sin unidades suficientes", "Revise...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    panelEditar.Visible = false;
+                }
+                else
+                {
+                    dgvOrden.Rows[filaEditar].Cells[3].Value = cantidadNueva.ToString();
+                    dgvOrden.Rows[filaEditar].Cells[4].Value = tbDescuEdit.Text;
+                    panelEditar.Visible = false;
+                }
             }
         }
         //En el txtbox de Cantidad solo permite el ingreso de numeros enteros
