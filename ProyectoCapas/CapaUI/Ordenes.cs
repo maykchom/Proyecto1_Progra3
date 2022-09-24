@@ -331,6 +331,7 @@ namespace CapaUI
             if (cantidadNueva > cantidadStock)
             {
                 MessageBox.Show("Sin unidades suficientes", "Revise...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                panelEditar.Visible = false;
             }
             else
             {

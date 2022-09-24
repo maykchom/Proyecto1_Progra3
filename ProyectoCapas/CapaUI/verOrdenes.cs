@@ -82,7 +82,7 @@ namespace CapaUI
         private void btImpri_Click(object sender, EventArgs e)
         {
             visor settingsform = new visor(NoFactura);
-            settingsform.Show();
+            settingsform.ShowDialog();
   
 
         }

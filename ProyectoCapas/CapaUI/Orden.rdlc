@@ -495,7 +495,7 @@
         <DataSetName>dtDetalles</DataSetName>
         <Top>6.70136cm</Top>
         <Left>0.94585cm</Left>
-        <Height>1.30583cm</Height>
+        <Height>1.30584cm</Height>
         <Width>17.45299cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
@@ -512,7 +512,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!FechaOrden.Value, "dtOrden")</Value>
-                <Style />
+                <Style>
+                  <Format>d</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -544,7 +546,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!FechaCompra.Value, "dtOrden")</Value>
-                <Style />
+                <Style>
+                  <Format>d</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -576,7 +580,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!FechaPeticion.Value, "dtOrden")</Value>
-                <Style />
+                <Style>
+                  <Format>d</Format>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>

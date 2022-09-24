@@ -22,7 +22,7 @@ namespace DAL
         public static DataTable ListarOrdenes(string strShipper)
         {
             string strSQL = "select * from vistaOrdenes";
-            strSQL += " where NombreCompania like '%" + strShipper + "%'";
+            strSQL += " where NombreCompania like '%" + strShipper + "%' order by OrdenID";
             return Configuracion.GetDataTable(strSQL);
         }
         /// <summary>

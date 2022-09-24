@@ -71,7 +71,9 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbfactura);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "visor";
             this.Text = "visor";
             this.Load += new System.EventHandler(this.visor_Load);

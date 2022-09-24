@@ -272,69 +272,74 @@ namespace CapaUI
         /// <param name="e"></param>
         private void btEditar_Click(object sender, EventArgs e)
         {
-            bool resultado = false;
-            Employees employees = new Employees();
-            employees.EmployeeID = Convert.ToInt32(txEmpID.Text);
-            employees.LastName = txLNam.Text.ToString();
-            employees.FirstName = txFsNam.Text.ToString();
-            employees.Title = txTitle.Text.ToString();
-            employees.TitleOfCourtesy = txTitCourt.Text.ToString();
-            employees.BirthDate = Convert.ToDateTime(dtpBirth.Text);
-            employees.HireDate = Convert.ToDateTime(dtpHire.Text);
-            employees.Address = txAddress.Text.ToString();
-            employees.City = txCity.Text.ToString();
-            employees.Region = txRegion.Text.ToString();
-            employees.PostalCode = txPCode.Text.ToString();
-            employees.Country = txCountry.Text.ToString();
-            employees.HomePhone = txHPhone.Text.ToString();
-            employees.Extension = txExtens.Text.ToString();
-            employees.Notes = txNots.Text.ToString();
-            employees.ReportsTo = Convert.ToInt32(cbReport.SelectedValue);
-            employees.PhotoPath = txPhotPath.Text.ToString();
-            employees.Salary = Convert.ToDecimal(txSalary.Text);
-
-
-            // verifica si existe una imagen seleccionada desde fromFile
-            //si existen imagen, se guarda en la base de datos
-            //de lo contrario, se guarda el campo como nulo
-            if (imagenLista)
+            if ((string.IsNullOrEmpty(txLNam.Text)) || (string.IsNullOrEmpty(txFsNam.Text)) || (string.IsNullOrEmpty(txTitle.Text)) || (string.IsNullOrEmpty(txHPhone.Text)) || (string.IsNullOrEmpty(txExtens.Text)) || (string.IsNullOrEmpty(txTitCourt.Text)) || (string.IsNullOrEmpty(txAddress.Text)) || (string.IsNullOrEmpty(txSalary.Text)))
             {
-                MessageBox.Show("Imagen lista!");
-                MemoryStream ms = new MemoryStream();
-                Image photo = Image.FromFile(nombre);
-                photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-                employees.Photo = (ms.ToArray());
-                imagenLista = false;
+                MessageBox.Show("Campo(s) vacio(s), revise");
             }
             else
             {
-                //verifica si no existe previamente una imagen en el pciture box para guardar el campo de la imagen como nulo
-                //de lo contrario se guarda la imagen del picture box en el campo de la imagen
-                MessageBox.Show("Imagen NO lista!");
-                if (pbPhoto.Image == null)
-                {
-                    employees.Photo = null;
-                }
-                else
-                {
+                bool resultado = false;
+                Employees employees = new Employees();
+                employees.EmployeeID = Convert.ToInt32(txEmpID.Text);
+                employees.LastName = txLNam.Text.ToString();
+                employees.FirstName = txFsNam.Text.ToString();
+                employees.Title = txTitle.Text.ToString();
+                employees.TitleOfCourtesy = txTitCourt.Text.ToString();
+                employees.BirthDate = Convert.ToDateTime(dtpBirth.Text);
+                employees.HireDate = Convert.ToDateTime(dtpHire.Text);
+                employees.Address = txAddress.Text.ToString();
+                employees.City = txCity.Text.ToString();
+                employees.Region = txRegion.Text.ToString();
+                employees.PostalCode = txPCode.Text.ToString();
+                employees.Country = txCountry.Text.ToString();
+                employees.HomePhone = txHPhone.Text.ToString();
+                employees.Extension = txExtens.Text.ToString();
+                employees.Notes = txNots.Text.ToString();
+                employees.ReportsTo = Convert.ToInt32(cbReport.SelectedValue);
+                employees.PhotoPath = txPhotPath.Text.ToString();
+                employees.Salary = Convert.ToDecimal(txSalary.Text);
+
+
+                // verifica si existe una imagen seleccionada desde fromFile
+                //si existen imagen, se guarda en la base de datos
+                //de lo contrario, se guarda el campo como nulo
+                if (imagenLista)
+                {                
                     MemoryStream ms = new MemoryStream();
-                    Image photo = pbPhoto.Image;
+                    Image photo = Image.FromFile(nombre);
                     photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
                     employees.Photo = (ms.ToArray());
                     imagenLista = false;
                 }
-            }
-            resultado = BLL.BLLEmployees.EditarEmployees(employees);
+                else
+                {
+                    //verifica si no existe previamente una imagen en el pciture box para guardar el campo de la imagen como nulo
+                    //de lo contrario se guarda la imagen del picture box en el campo de la imagen                
+                    if (pbPhoto.Image == null)
+                    {
+                        employees.Photo = null;
+                    }
+                    else
+                    {
+                        MemoryStream ms = new MemoryStream();
+                        Image photo = pbPhoto.Image;
+                        photo.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
+                        employees.Photo = (ms.ToArray());
+                        imagenLista = false;
+                    }
+                }
+                resultado = BLL.BLLEmployees.EditarEmployees(employees);
 
-            if (resultado)
-            {
-                MessageBox.Show("Registro editado correctamente");
-                Limpiarcontroles();
-                cargarEmployees();
-            }
-            else
-            {
-                MessageBox.Show("No se pudo editar el registro");
+                if (resultado)
+                {
+                    MessageBox.Show("Registro editado correctamente");
+                    Limpiarcontroles();
+                    cargarEmployees();
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo editar el registro");
+                }
             }
         }
 
