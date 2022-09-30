@@ -84,6 +84,7 @@ namespace CapaUI
                     MessageBox.Show("Registro editado correctamente");
                     Limpiarcontroles();
                     Listar();
+                    panelEE.Enabled = false;
                 }
                 else
                 {
@@ -142,6 +143,7 @@ namespace CapaUI
                 MessageBox.Show("Registro Eliminado correctamente");
                 Limpiarcontroles();
                 Listar();
+                panelEE.Enabled = false;
             }
             else
             {
@@ -186,6 +188,7 @@ namespace CapaUI
                     Limpiarcontroles();
                     Listar();
                     dgProveedores.FirstDisplayedScrollingRowIndex = dgProveedores.RowCount - 1;
+                    panelEE.Enabled = false;
                 }
                 else
                 {

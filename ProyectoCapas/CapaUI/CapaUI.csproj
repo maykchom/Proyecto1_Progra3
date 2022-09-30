@@ -107,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetOrdenes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DataSetTotal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTotal.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Employeess.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +246,17 @@
     </None>
     <None Include="DataSets\DataSetOrdenes.xss">
       <DependentUpon>DataSetOrdenes.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetTotal.xsc">
+      <DependentUpon>DataSetTotal.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetTotal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTotal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetTotal.xss">
+      <DependentUpon>DataSetTotal.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

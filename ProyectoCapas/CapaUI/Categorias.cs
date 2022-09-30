@@ -88,6 +88,7 @@ namespace CapaUI
                     MessageBox.Show("Registro ingresado correctamente");
                     Limpiarcontroles();
                     cargarCategorias();
+                    panelEE.Enabled = false;
                 }
                 else
                 {
@@ -157,6 +158,7 @@ namespace CapaUI
                 MessageBox.Show("Registro Eliminado correctamente");
                 Limpiarcontroles();
                 cargarCategorias();
+                panelEE.Enabled = false;
             }
             else
             {
@@ -256,6 +258,7 @@ namespace CapaUI
                     MessageBox.Show("Registro editado correctamente");
                     Limpiarcontroles();
                     cargarCategorias();
+                    panelEE.Enabled = false;
                 }
                 else
                 {
@@ -275,6 +278,7 @@ namespace CapaUI
         {
             Limpiarcontroles();
             panelEE.Enabled = false;
+            imagenLista = false;
         }
         
         //En el txtbox permite solo el ingreso de letras

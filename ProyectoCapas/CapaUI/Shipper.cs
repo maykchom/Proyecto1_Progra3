@@ -144,6 +144,7 @@ namespace CapaUI
                 MessageBox.Show("Registro Eliminado correctamente");
                 Limpiarcontroles();
                 cargarShipper();
+                panelEE.Enabled = false;
             }
             else
             {

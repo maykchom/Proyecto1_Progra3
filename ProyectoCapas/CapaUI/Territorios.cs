@@ -103,6 +103,7 @@ namespace CapaUI
                     MessageBox.Show("Registro editado correctamente");
                     Limpiarcontroles();
                     Listar();
+                    panelEE.Enabled = false;
                 }
                 else
                 {
@@ -132,6 +133,7 @@ namespace CapaUI
                 MessageBox.Show("Registro Eliminado correctamente");
                 Limpiarcontroles();
                 Listar();
+                panelEE.Enabled = false;
             }
             else
             {
@@ -168,6 +170,7 @@ namespace CapaUI
                     Listar();
                     dgTerritorios.FirstDisplayedScrollingRowIndex = dgTerritorios.RowCount - 1;
                     cbRegion.SelectedIndex = 0;
+                    panelEE.Enabled = false;
                 }
                 else
                 {

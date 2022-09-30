@@ -54,5 +54,11 @@ namespace DAL
             strSQL += " where OrderID = "+ order;
             return Configuracion.GetDataTable(strSQL);
         }
+
+        public static DataTable obtenerTotal(int order)
+        {
+            string strSQL = "select sum(UnitPrice * Quantity) Total from `order details` od where OrderID = "+order;
+            return Configuracion.GetDataTable(strSQL);
+        }
     }
 }

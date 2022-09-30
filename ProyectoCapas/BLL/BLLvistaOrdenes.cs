@@ -48,5 +48,10 @@ namespace BLL
         {
             return ClaseVistaOrdenes.ListarOrdenesDetalles(order);
         }
+
+        public static DataTable obtenerTotal(int order)
+        {
+            return ClaseVistaOrdenes.obtenerTotal(order);
+        }
     }
 }

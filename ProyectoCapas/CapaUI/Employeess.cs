@@ -111,6 +111,7 @@ namespace CapaUI
                     Limpiarcontroles();
                     cargarEmployees();
                     dgEmpl.FirstDisplayedScrollingRowIndex = dgEmpl.RowCount - 1;
+                    panelEE.Enabled = false;
                 }
                 else
                 {
@@ -197,6 +198,7 @@ namespace CapaUI
                 MessageBox.Show("Registro Eliminado correctamente");
                 Limpiarcontroles();
                 cargarEmployees();
+                panelEE.Enabled = false;
             }
             else
             {
@@ -335,6 +337,7 @@ namespace CapaUI
                     MessageBox.Show("Registro editado correctamente");
                     Limpiarcontroles();
                     cargarEmployees();
+                    panelEE.Enabled = false;
                 }
                 else
                 {
@@ -354,6 +357,7 @@ namespace CapaUI
             Limpiarcontroles();
             panelEE.Enabled = false;
             pbPhoto.Image = null;
+            imagenLista=false;
         }
 
         //En el txtbox de LastName solo permite el ingreso de letras
